@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.12 0.015 280;
+    --foreground: 0.97 0.01 260;
+    --card: 0.16 0.018 280;
+    --card-foreground: 0.97 0.01 260;
+    --popover: 0.14 0.016 280;
+    --popover-foreground: 0.97 0.01 260;
+    --primary: 0.6 0.22 295;
+    --primary-foreground: 0.98 0.005 260;
+    --secondary: 0.2 0.025 280;
+    --secondary-foreground: 0.85 0.015 260;
+    --muted: 0.22 0.02 280;
+    --muted-foreground: 0.55 0.02 270;
+    --accent: 0.65 0.2 210;
+    --accent-foreground: 0.98 0.005 260;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 0;
+    --border: 0.25 0.025 280;
+    --input: 0.22 0.02 280;
+    --ring: 0.6 0.22 295;
+    --radius: 0.75rem;
+    --chart-1: 0.6 0.22 295;
+    --chart-2: 0.65 0.2 210;
+    --chart-3: 0.7 0.18 175;
+    --chart-4: 0.7 0.2 50;
+    --chart-5: 0.65 0.22 350;
+    --sidebar: 0.13 0.016 280;
+    --sidebar-foreground: 0.97 0.01 260;
+    --sidebar-primary: 0.6 0.22 295;
+    --sidebar-primary-foreground: 0.98 0.005 260;
+    --sidebar-accent: 0.22 0.025 280;
+    --sidebar-accent-foreground: 0.85 0.015 260;
+    --sidebar-border: 0.22 0.022 280;
+    --sidebar-ring: 0.6 0.22 295;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background: oklch(0.12 0.015 280);
+    background-image: radial-gradient(
+        ellipse 80% 50% at 20% 0%,
+        oklch(0.25 0.06 295 / 0.3) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 80% 100%,
+        oklch(0.25 0.06 210 / 0.2) 0%,
+        transparent 60%
+      );
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+/* Glass card utility */
+.glass-card {
+  background: oklch(0.18 0.02 280 / 0.7);
+  border: 1px solid oklch(0.35 0.03 280 / 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+}
+
+.glass-card-light {
+  background: oklch(0.22 0.022 280 / 0.5);
+  border: 1px solid oklch(0.35 0.03 280 / 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.55 0.25 295),
+    oklch(0.55 0.2 240),
+    oklch(0.65 0.18 210)
+  );
+  transition: all 0.2s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.04 280);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.5 0.1 295);
+}
+
+/* Notification slide-in */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px oklch(0.6 0.22 295 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px oklch(0.6 0.22 295 / 0.8), 0 0 50px
+      oklch(0.65 0.2 210 / 0.4);
+  }
+}
+
+.notification-enter {
+  animation: slideInRight 0.3s ease;
+}
+
+.post-enter {
+  animation: fadeInUp 0.4s ease;
+}
+
+.boost-pulse {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Typing indicator dots */
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: oklch(0.55 0.15 295);
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+/* Fan Rebellion pulse */
+@keyframes rebellion-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px oklch(0.55 0.28 25 / 0.3);
+    border-color: oklch(0.65 0.28 25 / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px oklch(0.55 0.28 25 / 0.6);
+    border-color: oklch(0.75 0.3 25 / 0.8);
+  }
+}
+
+/* Shake animation for rebellion emoji */
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}

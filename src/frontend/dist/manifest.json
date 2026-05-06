@@ -1,0 +1,17 @@
+{
+  "name": "MindForge AI Social Simulator",
+  "short_name": "MindForge",
+  "description": "Grow your creator career in this immersive social media simulator",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0f0f1a",
+  "background_color": "#0f0f1a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
