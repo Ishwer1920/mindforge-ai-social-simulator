@@ -117,8 +117,27 @@ export default function Profile({ userId }: Props) {
     legacyScore,
     updateLegacyScore,
     celebrityMode,
+    setCreatorCoins,
   } = useApp();
   const isOwnProfile = !userId;
+
+  const hackClicksRef = useRef(0);
+  const hackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleAvatarHackClick() {
+    hackClicksRef.current += 1;
+    if (hackTimerRef.current) clearTimeout(hackTimerRef.current);
+    hackTimerRef.current = setTimeout(() => {
+      hackClicksRef.current = 0;
+    }, 3000);
+    if (hackClicksRef.current >= 7) {
+      hackClicksRef.current = 0;
+      setCreatorCoins((c: number) => c + 99999);
+      toast.success("💰 Secret hack activated! +99,999 coins", {
+        duration: 5000,
+      });
+    }
+  }
 
   const [paparazziOpen, setPaparazziOpen] = useState(false);
   const [paparazziFollowers, setPaparazziFollowers] = useState(0);
@@ -322,8 +341,10 @@ export default function Profile({ userId }: Props) {
       <div className="glass-card p-6">
         <div className="flex items-start gap-5">
           <Avatar
-            className="w-24 h-24"
+            className="w-24 h-24 cursor-pointer select-none"
             style={{ boxShadow: "0 0 0 4px oklch(0.6 0.22 295 / 0.3)" }}
+            onClick={isOwnProfile ? handleAvatarHackClick : undefined}
+            data-ocid="profile.avatar"
           >
             <AvatarImage
               src={displayProfile.avatar}

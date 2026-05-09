@@ -7,8 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ArrowLeft, Coins, RefreshCw, Save } from "lucide-react";
+import { ArrowLeft, Coins, RefreshCw, Save, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
 
@@ -153,6 +154,41 @@ const HUB_FEATURES = [
     description: "Leaked intel & reach multipliers",
     page: "algo-hack",
   },
+  {
+    id: "content-vault",
+    emoji: "🔒",
+    label: "Content Vault",
+    description: "Boost your top saved posts",
+    page: "content-vault",
+  },
+  {
+    id: "trend-radar",
+    emoji: "📍",
+    label: "Trend Radar",
+    description: "Ride trends for bonus reach",
+    page: "trend-radar",
+  },
+  {
+    id: "fan-mail",
+    emoji: "💌",
+    label: "Fan Mail Center",
+    description: "Reply fans to earn coins",
+    page: "fan-mail",
+  },
+  {
+    id: "challenges-board",
+    emoji: "📊",
+    label: "Daily Challenges",
+    description: "Complete goals for coin rewards",
+    page: "challenges-board",
+  },
+  {
+    id: "monetization-booster",
+    emoji: "💸",
+    label: "Ad Campaigns",
+    description: "Run campaigns for passive coins",
+    page: "monetization-booster",
+  },
 ];
 
 const GRADIENT_MAP: Record<string, string> = {
@@ -189,12 +225,23 @@ const GRADIENT_MAP: Record<string, string> = {
     "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.6 0.2 295))",
   "algo-hack":
     "linear-gradient(135deg, oklch(0.5 0.22 295), oklch(0.55 0.25 260))",
+  "content-vault":
+    "linear-gradient(135deg, oklch(0.5 0.18 220), oklch(0.55 0.2 240))",
+  "trend-radar":
+    "linear-gradient(135deg, oklch(0.6 0.2 25), oklch(0.65 0.18 45))",
+  "fan-mail":
+    "linear-gradient(135deg, oklch(0.58 0.22 320), oklch(0.55 0.2 295))",
+  "challenges-board":
+    "linear-gradient(135deg, oklch(0.55 0.2 200), oklch(0.6 0.18 145))",
+  "monetization-booster":
+    "linear-gradient(135deg, oklch(0.62 0.22 145), oklch(0.58 0.18 80))",
 };
 
 export default function CreatorHub() {
   const {
     navigate,
     creatorCoins,
+    setCreatorCoins,
     lastSaved,
     isSaving,
     triggerSave,
@@ -203,6 +250,69 @@ export default function CreatorHub() {
     postingStreak,
   } = useApp();
   const [newGameOpen, setNewGameOpen] = useState(false);
+
+  // Daily Spin state
+  const SPIN_LS_KEY = "mindforge-daily-spin";
+  const [spinResult, setSpinResult] = useState<number | null>(null);
+  const [spinning, setSpinning] = useState(false);
+  const [spinCooldown, setSpinCooldown] = useState<number | null>(() => {
+    try {
+      const raw = localStorage.getItem(SPIN_LS_KEY);
+      if (raw) {
+        const d = JSON.parse(raw) as { lastSpin: number };
+        const next = d.lastSpin + 24 * 3600000;
+        return next > Date.now() ? next : null;
+      }
+    } catch (_) {}
+    return null;
+  });
+  const [spinTimeLeft, setSpinTimeLeft] = useState("");
+
+  useEffect(() => {
+    if (!spinCooldown) {
+      setSpinTimeLeft("");
+      return;
+    }
+    const id = setInterval(() => {
+      const diff = Math.max(0, spinCooldown - Date.now());
+      if (diff === 0) {
+        setSpinCooldown(null);
+        setSpinTimeLeft("");
+        clearInterval(id);
+        return;
+      }
+      const hrs = Math.floor(diff / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      setSpinTimeLeft(`${hrs}h ${mins}m`);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [spinCooldown]);
+
+  function handleSpin() {
+    if (spinCooldown) return;
+    setSpinning(true);
+    setSpinResult(null);
+    setTimeout(() => {
+      const roll = Math.random();
+      let coins: number;
+      if (roll < 0.6) {
+        coins = Math.floor(50 + Math.random() * 150); // Common 50-200
+      } else if (roll < 0.85) {
+        coins = Math.floor(200 + Math.random() * 300); // Rare 200-500
+      } else {
+        coins = Math.floor(500 + Math.random() * 1500); // Epic 500-2000
+      }
+      setCreatorCoins((c: number) => c + coins);
+      setSpinResult(coins);
+      setSpinning(false);
+      const next = Date.now() + 24 * 3600000;
+      setSpinCooldown(next);
+      localStorage.setItem(
+        SPIN_LS_KEY,
+        JSON.stringify({ lastSpin: Date.now() }),
+      );
+    }, 1200);
+  }
 
   function timeAgo(ts: number | null): string {
     if (!ts) return "Never";
@@ -243,19 +353,71 @@ export default function CreatorHub() {
           </h1>
           <p className="text-xs text-muted-foreground">Your control center</p>
         </div>
-        {/* Creator Coins */}
-        <div
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold"
-          style={{
-            background:
-              "linear-gradient(135deg, oklch(0.55 0.18 80 / 0.25), oklch(0.5 0.15 70 / 0.15))",
-            border: "1px solid oklch(0.6 0.2 80 / 0.4)",
-            color: "oklch(0.8 0.18 80)",
-          }}
-          data-ocid="hub.coins.panel"
-        >
-          <Coins className="w-4 h-4" />
-          {creatorCoins.toLocaleString()}
+        {/* Creator Coins + Daily Spin */}
+        <div className="flex items-center gap-2">
+          <div
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.55 0.18 80 / 0.25), oklch(0.5 0.15 70 / 0.15))",
+              border: "1px solid oklch(0.6 0.2 80 / 0.4)",
+              color: "oklch(0.8 0.18 80)",
+            }}
+            data-ocid="hub.coins.panel"
+          >
+            <Coins className="w-4 h-4" />
+            {creatorCoins.toLocaleString()}
+          </div>
+          {/* Daily Spin Button */}
+          <button
+            type="button"
+            data-ocid="hub.daily_spin.button"
+            onClick={handleSpin}
+            disabled={!!spinCooldown || spinning}
+            title={
+              spinCooldown
+                ? `Next spin in ${spinTimeLeft}`
+                : "Daily Spin — free coins!"
+            }
+            className="relative flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+            style={{
+              background: spinCooldown
+                ? "oklch(0.16 0.02 280 / 0.8)"
+                : "linear-gradient(135deg, oklch(0.6 0.25 295), oklch(0.55 0.22 260))",
+              border: spinCooldown
+                ? "1px solid oklch(0.28 0.03 280 / 0.5)"
+                : "1px solid oklch(0.7 0.22 295 / 0.5)",
+              color: spinCooldown ? "oklch(0.5 0.04 280)" : "white",
+              boxShadow: !spinCooldown
+                ? "0 2px 12px oklch(0.55 0.22 295 / 0.4)"
+                : "none",
+            }}
+          >
+            <Sparkles className="w-3 h-3" />
+            {spinning
+              ? "Spinning..."
+              : spinCooldown
+                ? spinTimeLeft || "Cooldown"
+                : "Spin!"}
+            {!spinCooldown && !spinning && (
+              <span
+                className="absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse"
+                style={{ background: "oklch(0.72 0.22 80)" }}
+              />
+            )}
+          </button>
+          {spinResult !== null && (
+            <span
+              className="text-xs font-bold px-2 py-0.5 rounded-full animate-bounce"
+              style={{
+                background: "oklch(0.55 0.22 80 / 0.3)",
+                color: "oklch(0.82 0.2 80)",
+                border: "1px solid oklch(0.6 0.2 80 / 0.4)",
+              }}
+            >
+              +{spinResult.toLocaleString()}
+            </span>
+          )}
         </div>
       </div>
 

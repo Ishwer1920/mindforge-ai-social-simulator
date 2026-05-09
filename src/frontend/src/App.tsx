@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import { Bell } from "lucide-react";
 import { useState } from "react";
 import DramaModal from "./components/DramaModal";
 import MobileNav from "./components/MobileNav";
@@ -13,26 +14,37 @@ import { useCollaborationSimulator } from "./hooks/useCollaborationSimulator";
 import { type DramaEvent, useDramaEngine } from "./hooks/useDramaEngine";
 import { useEngagementSimulator } from "./hooks/useEngagementSimulator";
 import { useViralEngine } from "./hooks/useViralEngine";
+import AgencyPage from "./pages/AgencyPage";
 import AlgorithmHack from "./pages/AlgorithmHack";
 import Analytics from "./pages/Analytics";
 import BlackMarket from "./pages/BlackMarket";
+import ChallengesBoardPage from "./pages/ChallengesBoardPage";
+import ChallengesPage from "./pages/ChallengesPage";
+import ContentVault from "./pages/ContentVault";
 import CreatorEnergy from "./pages/CreatorEnergy";
 import CreatorHouses from "./pages/CreatorHouses";
 import CreatorHub from "./pages/CreatorHub";
+import CreatorStudio from "./pages/CreatorStudio";
 import Explore from "./pages/Explore";
 import FanArmyWars from "./pages/FanArmyWars";
+import FanMailCenter from "./pages/FanMailCenter";
 import HallOfFame from "./pages/HallOfFame";
 import HashtagPage from "./pages/HashtagPage";
 import HomeFeed from "./pages/HomeFeed";
+import InvestmentPage from "./pages/InvestmentPage";
 import Leaderboard from "./pages/Leaderboard";
 import LiveStream from "./pages/LiveStream";
 import MerchStore from "./pages/MerchStore";
 import Messages from "./pages/Messages";
 import Monetization from "./pages/Monetization";
+import MonetizationBooster from "./pages/MonetizationBooster";
 import Onboarding from "./pages/Onboarding";
 import Profile from "./pages/Profile";
+import SkillUpgrades from "./pages/SkillUpgrades";
 import SponsorBidding from "./pages/SponsorBidding";
+import StreaksRewards from "./pages/StreaksRewards";
 import TrendBattles from "./pages/TrendBattles";
+import TrendRadar from "./pages/TrendRadar";
 import Trending from "./pages/Trending";
 import ViralRoulette from "./pages/ViralRoulette";
 
@@ -47,6 +59,7 @@ function AppShell() {
 
   const [activeDrama, setActiveDrama] = useState<DramaEvent | null>(null);
   useDramaEngine((event) => setActiveDrama(event));
+  const [notifOpen, setNotifOpen] = useState(false);
 
   if (isNewUser) {
     return <Onboarding />;
@@ -79,9 +92,9 @@ function AppShell() {
       case "hub":
         return <CreatorHub />;
       case "creator-studio":
-        return <HomeFeed />;
+        return <CreatorStudio />;
       case "challenges":
-        return <HomeFeed />;
+        return <ChallengesPage />;
       case "user-profile":
         return <Profile userId={currentRoute.userId} />;
       case "hashtag":
@@ -104,6 +117,24 @@ function AppShell() {
         return <SponsorBidding />;
       case "algo-hack":
         return <AlgorithmHack />;
+      case "skills":
+        return <SkillUpgrades />;
+      case "agency":
+        return <AgencyPage />;
+      case "investment":
+        return <InvestmentPage />;
+      case "streaks":
+        return <StreaksRewards />;
+      case "content-vault":
+        return <ContentVault />;
+      case "trend-radar":
+        return <TrendRadar />;
+      case "fan-mail":
+        return <FanMailCenter />;
+      case "challenges-board":
+        return <ChallengesBoardPage />;
+      case "monetization-booster":
+        return <MonetizationBooster />;
       default:
         return <HomeFeed />;
     }
@@ -120,13 +151,35 @@ function AppShell() {
         className="flex-1 overflow-y-auto"
         style={{
           marginLeft: isMobile ? 0 : "240px",
-          marginRight: isMobile ? 0 : "288px",
+          marginRight: isMobile ? 0 : notifOpen ? "288px" : "0px",
           paddingBottom: isMobile && !hideMobileNav ? "80px" : 0,
         }}
       >
         {renderPage()}
       </main>
-      {!isMobile && <NotificationsSidebar />}
+      {!isMobile && notifOpen && (
+        <NotificationsSidebar onClose={() => setNotifOpen(false)} />
+      )}
+      {/* Bell toggle button (desktop) */}
+      {!isMobile && !notifOpen && (
+        <button
+          type="button"
+          aria-label="Open notifications"
+          data-ocid="app.notifications.open_button"
+          onClick={() => setNotifOpen(true)}
+          className="fixed top-4 right-4 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+          style={{
+            background: "oklch(0.18 0.025 280 / 0.9)",
+            border: "1px solid oklch(0.35 0.04 280 / 0.5)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <Bell
+            className="w-4.5 h-4.5"
+            style={{ color: "oklch(0.72 0.18 295)" }}
+          />
+        </button>
+      )}
       {isMobile && !hideMobileNav && (
         <MobileNav activePage={activePage} onNavigate={handleNavigate} />
       )}

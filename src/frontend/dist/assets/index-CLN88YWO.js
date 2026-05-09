@@ -18748,6 +18748,1120 @@ const Toaster = ({ ...props }) => {
     }
   );
 };
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const toKebabCase = (string2) => string2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string2) => string2.replace(
+  /^([A-Z])|[\s-_]+(\w)/g,
+  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
+);
+const toPascalCase = (string2) => {
+  const camelCase = toCamelCase(string2);
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes) => classes.filter((className, index2, array2) => {
+  return Boolean(className) && className.trim() !== "" && array2.indexOf(className) === index2;
+}).join(" ").trim();
+const hasA11yProp = (props) => {
+  for (const prop in props) {
+    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+      return true;
+    }
+  }
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+var defaultAttributes = {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Icon$1 = reactExports.forwardRef(
+  ({
+    color: color2 = "currentColor",
+    size: size2 = 24,
+    strokeWidth = 2,
+    absoluteStrokeWidth,
+    className = "",
+    children,
+    iconNode,
+    ...rest
+  }, ref) => reactExports.createElement(
+    "svg",
+    {
+      ref,
+      ...defaultAttributes,
+      width: size2,
+      height: size2,
+      stroke: color2,
+      strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size2) : strokeWidth,
+      className: mergeClasses("lucide", className),
+      ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
+      ...rest
+    },
+    [
+      ...iconNode.map(([tag, attrs]) => reactExports.createElement(tag, attrs)),
+      ...Array.isArray(children) ? children : [children]
+    ]
+  )
+);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const createLucideIcon = (iconName, iconNode) => {
+  const Component2 = reactExports.forwardRef(
+    ({ className, ...props }, ref) => reactExports.createElement(Icon$1, {
+      ref,
+      iconNode,
+      className: mergeClasses(
+        `lucide-${toKebabCase(toPascalCase(iconName))}`,
+        `lucide-${iconName}`,
+        className
+      ),
+      ...props
+    })
+  );
+  Component2.displayName = toPascalCase(iconName);
+  return Component2;
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1a = [
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+];
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$19 = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+];
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$19);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$18 = [
+  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
+  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
+];
+const ArrowUpRight = createLucideIcon("arrow-up-right", __iconNode$18);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$17 = [
+  [
+    "path",
+    {
+      d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
+      key: "1yiouv"
+    }
+  ],
+  ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }]
+];
+const Award = createLucideIcon("award", __iconNode$17);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$16 = [
+  [
+    "path",
+    {
+      d: "M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z",
+      key: "3c2336"
+    }
+  ],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const BadgeCheck = createLucideIcon("badge-check", __iconNode$16);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$15 = [
+  ["path", { d: "M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2", key: "1sdynx" }],
+  ["path", { d: "M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1", key: "1gkd3k" }],
+  ["path", { d: "m11 7-3 5h4l-3 5", key: "b4a64w" }],
+  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }]
+];
+const BatteryCharging = createLucideIcon("battery-charging", __iconNode$15);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$14 = [
+  ["rect", { width: "16", height: "10", x: "2", y: "7", rx: "2", ry: "2", key: "1w10f2" }],
+  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }],
+  ["line", { x1: "6", x2: "6", y1: "11", y2: "13", key: "1wd6dw" }]
+];
+const BatteryLow = createLucideIcon("battery-low", __iconNode$14);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$13 = [
+  ["rect", { width: "16", height: "10", x: "2", y: "7", rx: "2", ry: "2", key: "1w10f2" }],
+  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }]
+];
+const Battery = createLucideIcon("battery", __iconNode$13);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$12 = [
+  ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
+  [
+    "path",
+    {
+      d: "M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326",
+      key: "11g9vi"
+    }
+  ]
+];
+const Bell = createLucideIcon("bell", __iconNode$12);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$11 = [
+  ["path", { d: "m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z", key: "1fy3hk" }]
+];
+const Bookmark = createLucideIcon("bookmark", __iconNode$11);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$10 = [
+  ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
+  ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
+  ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
+  ["path", { d: "M10 6h4", key: "1itunk" }],
+  ["path", { d: "M10 10h4", key: "tcdvrf" }],
+  ["path", { d: "M10 14h4", key: "kelpxr" }],
+  ["path", { d: "M10 18h4", key: "1ulq68" }]
+];
+const Building2 = createLucideIcon("building-2", __iconNode$10);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$$ = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }]
+];
+const Calendar = createLucideIcon("calendar", __iconNode$$);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$_ = [
+  [
+    "path",
+    {
+      d: "M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z",
+      key: "1tc9qg"
+    }
+  ],
+  ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
+];
+const Camera = createLucideIcon("camera", __iconNode$_);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Z = [
+  ["line", { x1: "18", x2: "18", y1: "20", y2: "10", key: "1xfpm4" }],
+  ["line", { x1: "12", x2: "12", y1: "20", y2: "4", key: "be30l9" }],
+  ["line", { x1: "6", x2: "6", y1: "20", y2: "14", key: "1r4le6" }]
+];
+const ChartNoAxesColumn = createLucideIcon("chart-no-axes-column", __iconNode$Z);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Y = [
+  ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
+  ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
+];
+const CheckCheck = createLucideIcon("check-check", __iconNode$Y);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$X = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$X);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$W = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$W);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$V = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$V);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$U = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$U);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$T = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$T);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$S = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$S);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$R = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$R);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Q = [
+  [
+    "path",
+    { d: "M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z", key: "1tn4o7" }
+  ],
+  ["path", { d: "m6.2 5.3 3.1 3.9", key: "iuk76l" }],
+  ["path", { d: "m12.4 3.4 3.1 4", key: "6hsd6n" }],
+  ["path", { d: "M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z", key: "ltgou9" }]
+];
+const Clapperboard = createLucideIcon("clapperboard", __iconNode$Q);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$P = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+];
+const Clock = createLucideIcon("clock", __iconNode$P);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$O = [
+  ["path", { d: "M10 2v2", key: "7u0qdc" }],
+  ["path", { d: "M14 2v2", key: "6buw04" }],
+  [
+    "path",
+    {
+      d: "M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1",
+      key: "pwadti"
+    }
+  ],
+  ["path", { d: "M6 2v2", key: "colzsn" }]
+];
+const Coffee = createLucideIcon("coffee", __iconNode$O);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$N = [
+  ["circle", { cx: "8", cy: "8", r: "6", key: "3yglwk" }],
+  ["path", { d: "M18.09 10.37A6 6 0 1 1 10.34 18", key: "t5s6rm" }],
+  ["path", { d: "M7 6h1v4", key: "1obek4" }],
+  ["path", { d: "m16.71 13.88.7.71-2.82 2.82", key: "1rbuyh" }]
+];
+const Coins = createLucideIcon("coins", __iconNode$N);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$M = [
+  [
+    "path",
+    {
+      d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
+      key: "9ktpf1"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
+];
+const Compass = createLucideIcon("compass", __iconNode$M);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$L = [
+  ["path", { d: "m15 10 5 5-5 5", key: "qqa56n" }],
+  ["path", { d: "M4 4v7a4 4 0 0 0 4 4h12", key: "z08zvw" }]
+];
+const CornerDownRight = createLucideIcon("corner-down-right", __iconNode$L);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$K = [
+  [
+    "path",
+    {
+      d: "M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z",
+      key: "1vdc57"
+    }
+  ],
+  ["path", { d: "M5 21h14", key: "11awu3" }]
+];
+const Crown = createLucideIcon("crown", __iconNode$K);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$J = [
+  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
+  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
+];
+const DollarSign = createLucideIcon("dollar-sign", __iconNode$J);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$I = [
+  ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
+  ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
+  ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
+];
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$I);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$H = [
+  [
+    "path",
+    {
+      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+      key: "1nclc0"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Eye = createLucideIcon("eye", __iconNode$H);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$G = [
+  [
+    "path",
+    {
+      d: "M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z",
+      key: "96xj49"
+    }
+  ]
+];
+const Flame = createLucideIcon("flame", __iconNode$G);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$F = [
+  [
+    "path",
+    {
+      d: "M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2",
+      key: "18mbvz"
+    }
+  ],
+  ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
+  ["path", { d: "M8.5 2h7", key: "csnxdl" }]
+];
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$F);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$E = [
+  ["rect", { x: "3", y: "8", width: "18", height: "4", rx: "1", key: "bkv52" }],
+  ["path", { d: "M12 8v13", key: "1c76mn" }],
+  ["path", { d: "M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7", key: "6wjy6b" }],
+  [
+    "path",
+    {
+      d: "M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5",
+      key: "1ihvrl"
+    }
+  ]
+];
+const Gift = createLucideIcon("gift", __iconNode$E);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$D = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }],
+  ["path", { d: "M9 3v18", key: "fh3hqa" }],
+  ["path", { d: "M15 3v18", key: "14nvp0" }]
+];
+const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$D);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$C = [
+  ["path", { d: "m11 17 2 2a1 1 0 1 0 3-3", key: "efffak" }],
+  [
+    "path",
+    {
+      d: "m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4",
+      key: "9pr0kb"
+    }
+  ],
+  ["path", { d: "m21 3 1 11h-2", key: "1tisrp" }],
+  ["path", { d: "M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3", key: "1uvwmv" }],
+  ["path", { d: "M3 4h8", key: "1ep09j" }]
+];
+const Handshake = createLucideIcon("handshake", __iconNode$C);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$B = [
+  ["line", { x1: "4", x2: "20", y1: "9", y2: "9", key: "4lhtct" }],
+  ["line", { x1: "4", x2: "20", y1: "15", y2: "15", key: "vyu0kd" }],
+  ["line", { x1: "10", x2: "8", y1: "3", y2: "21", key: "1ggp8o" }],
+  ["line", { x1: "16", x2: "14", y1: "3", y2: "21", key: "weycgp" }]
+];
+const Hash$2 = createLucideIcon("hash", __iconNode$B);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$A = [
+  [
+    "path",
+    {
+      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+      key: "c3ymky"
+    }
+  ]
+];
+const Heart = createLucideIcon("heart", __iconNode$A);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$z = [
+  ["path", { d: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8", key: "5wwlr5" }],
+  [
+    "path",
+    {
+      d: "M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+      key: "1d0kgt"
+    }
+  ]
+];
+const House = createLucideIcon("house", __iconNode$z);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$y = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+];
+const Image$1 = createLucideIcon("image", __iconNode$y);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$x = [
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
+];
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$x);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$w = [
+  [
+    "path",
+    {
+      d: "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",
+      key: "1gvzjb"
+    }
+  ],
+  ["path", { d: "M9 18h6", key: "x1upvd" }],
+  ["path", { d: "M10 22h4", key: "ceow96" }]
+];
+const Lightbulb = createLucideIcon("lightbulb", __iconNode$w);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$v = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$v);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$u = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+];
+const Lock = createLucideIcon("lock", __iconNode$u);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$t = [
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+];
+const LogOut = createLucideIcon("log-out", __iconNode$t);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$s = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$s);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$r = [
+  ["path", { d: "m3 11 18-5v12L3 14v-3z", key: "n962bs" }],
+  ["path", { d: "M11.6 16.8a3 3 0 1 1-5.8-1.6", key: "1yl0tm" }]
+];
+const Megaphone = createLucideIcon("megaphone", __iconNode$r);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$q = [
+  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
+];
+const MessageCircle = createLucideIcon("message-circle", __iconNode$q);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
+  ["path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", key: "1lielz" }]
+];
+const MessageSquare = createLucideIcon("message-square", __iconNode$p);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$o = [
+  [
+    "path",
+    {
+      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
+      key: "1a8usu"
+    }
+  ]
+];
+const Pen = createLucideIcon("pen", __iconNode$o);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
+  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
+  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
+  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+];
+const Radio = createLucideIcon("radio", __iconNode$m);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$l = [
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+];
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
+  [
+    "path",
+    {
+      d: "M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z",
+      key: "m3kijz"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z",
+      key: "1fmvmk"
+    }
+  ],
+  ["path", { d: "M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0", key: "1f8sc4" }],
+  ["path", { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" }]
+];
+const Rocket = createLucideIcon("rocket", __iconNode$k);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$j = [
+  [
+    "path",
+    {
+      d: "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
+      key: "1c8476"
+    }
+  ],
+  ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
+  ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
+];
+const Save = createLucideIcon("save", __iconNode$j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+];
+const Search = createLucideIcon("search", __iconNode$i);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$h = [
+  [
+    "path",
+    {
+      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
+      key: "1ffxy3"
+    }
+  ],
+  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
+];
+const Send = createLucideIcon("send", __iconNode$h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }],
+  ["circle", { cx: "6", cy: "12", r: "3", key: "w7nqdw" }],
+  ["circle", { cx: "18", cy: "19", r: "3", key: "1xt0gg" }],
+  ["line", { x1: "8.59", x2: "15.42", y1: "13.51", y2: "17.49", key: "47mynk" }],
+  ["line", { x1: "15.41", x2: "8.59", y1: "6.51", y2: "10.49", key: "1n3mei" }]
+];
+const Share2 = createLucideIcon("share-2", __iconNode$g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  [
+    "path",
+    {
+      d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
+      key: "4pj2yx"
+    }
+  ],
+  ["path", { d: "M20 3v4", key: "1olli1" }],
+  ["path", { d: "M22 5h-4", key: "1gvqau" }],
+  ["path", { d: "M4 17v2", key: "vumght" }],
+  ["path", { d: "M5 18H3", key: "zchphs" }]
+];
+const Sparkles = createLucideIcon("sparkles", __iconNode$f);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [
+  [
+    "path",
+    {
+      d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
+      key: "r04s7s"
+    }
+  ]
+];
+const Star = createLucideIcon("star", __iconNode$e);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
+  ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
+  ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
+  ["line", { x1: "19", x2: "21", y1: "21", y2: "19", key: "13pww6" }],
+  ["polyline", { points: "14.5 6.5 18 3 21 3 21 6 17.5 9.5", key: "hbey2j" }],
+  ["line", { x1: "5", x2: "9", y1: "14", y2: "18", key: "1hf58s" }],
+  ["line", { x1: "7", x2: "4", y1: "17", y2: "20", key: "pidxm4" }],
+  ["line", { x1: "3", x2: "5", y1: "19", y2: "21", key: "1pehsh" }]
+];
+const Swords = createLucideIcon("swords", __iconNode$d);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$c = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
+];
+const Target = createLucideIcon("target", __iconNode$c);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$b = [
+  ["line", { x1: "10", x2: "14", y1: "2", y2: "2", key: "14vaq8" }],
+  ["line", { x1: "12", x2: "15", y1: "14", y2: "11", key: "17fdiu" }],
+  ["circle", { cx: "12", cy: "14", r: "8", key: "1e1u0o" }]
+];
+const Timer = createLucideIcon("timer", __iconNode$b);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$a = [
+  ["path", { d: "M16 7h6v6", key: "box55l" }],
+  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
+];
+const TrendingUp = createLucideIcon("trending-up", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  [
+    "path",
+    {
+      d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
+      key: "wmoenq"
+    }
+  ],
+  ["path", { d: "M12 9v4", key: "juzpu7" }],
+  ["path", { d: "M12 17h.01", key: "p32p05" }]
+];
+const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$9);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$8 = [
+  ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
+  ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
+  ["path", { d: "M4 22h16", key: "57wxv0" }],
+  ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
+  ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
+  ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
+];
+const Trophy = createLucideIcon("trophy", __iconNode$8);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [
+  ["path", { d: "M12 4v16", key: "1654pz" }],
+  ["path", { d: "M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2", key: "e0r10z" }],
+  ["path", { d: "M9 20h6", key: "s66wpe" }]
+];
+const Type = createLucideIcon("type", __iconNode$7);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  ["path", { d: "M12 3v12", key: "1x0j5s" }],
+  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+];
+const Upload = createLucideIcon("upload", __iconNode$6);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$5 = [
+  ["path", { d: "m16 11 2 2 4-4", key: "9rsbq5" }],
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
+];
+const UserCheck = createLucideIcon("user-check", __iconNode$5);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$4 = [
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+  ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
+  ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
+];
+const UserPlus = createLucideIcon("user-plus", __iconNode$4);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$3 = [
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+];
+const User = createLucideIcon("user", __iconNode$3);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$2 = [
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
+];
+const Users = createLucideIcon("users", __iconNode$2);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1 = [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+];
+const X = createLucideIcon("x", __iconNode$1);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
+      key: "1xq2db"
+    }
+  ]
+];
+const Zap = createLucideIcon("zap", __iconNode);
 function createContextScope$1(scopeName, createContextScopeDeps = []) {
   let defaultContexts = [];
   function createContext3(rootComponentName, defaultContext) {
@@ -19157,8 +20271,8 @@ function useImageLoadingStatus(src, { referrerPolicy, crossOrigin }) {
   }, [image, crossOrigin, referrerPolicy]);
   return loadingStatus;
 }
-var Root$6 = Avatar$1;
-var Image$1 = AvatarImage$1;
+var Root$8 = Avatar$1;
+var Image = AvatarImage$1;
 var Fallback = AvatarFallback$1;
 function r(e3) {
   var t2, f2, n2 = "";
@@ -21640,7 +22754,7 @@ function Avatar({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root$6,
+    Root$8,
     {
       "data-slot": "avatar",
       className: cn(
@@ -21656,7 +22770,7 @@ function AvatarImage({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Image$1,
+    Image,
     {
       "data-slot": "avatar-image",
       className: cn("aspect-square size-full", className),
@@ -30204,7 +31318,7 @@ const AI_CREATORS = CREATOR_DATA.map((data, i) => {
     )
   };
 });
-const CAPTION_TEMPLATES = {
+const CAPTION_TEMPLATES$1 = {
   comedian: [
     "Tried to be productive today... didn't work 😂 #comedy #relatable",
     "My brain at 2am vs my brain at 9am... not the same person 💀 #mood #funny",
@@ -30253,7 +31367,7 @@ const NICHE_HASHTAGS = {
 };
 function generateAIPost(creator, postIndex) {
   const seed = creator.id.charCodeAt(3) * 100 + postIndex;
-  const captions = CAPTION_TEMPLATES[creator.personality];
+  const captions = CAPTION_TEMPLATES$1[creator.personality];
   const caption = captions[postIndex % captions.length];
   const hashtags = NICHE_HASHTAGS[creator.niche].slice(0, 4);
   const imgSeed = seed * 17 + 42;
@@ -31818,6 +32932,24 @@ function AppProvider({ children }) {
   const navigate = reactExports.useCallback((page, params) => {
     setCurrentRoute({ page, ...params });
   }, []);
+  const dismissNotification = reactExports.useCallback((id2) => {
+    setNotifications((prev) => prev.filter((n2) => n2.id !== id2));
+  }, []);
+  const clearActivityNotifications = reactExports.useCallback(() => {
+    setNotifications(
+      (prev) => prev.filter(
+        (n2) => n2.type === "collab_request" || n2.type === "collab_accepted"
+      )
+    );
+  }, []);
+  const clearCollabNotifications = reactExports.useCallback(() => {
+    setNotifications(
+      (prev) => prev.filter(
+        (n2) => n2.type !== "collab_request" && n2.type !== "collab_accepted"
+      )
+    );
+    setPendingCollabs([]);
+  }, []);
   const addNotification = reactExports.useCallback(
     (notif) => {
       if (notif.type === "collab_request" && notif.collabId && notif.collabCreatorId && notif.collabCreatorName && notif.collabCreatorAvatar) {
@@ -32648,6 +33780,9 @@ function AppProvider({ children }) {
         stories: activeStories,
         notifications,
         addNotification,
+        dismissNotification,
+        clearActivityNotifications,
+        clearCollabNotifications,
         conversations,
         setConversations,
         achievements,
@@ -33043,804 +34178,6 @@ function DramaModal({ event, onClose }) {
     }
   ) });
 }
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const toKebabCase = (string2) => string2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-const toCamelCase = (string2) => string2.replace(
-  /^([A-Z])|[\s-_]+(\w)/g,
-  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
-);
-const toPascalCase = (string2) => {
-  const camelCase = toCamelCase(string2);
-  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-};
-const mergeClasses = (...classes) => classes.filter((className, index2, array2) => {
-  return Boolean(className) && className.trim() !== "" && array2.indexOf(className) === index2;
-}).join(" ").trim();
-const hasA11yProp = (props) => {
-  for (const prop in props) {
-    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
-      return true;
-    }
-  }
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-var defaultAttributes = {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const Icon$1 = reactExports.forwardRef(
-  ({
-    color: color2 = "currentColor",
-    size: size2 = 24,
-    strokeWidth = 2,
-    absoluteStrokeWidth,
-    className = "",
-    children,
-    iconNode,
-    ...rest
-  }, ref) => reactExports.createElement(
-    "svg",
-    {
-      ref,
-      ...defaultAttributes,
-      width: size2,
-      height: size2,
-      stroke: color2,
-      strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size2) : strokeWidth,
-      className: mergeClasses("lucide", className),
-      ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
-      ...rest
-    },
-    [
-      ...iconNode.map(([tag, attrs]) => reactExports.createElement(tag, attrs)),
-      ...Array.isArray(children) ? children : [children]
-    ]
-  )
-);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const createLucideIcon = (iconName, iconNode) => {
-  const Component2 = reactExports.forwardRef(
-    ({ className, ...props }, ref) => reactExports.createElement(Icon$1, {
-      ref,
-      iconNode,
-      className: mergeClasses(
-        `lucide-${toKebabCase(toPascalCase(iconName))}`,
-        `lucide-${iconName}`,
-        className
-      ),
-      ...props
-    })
-  );
-  Component2.displayName = toPascalCase(iconName);
-  return Component2;
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$R = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
-];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$R);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$Q = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
-];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$Q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$P = [
-  ["path", { d: "M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2", key: "1sdynx" }],
-  ["path", { d: "M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1", key: "1gkd3k" }],
-  ["path", { d: "m11 7-3 5h4l-3 5", key: "b4a64w" }],
-  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }]
-];
-const BatteryCharging = createLucideIcon("battery-charging", __iconNode$P);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$O = [
-  ["rect", { width: "16", height: "10", x: "2", y: "7", rx: "2", ry: "2", key: "1w10f2" }],
-  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }],
-  ["line", { x1: "6", x2: "6", y1: "11", y2: "13", key: "1wd6dw" }]
-];
-const BatteryLow = createLucideIcon("battery-low", __iconNode$O);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$N = [
-  ["rect", { width: "16", height: "10", x: "2", y: "7", rx: "2", ry: "2", key: "1w10f2" }],
-  ["line", { x1: "22", x2: "22", y1: "11", y2: "13", key: "4dh1rd" }]
-];
-const Battery = createLucideIcon("battery", __iconNode$N);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$M = [
-  ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
-  [
-    "path",
-    {
-      d: "M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326",
-      key: "11g9vi"
-    }
-  ]
-];
-const Bell = createLucideIcon("bell", __iconNode$M);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$L = [
-  ["path", { d: "m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z", key: "1fy3hk" }]
-];
-const Bookmark = createLucideIcon("bookmark", __iconNode$L);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$K = [
-  ["line", { x1: "18", x2: "18", y1: "20", y2: "10", key: "1xfpm4" }],
-  ["line", { x1: "12", x2: "12", y1: "20", y2: "4", key: "be30l9" }],
-  ["line", { x1: "6", x2: "6", y1: "20", y2: "14", key: "1r4le6" }]
-];
-const ChartNoAxesColumn = createLucideIcon("chart-no-axes-column", __iconNode$K);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$J = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$J);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$I = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$I);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$H = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$H);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$G = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$G);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$F = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$F);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$E = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$E);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$D = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$D);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$C = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-];
-const Clock = createLucideIcon("clock", __iconNode$C);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$B = [
-  ["path", { d: "M10 2v2", key: "7u0qdc" }],
-  ["path", { d: "M14 2v2", key: "6buw04" }],
-  [
-    "path",
-    {
-      d: "M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1",
-      key: "pwadti"
-    }
-  ],
-  ["path", { d: "M6 2v2", key: "colzsn" }]
-];
-const Coffee = createLucideIcon("coffee", __iconNode$B);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$A = [
-  ["circle", { cx: "8", cy: "8", r: "6", key: "3yglwk" }],
-  ["path", { d: "M18.09 10.37A6 6 0 1 1 10.34 18", key: "t5s6rm" }],
-  ["path", { d: "M7 6h1v4", key: "1obek4" }],
-  ["path", { d: "m16.71 13.88.7.71-2.82 2.82", key: "1rbuyh" }]
-];
-const Coins = createLucideIcon("coins", __iconNode$A);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$z = [
-  [
-    "path",
-    {
-      d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
-      key: "9ktpf1"
-    }
-  ],
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-];
-const Compass = createLucideIcon("compass", __iconNode$z);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$y = [
-  ["path", { d: "m15 10 5 5-5 5", key: "qqa56n" }],
-  ["path", { d: "M4 4v7a4 4 0 0 0 4 4h12", key: "z08zvw" }]
-];
-const CornerDownRight = createLucideIcon("corner-down-right", __iconNode$y);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$x = [
-  ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
-  ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
-  ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
-];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$x);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$w = [
-  [
-    "path",
-    {
-      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
-      key: "1nclc0"
-    }
-  ],
-  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-];
-const Eye = createLucideIcon("eye", __iconNode$w);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$v = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "M3 15h18", key: "5xshup" }],
-  ["path", { d: "M9 3v18", key: "fh3hqa" }],
-  ["path", { d: "M15 3v18", key: "14nvp0" }]
-];
-const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$v);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$u = [
-  ["line", { x1: "4", x2: "20", y1: "9", y2: "9", key: "4lhtct" }],
-  ["line", { x1: "4", x2: "20", y1: "15", y2: "15", key: "vyu0kd" }],
-  ["line", { x1: "10", x2: "8", y1: "3", y2: "21", key: "1ggp8o" }],
-  ["line", { x1: "16", x2: "14", y1: "3", y2: "21", key: "weycgp" }]
-];
-const Hash$2 = createLucideIcon("hash", __iconNode$u);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$t = [
-  [
-    "path",
-    {
-      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-      key: "c3ymky"
-    }
-  ]
-];
-const Heart = createLucideIcon("heart", __iconNode$t);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$s = [
-  ["path", { d: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8", key: "5wwlr5" }],
-  [
-    "path",
-    {
-      d: "M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
-      key: "1d0kgt"
-    }
-  ]
-];
-const House = createLucideIcon("house", __iconNode$s);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$r = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-];
-const Image = createLucideIcon("image", __iconNode$r);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$q = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
-  [
-    "path",
-    {
-      d: "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",
-      key: "1gvzjb"
-    }
-  ],
-  ["path", { d: "M9 18h6", key: "x1upvd" }],
-  ["path", { d: "M10 22h4", key: "ceow96" }]
-];
-const Lightbulb = createLucideIcon("lightbulb", __iconNode$p);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$o = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$o);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$n = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
-];
-const Lock = createLucideIcon("lock", __iconNode$n);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$m = [
-  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
-];
-const MessageCircle = createLucideIcon("message-circle", __iconNode$m);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$l = [
-  [
-    "path",
-    {
-      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
-      key: "1a8usu"
-    }
-  ]
-];
-const Pen = createLucideIcon("pen", __iconNode$l);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$k = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-];
-const Plus = createLucideIcon("plus", __iconNode$k);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$j = [
-  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
-  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
-  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
-];
-const Radio = createLucideIcon("radio", __iconNode$j);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$i = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
-];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$i);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$h = [
-  [
-    "path",
-    {
-      d: "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
-      key: "1c8476"
-    }
-  ],
-  ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
-  ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
-];
-const Save = createLucideIcon("save", __iconNode$h);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$g);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
-  [
-    "path",
-    {
-      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
-      key: "1ffxy3"
-    }
-  ],
-  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
-];
-const Send = createLucideIcon("send", __iconNode$f);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$e = [
-  ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }],
-  ["circle", { cx: "6", cy: "12", r: "3", key: "w7nqdw" }],
-  ["circle", { cx: "18", cy: "19", r: "3", key: "1xt0gg" }],
-  ["line", { x1: "8.59", x2: "15.42", y1: "13.51", y2: "17.49", key: "47mynk" }],
-  ["line", { x1: "15.41", x2: "8.59", y1: "6.51", y2: "10.49", key: "1n3mei" }]
-];
-const Share2 = createLucideIcon("share-2", __iconNode$e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
-  [
-    "path",
-    {
-      d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
-      key: "4pj2yx"
-    }
-  ],
-  ["path", { d: "M20 3v4", key: "1olli1" }],
-  ["path", { d: "M22 5h-4", key: "1gvqau" }],
-  ["path", { d: "M4 17v2", key: "vumght" }],
-  ["path", { d: "M5 18H3", key: "zchphs" }]
-];
-const Sparkles = createLucideIcon("sparkles", __iconNode$d);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$c = [
-  ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
-  ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
-  ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
-  ["line", { x1: "19", x2: "21", y1: "21", y2: "19", key: "13pww6" }],
-  ["polyline", { points: "14.5 6.5 18 3 21 3 21 6 17.5 9.5", key: "hbey2j" }],
-  ["line", { x1: "5", x2: "9", y1: "14", y2: "18", key: "1hf58s" }],
-  ["line", { x1: "7", x2: "4", y1: "17", y2: "20", key: "pidxm4" }],
-  ["line", { x1: "3", x2: "5", y1: "19", y2: "21", key: "1pehsh" }]
-];
-const Swords = createLucideIcon("swords", __iconNode$c);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$b = [
-  ["line", { x1: "10", x2: "14", y1: "2", y2: "2", key: "14vaq8" }],
-  ["line", { x1: "12", x2: "15", y1: "14", y2: "11", key: "17fdiu" }],
-  ["circle", { cx: "12", cy: "14", r: "8", key: "1e1u0o" }]
-];
-const Timer = createLucideIcon("timer", __iconNode$b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
-  ["path", { d: "M16 7h6v6", key: "box55l" }],
-  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
-];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
-  [
-    "path",
-    {
-      d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
-      key: "wmoenq"
-    }
-  ],
-  ["path", { d: "M12 9v4", key: "juzpu7" }],
-  ["path", { d: "M12 17h.01", key: "p32p05" }]
-];
-const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$9);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$8 = [
-  ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
-  ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
-  ["path", { d: "M4 22h16", key: "57wxv0" }],
-  ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
-  ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
-  ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
-];
-const Trophy = createLucideIcon("trophy", __iconNode$8);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
-  ["path", { d: "M12 4v16", key: "1654pz" }],
-  ["path", { d: "M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2", key: "e0r10z" }],
-  ["path", { d: "M9 20h6", key: "s66wpe" }]
-];
-const Type = createLucideIcon("type", __iconNode$7);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$6 = [
-  ["path", { d: "M12 3v12", key: "1x0j5s" }],
-  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
-];
-const Upload = createLucideIcon("upload", __iconNode$6);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$5 = [
-  ["path", { d: "m16 11 2 2 4-4", key: "9rsbq5" }],
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
-];
-const UserCheck = createLucideIcon("user-check", __iconNode$5);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$4 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
-  ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
-  ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
-];
-const UserPlus = createLucideIcon("user-plus", __iconNode$4);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$3 = [
-  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
-  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
-];
-const User = createLucideIcon("user", __iconNode$3);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$2 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
-  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
-];
-const Users = createLucideIcon("users", __iconNode$2);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1 = [
-  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
-  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-];
-const X = createLucideIcon("x", __iconNode$1);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode = [
-  [
-    "path",
-    {
-      d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
-      key: "1xq2db"
-    }
-  ]
-];
-const Zap = createLucideIcon("zap", __iconNode);
 function MobileNav({ activePage, onNavigate }) {
   const { unreadDMs } = useApp();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -33966,6 +34303,38 @@ function NavBtn({
           }
         )
       ]
+    }
+  );
+}
+const badgeVariants = cva(
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        secondary: "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+        destructive: "border-transparent bg-destructive text-destructive-foreground [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground"
+      }
+    },
+    defaultVariants: {
+      variant: "default"
+    }
+  }
+);
+function Badge({
+  className,
+  variant,
+  asChild = false,
+  ...props
+}) {
+  const Comp = asChild ? Slot$2 : "span";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Comp,
+    {
+      "data-slot": "badge",
+      className: cn(badgeVariants({ variant }), className),
+      ...props
     }
   );
 }
@@ -34808,19 +35177,19 @@ var ScrollAreaScrollbarImpl = reactExports.forwardRef((props, forwardedRef) => {
     }
   );
 });
-var THUMB_NAME = "ScrollAreaThumb";
+var THUMB_NAME$1 = "ScrollAreaThumb";
 var ScrollAreaThumb = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { forceMount, ...thumbProps } = props;
-    const scrollbarContext = useScrollbarContext(THUMB_NAME, props.__scopeScrollArea);
+    const scrollbarContext = useScrollbarContext(THUMB_NAME$1, props.__scopeScrollArea);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || scrollbarContext.hasThumb, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollAreaThumbImpl, { ref: forwardedRef, ...thumbProps }) });
   }
 );
 var ScrollAreaThumbImpl = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeScrollArea, style: style2, ...thumbProps } = props;
-    const scrollAreaContext = useScrollAreaContext(THUMB_NAME, __scopeScrollArea);
-    const scrollbarContext = useScrollbarContext(THUMB_NAME, __scopeScrollArea);
+    const scrollAreaContext = useScrollAreaContext(THUMB_NAME$1, __scopeScrollArea);
+    const scrollbarContext = useScrollbarContext(THUMB_NAME$1, __scopeScrollArea);
     const { onThumbPositionChange } = scrollbarContext;
     const composedRef = useComposedRefs$1(
       forwardedRef,
@@ -34872,7 +35241,7 @@ var ScrollAreaThumbImpl = reactExports.forwardRef(
     );
   }
 );
-ScrollAreaThumb.displayName = THUMB_NAME;
+ScrollAreaThumb.displayName = THUMB_NAME$1;
 var CORNER_NAME = "ScrollAreaCorner";
 var ScrollAreaCorner = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -34940,7 +35309,7 @@ function getScrollPositionFromPointer(pointerPos, pointerOffset, sizes, dir = "l
   const maxPointerPos = sizes.scrollbar.size - sizes.scrollbar.paddingEnd - thumbOffsetFromEnd;
   const maxScrollPos = sizes.content - sizes.viewport;
   const scrollRange = dir === "ltr" ? [0, maxScrollPos] : [maxScrollPos * -1, 0];
-  const interpolate2 = linearScale([minPointerPos, maxPointerPos], scrollRange);
+  const interpolate2 = linearScale$1([minPointerPos, maxPointerPos], scrollRange);
   return interpolate2(pointerPos);
 }
 function getThumbOffsetFromScroll(scrollPos, sizes, dir = "ltr") {
@@ -34951,10 +35320,10 @@ function getThumbOffsetFromScroll(scrollPos, sizes, dir = "ltr") {
   const maxThumbPos = scrollbar - thumbSizePx;
   const scrollClampRange = dir === "ltr" ? [0, maxScrollPos] : [maxScrollPos * -1, 0];
   const scrollWithoutMomentum = clamp$1(scrollPos, scrollClampRange);
-  const interpolate2 = linearScale([0, maxScrollPos], [0, maxThumbPos]);
+  const interpolate2 = linearScale$1([0, maxScrollPos], [0, maxThumbPos]);
   return interpolate2(scrollWithoutMomentum);
 }
-function linearScale(input, output) {
+function linearScale$1(input, output) {
   return (value) => {
     if (input[0] === input[1] || output[0] === output[1]) return output[0];
     const ratio = (output[1] - output[0]) / (input[1] - input[0]);
@@ -35004,7 +35373,7 @@ function useResizeObserver(element, onResize) {
     }
   }, [element, handleResize]);
 }
-var Root$5 = ScrollArea$1;
+var Root$7 = ScrollArea$1;
 var Viewport$1 = ScrollAreaViewport;
 var Corner = ScrollAreaCorner;
 function ScrollArea({
@@ -35013,7 +35382,7 @@ function ScrollArea({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Root$5,
+    Root$7,
     {
       "data-slot": "scroll-area",
       className: cn("relative", className),
@@ -35069,56 +35438,517 @@ function timeAgo$5(ts) {
   if (hrs < 24) return `${hrs}h ago`;
   return `${Math.floor(hrs / 24)}d ago`;
 }
-function NotificationsSidebar() {
-  const { notifications, acceptCollab } = useApp();
+function getTypeStyle(type) {
+  switch (type) {
+    case "follower":
+    case "follower_gain":
+    case "boost":
+      return {
+        accent: "oklch(0.72 0.2 145)",
+        bg: "oklch(0.12 0.025 145 / 0.45)",
+        border: "oklch(0.4 0.12 145 / 0.4)",
+        dot: "oklch(0.68 0.22 145)"
+      };
+    case "sponsorship":
+    case "merch_sale":
+    case "tip":
+      return {
+        accent: "oklch(0.75 0.18 295)",
+        bg: "oklch(0.12 0.025 295 / 0.45)",
+        border: "oklch(0.4 0.12 295 / 0.4)",
+        dot: "oklch(0.72 0.22 295)"
+      };
+    case "challenge":
+    case "achievement":
+      return {
+        accent: "oklch(0.82 0.2 80)",
+        bg: "oklch(0.12 0.03 80 / 0.45)",
+        border: "oklch(0.45 0.15 80 / 0.4)",
+        dot: "oklch(0.80 0.22 80)"
+      };
+    case "viral":
+    case "event":
+      return {
+        accent: "oklch(0.72 0.22 25)",
+        bg: "oklch(0.12 0.025 25 / 0.45)",
+        border: "oklch(0.45 0.15 25 / 0.4)",
+        dot: "oklch(0.70 0.24 25)"
+      };
+    case "collab_request":
+    case "collab_accepted":
+      return {
+        accent: "oklch(0.72 0.2 260)",
+        bg: "oklch(0.12 0.025 260 / 0.45)",
+        border: "oklch(0.4 0.12 260 / 0.4)",
+        dot: "oklch(0.68 0.22 260)"
+      };
+    default:
+      return {
+        accent: "oklch(0.72 0.18 220)",
+        bg: "oklch(0.12 0.02 220 / 0.45)",
+        border: "oklch(0.4 0.1 220 / 0.35)",
+        dot: "oklch(0.68 0.2 220)"
+      };
+  }
+}
+const STREAK_ICON_TYPES = /* @__PURE__ */ new Set(["challenge", "achievement"]);
+const BRAND_TYPES = /* @__PURE__ */ new Set(["sponsorship", "merch_sale", "tip"]);
+function friendlyTypeLabel(type) {
+  if (type === "follower" || type === "follower_gain") return "New Follower";
+  if (BRAND_TYPES.has(type)) return "Brand Deal";
+  if (STREAK_ICON_TYPES.has(type)) return "Challenge";
+  if (type === "viral") return "Viral Post";
+  if (type === "event") return "Platform Event";
+  if (type === "boost") return "Boost";
+  if (type === "house") return "House";
+  if (type === "shadow_ban") return "Warning";
+  if (type === "smart") return "Insight";
+  return "Activity";
+}
+function CollabCard({ notif, idx, onAccept, onDecline }) {
+  const isRequest = notif.type === "collab_request";
+  const isAccepted = notif.type === "collab_accepted";
+  const seed = notif.collabCreatorId ?? notif.id;
+  const seedNum = seed.split("").reduce((acc, c2) => acc + c2.charCodeAt(0), 0);
+  const fakeFollowers = 1e4 + seedNum % 18 * 12e3;
+  const fakeEngagement = (2.8 + seedNum % 12 * 0.4).toFixed(1);
+  const earningsEst = Math.floor(fakeFollowers / 1e3) * 15 + 80;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      "data-ocid": `notifications.collabs.item.${idx + 1}`,
+      className: "rounded-xl p-3 space-y-3 notification-enter",
+      style: {
+        background: isAccepted ? "oklch(0.14 0.03 145 / 0.6)" : "oklch(0.16 0.025 260 / 0.65)",
+        border: `1px solid ${isAccepted ? "oklch(0.42 0.14 145 / 0.35)" : "oklch(0.4 0.12 260 / 0.35)"}`,
+        animation: "notifSlideIn 0.3s ease-out forwards"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-shrink-0", children: [
+            notif.collabCreatorAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src: notif.collabCreatorAvatar,
+                alt: notif.collabCreatorName ?? "Creator",
+                className: "w-10 h-10 rounded-full object-cover",
+                style: { border: "2px solid oklch(0.55 0.2 260 / 0.5)" }
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "w-10 h-10 rounded-full flex items-center justify-center text-lg",
+                style: { background: "oklch(0.22 0.04 260 / 0.8)" },
+                children: notif.icon
+              }
+            ),
+            isAccepted && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -bottom-0.5 -right-0.5 text-[10px] leading-none", children: "✅" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: "text-xs font-semibold truncate",
+                style: {
+                  color: isAccepted ? "oklch(0.78 0.18 145)" : "oklch(0.82 0.18 260)"
+                },
+                children: notif.collabCreatorName ?? "Creator"
+              }
+            ),
+            isRequest && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 mt-0.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-[10px] font-medium",
+                  style: { color: "oklch(0.72 0.15 260)" },
+                  children: [
+                    (fakeFollowers / 1e3).toFixed(0),
+                    "K followers"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground", children: "·" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-[10px] font-medium",
+                  style: { color: "oklch(0.78 0.2 80)" },
+                  children: [
+                    fakeEngagement,
+                    "% eng."
+                  ]
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground flex-shrink-0", children: timeAgo$5(notif.timestamp) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "p",
+          {
+            className: "text-[11px] leading-relaxed",
+            style: { color: "oklch(0.82 0.04 260)" },
+            children: notif.message
+          }
+        ),
+        isRequest && notif.collabId && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "flex justify-between text-[10px] px-2 py-1 rounded-lg",
+              style: { background: "oklch(0.14 0.02 260 / 0.6)" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Estimated earnings" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "span",
+                  {
+                    style: { color: "oklch(0.78 0.2 80)" },
+                    className: "font-semibold",
+                    children: [
+                      "~$",
+                      earningsEst.toLocaleString()
+                    ]
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
+              {
+                "data-ocid": "notifications.collabs.confirm_button",
+                size: "sm",
+                onClick: onAccept,
+                className: "flex-1 text-xs h-8 font-semibold text-white border-none transition-all duration-200 hover:scale-[1.02]",
+                style: {
+                  background: "linear-gradient(135deg, oklch(0.55 0.24 280), oklch(0.5 0.28 300))",
+                  boxShadow: "0 2px 8px oklch(0.55 0.22 295 / 0.35)"
+                },
+                children: "🤝 Accept"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
+              {
+                "data-ocid": "notifications.collabs.cancel_button",
+                size: "sm",
+                variant: "outline",
+                onClick: onDecline,
+                className: "flex-1 text-xs h-8 border-destructive/40 text-destructive hover:bg-destructive/10 transition-all duration-200",
+                children: "Decline"
+              }
+            )
+          ] })
+        ] }),
+        isAccepted && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "flex items-center justify-center gap-2 py-1.5 rounded-lg text-[11px] font-semibold",
+            style: {
+              background: "oklch(0.55 0.22 145 / 0.15)",
+              color: "oklch(0.78 0.2 145)",
+              border: "1px solid oklch(0.45 0.15 145 / 0.35)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckCheck, { className: "w-3.5 h-3.5" }),
+              "Collab live! Earning together 🚀"
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function ActivityRow({ notif, idx, onDismiss }) {
+  const style2 = getTypeStyle(notif.type);
+  const label = friendlyTypeLabel(notif.type);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      "data-ocid": `notifications.activity.item.${idx + 1}`,
+      className: "group relative flex gap-2.5 p-2.5 rounded-xl transition-all duration-200 hover:scale-[1.01] notification-enter",
+      style: {
+        background: style2.bg,
+        border: `1px solid ${style2.border}`,
+        animation: `notifSlideIn 0.25s ease-out ${Math.min(idx * 0.05, 0.3)}s both`
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5",
+            style: { background: style2.dot, boxShadow: `0 0 6px ${style2.dot}` }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base leading-none mt-0.5 flex-shrink-0", children: notif.icon }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0 pr-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5 mb-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: "text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full",
+              style: {
+                background: `${style2.accent}22`,
+                color: style2.accent,
+                border: `1px solid ${style2.accent}44`
+              },
+              children: label
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-foreground leading-relaxed", children: notif.message }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mt-0.5", children: timeAgo$5(notif.timestamp) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": "notifications.activity.dismiss_button",
+            onClick: () => onDismiss(notif.id),
+            "aria-label": "Dismiss notification",
+            className: "absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 w-5 h-5 rounded-full flex items-center justify-center hover:bg-muted/60",
+            style: { color: "oklch(0.55 0.04 260)" },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-3 h-3" })
+          }
+        )
+      ]
+    }
+  );
+}
+function NotificationsSidebar({
+  onClose
+}) {
+  const {
+    notifications,
+    acceptCollab,
+    dismissNotification,
+    clearActivityNotifications,
+    clearCollabNotifications
+  } = useApp();
+  const [activeTab, setActiveTab] = reactExports.useState("collabs");
+  const collabNotifs = notifications.filter(
+    (n2) => n2.type === "collab_request" || n2.type === "collab_accepted"
+  );
+  const regularNotifs = notifications.filter(
+    (n2) => n2.type !== "collab_request" && n2.type !== "collab_accepted"
+  );
+  const unreadCount = notifications.length;
+  function handleAccept(collabId) {
+    acceptCollab(collabId);
+  }
+  function handleDecline(notifId) {
+    dismissNotification(notifId);
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "aside",
     {
       "data-ocid": "notifications.panel",
-      className: "fixed right-0 top-0 h-screen w-72 flex flex-col py-6 px-4 z-20",
+      className: "fixed right-0 top-0 h-screen w-[280px] flex flex-col z-20",
       style: {
-        background: "oklch(0.13 0.016 280 / 0.95)",
+        background: "oklch(0.13 0.016 280 / 0.97)",
         borderLeft: "1px solid oklch(0.25 0.025 280 / 0.5)",
-        backdropFilter: "blur(20px)"
+        backdropFilter: "blur(24px)"
       },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-6", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-5 h-5 text-purple-400" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-semibold text-foreground", children: "Notifications" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-auto text-xs text-muted-foreground", children: notifications.length })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollArea, { className: "flex-1 -mx-1 px-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: notifications.map((notif, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            "data-ocid": idx === 0 ? "notifications.item.1" : void 0,
-            className: "glass-card-light p-3 flex flex-col gap-2 notification-enter",
+            className: "px-4 py-4 flex items-center gap-2 flex-shrink-0",
+            style: { borderBottom: "1px solid oklch(0.22 0.02 280 / 0.5)" },
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 items-start", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-lg leading-none mt-0.5", children: notif.icon }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-foreground leading-relaxed", children: notif.message }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-1", children: timeAgo$5(notif.timestamp) })
-                ] })
-              ] }),
-              notif.type === "collab_request" && notif.collabId && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Bell,
                 {
-                  "data-ocid": "notifications.confirm_button",
-                  size: "sm",
-                  className: "w-full text-xs h-7",
+                  className: "w-4.5 h-4.5",
+                  style: { color: "oklch(0.72 0.18 295)" }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-semibold text-sm text-foreground", children: "Notifications" }),
+              unreadCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Badge,
+                {
+                  "data-ocid": "notifications.unread_badge",
+                  className: "ml-1 text-[10px] h-5 min-w-5 px-1.5 font-bold border-none",
                   style: {
-                    background: "linear-gradient(135deg, oklch(0.6 0.22 280), oklch(0.55 0.25 300))",
-                    color: "white",
-                    border: "none"
+                    background: "oklch(0.55 0.22 295 / 0.3)",
+                    border: "1px solid oklch(0.55 0.22 295 / 0.5)",
+                    color: "oklch(0.78 0.2 295)"
                   },
-                  onClick: () => acceptCollab(notif.collabId),
-                  children: "🤝 Accept Collab"
+                  children: unreadCount
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "notifications.close_button",
+                  onClick: onClose,
+                  "aria-label": "Close notifications",
+                  className: "ml-auto p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-4 h-4" })
                 }
               )
             ]
-          },
-          notif.id
-        )) }) })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "flex flex-shrink-0",
+            style: { borderBottom: "1px solid oklch(0.22 0.02 280 / 0.5)" },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "notifications.collabs.tab",
+                  onClick: () => setActiveTab("collabs"),
+                  className: "flex-1 py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors relative",
+                  style: {
+                    color: activeTab === "collabs" ? "oklch(0.82 0.18 260)" : "oklch(0.5 0.04 280)",
+                    background: "transparent"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Handshake, { className: "w-3.5 h-3.5" }),
+                    "Collabs",
+                    collabNotifs.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "text-[9px] font-bold px-1 rounded-full",
+                        style: {
+                          background: "oklch(0.55 0.22 260 / 0.3)",
+                          color: "oklch(0.78 0.2 260)"
+                        },
+                        children: collabNotifs.length
+                      }
+                    ),
+                    activeTab === "collabs" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "absolute bottom-0 left-0 right-0 h-0.5 rounded-full",
+                        style: { background: "oklch(0.72 0.2 260)" }
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "notifications.activity.tab",
+                  onClick: () => setActiveTab("activity"),
+                  className: "flex-1 py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors relative",
+                  style: {
+                    color: activeTab === "activity" ? "oklch(0.82 0.18 295)" : "oklch(0.5 0.04 280)",
+                    background: "transparent"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-3.5 h-3.5" }),
+                    "Activity",
+                    regularNotifs.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "text-[9px] font-bold px-1 rounded-full",
+                        style: {
+                          background: "oklch(0.55 0.22 295 / 0.25)",
+                          color: "oklch(0.78 0.2 295)"
+                        },
+                        children: regularNotifs.length
+                      }
+                    ),
+                    activeTab === "activity" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "absolute bottom-0 left-0 right-0 h-0.5 rounded-full",
+                        style: { background: "oklch(0.72 0.18 295)" }
+                      }
+                    )
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollArea, { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-3 space-y-2", children: [
+          activeTab === "collabs" && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "data-ocid": "notifications.collabs.panel", children: [
+            collabNotifs.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-end mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "notifications.collabs.clear_button",
+                onClick: clearCollabNotifications,
+                className: "text-[10px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-0.5",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(CheckCheck, { className: "w-3 h-3" }),
+                  "Clear"
+                ]
+              }
+            ) }),
+            collabNotifs.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "text-center py-5 rounded-xl",
+                "data-ocid": "notifications.collabs.empty_state",
+                style: {
+                  background: "oklch(0.11 0.02 260 / 0.4)",
+                  border: "1px solid oklch(0.28 0.06 260 / 0.3)"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl mb-1", children: "🤝" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground font-medium", children: "No collab requests yet" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mt-0.5 opacity-70", children: "AI creators will invite you to collaborate" })
+                ]
+              }
+            ) : collabNotifs.map((notif, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CollabCard,
+              {
+                notif,
+                idx,
+                onAccept: () => handleAccept(notif.collabId),
+                onDecline: () => handleDecline(notif.id)
+              },
+              notif.id
+            ))
+          ] }),
+          activeTab === "activity" && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "data-ocid": "notifications.regular.panel", children: [
+            regularNotifs.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-end mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "notifications.activity.clear_button",
+                onClick: clearActivityNotifications,
+                className: "text-[10px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-0.5",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(CheckCheck, { className: "w-3 h-3" }),
+                  "Clear all"
+                ]
+              }
+            ) }),
+            regularNotifs.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "text-center py-5 rounded-xl",
+                "data-ocid": "notifications.regular.empty_state",
+                style: {
+                  background: "oklch(0.11 0.02 280 / 0.4)",
+                  border: "1px solid oklch(0.25 0.04 280 / 0.3)"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl mb-1", children: "🔔" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "No activity yet" })
+                ]
+              }
+            ) : regularNotifs.map((notif, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ActivityRow,
+              {
+                notif,
+                idx,
+                onDismiss: dismissNotification
+              },
+              notif.id
+            ))
+          ] })
+        ] }) })
       ]
     }
   );
@@ -35162,38 +35992,6 @@ function SaveIndicator() {
           timeAgo$4(lastSaved)
         ] })
       ]
-    }
-  );
-}
-const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
-  {
-    variants: {
-      variant: {
-        default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-        secondary: "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive: "border-transparent bg-destructive text-destructive-foreground [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground"
-      }
-    },
-    defaultVariants: {
-      variant: "default"
-    }
-  }
-);
-function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot$2 : "span";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Comp,
-    {
-      "data-slot": "badge",
-      className: cn(badgeVariants({ variant }), className),
-      ...props
     }
   );
 }
@@ -35281,7 +36079,7 @@ function getInvalidValueError(propValue, componentName) {
 
 Defaulting to \`null\`.`;
 }
-var Root$4 = Progress$1;
+var Root$6 = Progress$1;
 var Indicator = ProgressIndicator;
 function Progress({
   className,
@@ -35289,7 +36087,7 @@ function Progress({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root$4,
+    Root$6,
     {
       "data-slot": "progress",
       className: cn(
@@ -36578,6 +37376,1124 @@ function useViralEngine() {
       clearTimeout(algoTimerId);
     };
   }, [setPosts, addNotification]);
+}
+function Card({ className, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      "data-slot": "card",
+      className: cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className
+      ),
+      ...props
+    }
+  );
+}
+function CardHeader({ className, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      "data-slot": "card-header",
+      className: cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      ),
+      ...props
+    }
+  );
+}
+function CardTitle({ className, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      "data-slot": "card-title",
+      className: cn("leading-none font-semibold", className),
+      ...props
+    }
+  );
+}
+function CardContent({ className, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      "data-slot": "card-content",
+      className: cn("px-6", className),
+      ...props
+    }
+  );
+}
+var NAME$3 = "Separator";
+var DEFAULT_ORIENTATION = "horizontal";
+var ORIENTATIONS = ["horizontal", "vertical"];
+var Separator$1 = reactExports.forwardRef((props, forwardedRef) => {
+  const { decorative, orientation: orientationProp = DEFAULT_ORIENTATION, ...domProps } = props;
+  const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
+  const ariaOrientation = orientation === "vertical" ? orientation : void 0;
+  const semanticProps = decorative ? { role: "none" } : { "aria-orientation": ariaOrientation, role: "separator" };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Primitive$1.div,
+    {
+      "data-orientation": orientation,
+      ...semanticProps,
+      ...domProps,
+      ref: forwardedRef
+    }
+  );
+});
+Separator$1.displayName = NAME$3;
+function isValidOrientation(orientation) {
+  return ORIENTATIONS.includes(orientation);
+}
+var Root$5 = Separator$1;
+function Separator({
+  className,
+  orientation = "horizontal",
+  decorative = true,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Root$5,
+    {
+      "data-slot": "separator",
+      decorative,
+      orientation,
+      className: cn(
+        "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
+        className
+      ),
+      ...props
+    }
+  );
+}
+const TIERS$1 = [
+  {
+    key: "starter",
+    label: "Starter Agency",
+    shortLabel: "Starter",
+    emoji: "🥉",
+    theme: "bronze",
+    cost: 500,
+    revenueBoostPct: 15,
+    dealBoostPct: 10,
+    growthBoostPct: 10,
+    collabsPerWeek: 1,
+    incomeMultiplier: 1.15,
+    passiveCoins: 3,
+    perks: [
+      "Basic sponsorship matching",
+      "1 collab opportunity/week",
+      "+15% ad revenue",
+      "+10% deal value"
+    ],
+    gradient: "linear-gradient(135deg, oklch(0.65 0.18 55), oklch(0.55 0.22 40))",
+    glowColor: "oklch(0.6 0.2 50 / 0.35)",
+    borderColor: "oklch(0.6 0.2 50 / 0.5)",
+    accentColor: "oklch(0.75 0.18 55)",
+    bgColor: "oklch(0.18 0.04 50 / 0.2)"
+  },
+  {
+    key: "pro",
+    label: "Pro Agency",
+    shortLabel: "Pro",
+    emoji: "🥈",
+    theme: "silver",
+    cost: 2e3,
+    revenueBoostPct: 30,
+    dealBoostPct: 20,
+    growthBoostPct: 20,
+    collabsPerWeek: 3,
+    incomeMultiplier: 1.3,
+    passiveCoins: 7,
+    perks: [
+      "Premium brand partnerships",
+      "3 collab opportunities/week",
+      "+30% ad revenue",
+      "+20% deal value",
+      "Priority brand matching"
+    ],
+    gradient: "linear-gradient(135deg, oklch(0.75 0.06 270), oklch(0.62 0.08 260))",
+    glowColor: "oklch(0.7 0.07 265 / 0.35)",
+    borderColor: "oklch(0.7 0.07 265 / 0.5)",
+    accentColor: "oklch(0.82 0.06 270)",
+    bgColor: "oklch(0.18 0.03 265 / 0.2)"
+  },
+  {
+    key: "elite",
+    label: "Elite Agency",
+    shortLabel: "Elite",
+    emoji: "🥇",
+    theme: "gold",
+    cost: 5e3,
+    revenueBoostPct: 60,
+    dealBoostPct: 40,
+    growthBoostPct: 40,
+    collabsPerWeek: 7,
+    incomeMultiplier: 1.6,
+    passiveCoins: 15,
+    perks: [
+      "Exclusive mega-brand deals",
+      "7 collab opportunities/week",
+      "+60% ad revenue",
+      "+40% deal value",
+      "Agency-exclusive sponsors",
+      "Celebrity introductions"
+    ],
+    gradient: "linear-gradient(135deg, oklch(0.82 0.22 80), oklch(0.68 0.24 60))",
+    glowColor: "oklch(0.75 0.22 72 / 0.4)",
+    borderColor: "oklch(0.75 0.22 72 / 0.6)",
+    accentColor: "oklch(0.88 0.2 80)",
+    bgColor: "oklch(0.18 0.05 72 / 0.2)"
+  }
+];
+const TIER_ORDER = ["none", "starter", "pro", "elite"];
+const AGENCY_RANKINGS = [
+  {
+    name: "Nexus Elite",
+    members: 2840,
+    avgBoost: 58,
+    tier: "elite",
+    emoji: "🥇"
+  },
+  {
+    name: "TrendForge",
+    members: 1920,
+    avgBoost: 52,
+    tier: "elite",
+    emoji: "🥇"
+  },
+  {
+    name: "ViralVault Agency",
+    members: 3100,
+    avgBoost: 45,
+    tier: "pro",
+    emoji: "🥈"
+  },
+  {
+    name: "ContentKings",
+    members: 1450,
+    avgBoost: 42,
+    tier: "pro",
+    emoji: "🥈"
+  },
+  {
+    name: "CreatorCircle",
+    members: 2200,
+    avgBoost: 38,
+    tier: "pro",
+    emoji: "🥈"
+  },
+  {
+    name: "StartUp Collabs",
+    members: 4500,
+    avgBoost: 22,
+    tier: "starter",
+    emoji: "🥉"
+  },
+  {
+    name: "RisingCreators",
+    members: 3800,
+    avgBoost: 18,
+    tier: "starter",
+    emoji: "🥉"
+  }
+];
+const SPONSOR_MSGS = [
+  { brand: "NexTech Pro", amount: 450, icon: "💻" },
+  { brand: "FitLife Co.", amount: 320, icon: "💪" },
+  { brand: "GlamForge", amount: 580, icon: "✨" },
+  { brand: "GameZone", amount: 410, icon: "🎮" },
+  { brand: "WellnessPlus", amount: 270, icon: "🌿" },
+  { brand: "StyleEdge", amount: 640, icon: "👗" },
+  { brand: "WanderDeals", amount: 390, icon: "✈️" }
+];
+function StatPill({
+  label,
+  value,
+  color: color2
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col items-center justify-center rounded-xl py-3 px-2",
+      style: {
+        background: "oklch(0.15 0.02 280 / 0.5)",
+        border: "1px solid oklch(0.3 0.025 280 / 0.2)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold", style: { color: color2 }, children: value }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground mt-0.5", children: label })
+      ]
+    }
+  );
+}
+function ActiveBenefitsPanel({ tier }) {
+  const { monetization, profile } = useApp();
+  const weeklyRevBoost = monetization.totalEarnings / 52 * tier.revenueBoostPct / 100;
+  const estimatedExtraFollowers = Math.floor(
+    profile.followers * tier.growthBoostPct / 100 / 4
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 8 },
+      animate: { opacity: 1, y: 0 },
+      transition: { delay: 0.15 },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        Card,
+        {
+          style: {
+            background: `linear-gradient(135deg, oklch(0.14 0.02 280 / 0.9), ${tier.bgColor})`,
+            border: `1px solid ${tier.borderColor}`,
+            boxShadow: `0 0 24px ${tier.glowColor}`
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4", style: { color: tier.accentColor } }),
+              "Active Benefits This Week"
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "rounded-xl p-3",
+                    style: {
+                      background: "oklch(0.18 0.025 280 / 0.5)",
+                      border: "1px solid oklch(0.3 0.02 280 / 0.3)"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Extra Revenue" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-base font-bold mt-0.5",
+                          style: { color: tier.accentColor },
+                          children: [
+                            "+$",
+                            weeklyRevBoost.toFixed(0)
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "this week" })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "rounded-xl p-3",
+                    style: {
+                      background: "oklch(0.18 0.025 280 / 0.5)",
+                      border: "1px solid oklch(0.3 0.02 280 / 0.3)"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Growth Boost" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-base font-bold mt-0.5",
+                          style: { color: "oklch(0.75 0.2 145)" },
+                          children: [
+                            "+",
+                            estimatedExtraFollowers.toLocaleString()
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "est. followers" })
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "rounded-xl p-3 flex items-center gap-3",
+                  style: {
+                    background: "oklch(0.18 0.025 280 / 0.5)",
+                    border: "1px solid oklch(0.3 0.02 280 / 0.3)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Sparkles,
+                      {
+                        className: "w-4 h-4 shrink-0",
+                        style: { color: tier.accentColor }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Passive income" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-sm font-semibold",
+                          style: { color: tier.accentColor },
+                          children: [
+                            "+",
+                            tier.passiveCoins,
+                            " 🪙 every 30 seconds"
+                          ]
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "rounded-xl p-3 flex items-center gap-3",
+                  style: {
+                    background: "oklch(0.18 0.025 280 / 0.5)",
+                    border: "1px solid oklch(0.3 0.02 280 / 0.3)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Users,
+                      {
+                        className: "w-4 h-4 shrink-0",
+                        style: { color: "oklch(0.75 0.18 220)" }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Collab Opportunities" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-sm font-semibold",
+                          style: { color: "oklch(0.75 0.18 220)" },
+                          children: [
+                            tier.collabsPerWeek,
+                            " per week"
+                          ]
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              )
+            ] })
+          ]
+        }
+      )
+    }
+  );
+}
+function AgencyRankings() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 8 },
+      animate: { opacity: 1, y: 0 },
+      transition: { delay: 0.2 },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        Card,
+        {
+          style: {
+            background: "oklch(0.13 0.016 280 / 0.95)",
+            border: "1px solid oklch(0.25 0.025 280 / 0.3)"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Trophy,
+                {
+                  className: "w-4 h-4",
+                  style: { color: "oklch(0.8 0.2 80)" }
+                }
+              ),
+              "Agency Rankings"
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "space-y-1.5", children: AGENCY_RANKINGS.map((agency, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                "data-ocid": `agency.ranking.item.${i + 1}`,
+                className: "flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/5",
+                style: { border: "1px solid oklch(0.22 0.02 280 / 0.3)" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "text-base w-5 text-center font-bold",
+                      style: {
+                        color: i < 3 ? "oklch(0.8 0.2 80)" : "oklch(0.55 0.03 280)"
+                      },
+                      children: i + 1
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: agency.emoji }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold truncate", children: agency.name }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground", children: [
+                      agency.members.toLocaleString(),
+                      " members"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "p",
+                      {
+                        className: "text-xs font-bold",
+                        style: { color: "oklch(0.72 0.2 145)" },
+                        children: [
+                          "+",
+                          agency.avgBoost,
+                          "%"
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "avg boost" })
+                  ] })
+                ]
+              },
+              agency.name
+            )) })
+          ]
+        }
+      )
+    }
+  );
+}
+function AgencyPage() {
+  var _a2;
+  const {
+    navigate,
+    creatorCoins,
+    setCreatorCoins,
+    agency,
+    setAgency,
+    setMonetization,
+    addNotification,
+    triggerSave
+  } = useApp();
+  const [tab, setTab] = reactExports.useState("overview");
+  const [confirmLeave, setConfirmLeave] = reactExports.useState(false);
+  const sponsorTimerRef = reactExports.useRef(null);
+  const currentTierIndex = TIER_ORDER.indexOf(agency.tier);
+  const activeTier = TIERS$1.find((t2) => t2.key === agency.tier);
+  reactExports.useEffect(() => {
+    if (agency.tier === "none") return;
+    const tier = TIERS$1.find((t2) => t2.key === agency.tier);
+    if (!tier) return;
+    const interval = setInterval(() => {
+      setCreatorCoins((c2) => c2 + tier.passiveCoins);
+      const passiveEarning = tier.revenueBoostPct * 0.01;
+      setMonetization((m2) => ({
+        ...m2,
+        adRevenue: m2.adRevenue + passiveEarning,
+        totalEarnings: m2.totalEarnings + passiveEarning,
+        dailyEarnings: m2.dailyEarnings.map(
+          (v2, i) => i === m2.dailyEarnings.length - 1 ? v2 + passiveEarning : v2
+        )
+      }));
+    }, 3e4);
+    return () => clearInterval(interval);
+  }, [agency.tier, setCreatorCoins, setMonetization]);
+  reactExports.useEffect(() => {
+    if (agency.tier === "none") return;
+    const tier = TIERS$1.find((t2) => t2.key === agency.tier);
+    if (!tier) return;
+    const scheduleNext = () => {
+      const baseDelay = tier.key === "elite" ? 12e4 : tier.key === "pro" ? 2e5 : 36e4;
+      const jitter = Math.random() * baseDelay * 0.5;
+      sponsorTimerRef.current = setTimeout(() => {
+        const sponsor = SPONSOR_MSGS[Math.floor(Math.random() * SPONSOR_MSGS.length)];
+        const boostedAmount = Math.floor(
+          sponsor.amount * tier.incomeMultiplier
+        );
+        addNotification({
+          icon: sponsor.icon,
+          message: `${sponsor.brand} sent a sponsored post request through your ${tier.shortLabel} Agency! Deal worth $${boostedAmount}`,
+          type: "sponsorship"
+        });
+        setMonetization((m2) => ({
+          ...m2,
+          sponsorRevenue: m2.sponsorRevenue + boostedAmount,
+          totalEarnings: m2.totalEarnings + boostedAmount
+        }));
+        scheduleNext();
+      }, baseDelay + jitter);
+    };
+    scheduleNext();
+    return () => {
+      if (sponsorTimerRef.current) clearTimeout(sponsorTimerRef.current);
+    };
+  }, [agency.tier, addNotification, setMonetization]);
+  const handleJoin = (tierKey) => {
+    const tier = TIERS$1.find((t2) => t2.key === tierKey);
+    if (!tier) return;
+    const prevTier = activeTier ? activeTier : null;
+    const upgradeCost = prevTier ? Math.max(0, tier.cost - prevTier.cost) : tier.cost;
+    if (creatorCoins < upgradeCost) {
+      ue.error(
+        `Need ${upgradeCost.toLocaleString()} 🪙 to ${activeTier ? "upgrade to" : "join"} ${tier.label}`
+      );
+      return;
+    }
+    setCreatorCoins((c2) => c2 - upgradeCost);
+    setAgency({
+      tier: tierKey === "starter" ? "basic" : tierKey === "pro" ? "premium" : tierKey,
+      revenueBoostPct: tier.revenueBoostPct,
+      dealBoostPct: tier.dealBoostPct,
+      growthBoostPct: tier.growthBoostPct
+    });
+    triggerSave();
+    addNotification({
+      icon: tier.emoji,
+      message: `Welcome to ${tier.label}! Your agency is now generating passive income and finding sponsorships for you. 🎉`,
+      type: "sponsorship"
+    });
+    ue.success(`Joined ${tier.label}! Passive income started. 🎉`);
+    setTab("overview");
+  };
+  const handleLeave = () => {
+    setAgency({
+      tier: "none",
+      revenueBoostPct: 0,
+      dealBoostPct: 0,
+      growthBoostPct: 0
+    });
+    triggerSave();
+    ue.info("Left agency. You're now independent again.");
+    setConfirmLeave(false);
+  };
+  const TABS = [
+    { key: "overview", label: "Overview" },
+    { key: "tiers", label: "Agencies" },
+    { key: "rankings", label: "Rankings" }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-xl mx-auto px-4 py-6 space-y-5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          type: "button",
+          "data-ocid": "agency.back_button",
+          onClick: () => navigate("hub"),
+          className: "w-9 h-9 rounded-xl flex items-center justify-center transition-colors hover:bg-white/10",
+          style: {
+            background: "oklch(0.15 0.02 280 / 0.5)",
+            border: "1px solid oklch(0.3 0.025 280 / 0.3)"
+          },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4" })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-xl font-bold", children: "Agency" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: activeTier ? `${activeTier.label} member` : "Join an agency to grow faster" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full",
+          style: {
+            background: "oklch(0.18 0.04 80 / 0.3)",
+            border: "1px solid oklch(0.55 0.2 80 / 0.3)"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: "🪙" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "text-sm font-bold",
+                style: { color: "oklch(0.8 0.18 80)" },
+                children: creatorCoins.toLocaleString()
+              }
+            )
+          ]
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: activeTier && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, scale: 0.97 },
+        animate: { opacity: 1, scale: 1 },
+        exit: { opacity: 0, scale: 0.97 },
+        className: "rounded-2xl p-4",
+        style: {
+          background: activeTier.gradient,
+          boxShadow: `0 0 40px ${activeTier.glowColor}`
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl", children: activeTier.emoji }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-bold text-white", children: activeTier.label }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(BadgeCheck, { className: "w-4 h-4 text-white/90" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-white/80 mt-0.5", children: [
+                "+",
+                activeTier.revenueBoostPct,
+                "% revenue · +",
+                activeTier.dealBoostPct,
+                "% deals · +",
+                activeTier.growthBoostPct,
+                "% growth"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-white/70 mt-0.5", children: [
+                activeTier.collabsPerWeek,
+                " collab opportunities/week ·",
+                " ",
+                activeTier.incomeMultiplier,
+                "x income multiplier"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-5 h-5 text-white/90 shrink-0" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Separator, { className: "my-3 opacity-20" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-2 text-center", children: [
+            { label: "Revenue", val: `+${activeTier.revenueBoostPct}%` },
+            { label: "Deals", val: `+${activeTier.dealBoostPct}%` },
+            { label: "Growth", val: `+${activeTier.growthBoostPct}%` }
+          ].map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-lg py-1.5",
+              style: { background: "rgba(255,255,255,0.12)" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-white", children: s2.val }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-white/70", children: s2.label })
+              ]
+            },
+            s2.label
+          )) })
+        ]
+      },
+      "active-banner"
+    ) }),
+    !activeTier && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 6 },
+        animate: { opacity: 1, y: 0 },
+        className: "rounded-2xl p-4 text-center",
+        style: {
+          background: "oklch(0.15 0.025 280 / 0.5)",
+          border: "1px solid oklch(0.3 0.025 280 / 0.3)"
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Building2,
+            {
+              className: "w-8 h-8 mx-auto mb-2",
+              style: { color: "oklch(0.65 0.15 280)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold", children: "Not in an Agency" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-1", children: "Join an agency to unlock sponsorships, passive income, and collab opportunities" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            Button,
+            {
+              "data-ocid": "agency.join_primary_button",
+              size: "sm",
+              className: "mt-3 text-white border-none",
+              style: {
+                background: "linear-gradient(135deg, oklch(0.65 0.18 55), oklch(0.55 0.22 40))"
+              },
+              onClick: () => setTab("tiers"),
+              children: [
+                "Browse Agencies",
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "w-3 h-3 ml-1" })
+              ]
+            }
+          )
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "flex gap-1 p-1 rounded-xl",
+        style: {
+          background: "oklch(0.13 0.016 280 / 0.8)",
+          border: "1px solid oklch(0.25 0.02 280 / 0.3)"
+        },
+        children: TABS.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": `agency.${t2.key}_tab`,
+            className: "flex-1 py-2 text-xs font-semibold rounded-lg transition-all",
+            style: {
+              background: tab === t2.key ? activeTier ? activeTier.gradient : "oklch(0.22 0.03 280)" : "transparent",
+              color: tab === t2.key ? "white" : "oklch(0.65 0.05 280)"
+            },
+            onClick: () => setTab(t2.key),
+            children: t2.label
+          },
+          t2.key
+        ))
+      }
+    ),
+    tab === "overview" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4", children: activeTier ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ActiveBenefitsPanel, { tier: activeTier }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 6 },
+          animate: { opacity: 1, y: 0 },
+          transition: { delay: 0.1 },
+          className: "grid grid-cols-4 gap-2",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              StatPill,
+              {
+                label: "Revenue",
+                value: `+${activeTier.revenueBoostPct}%`,
+                color: activeTier.accentColor
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              StatPill,
+              {
+                label: "Deals",
+                value: `+${activeTier.dealBoostPct}%`,
+                color: activeTier.accentColor
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              StatPill,
+              {
+                label: "Growth",
+                value: `+${activeTier.growthBoostPct}%`,
+                color: "oklch(0.75 0.2 145)"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              StatPill,
+              {
+                label: "Passive",
+                value: `${activeTier.passiveCoins}🪙`,
+                color: "oklch(0.8 0.18 80)"
+              }
+            )
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 6 },
+          animate: { opacity: 1, y: 0 },
+          transition: { delay: 0.18 },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            Card,
+            {
+              style: {
+                background: "oklch(0.13 0.016 280 / 0.95)",
+                border: `1px solid ${activeTier.borderColor}`
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Star,
+                    {
+                      className: "w-4 h-4",
+                      style: { color: activeTier.accentColor }
+                    }
+                  ),
+                  "Your Agency Perks"
+                ] }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "space-y-2", children: activeTier.perks.map((perk) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    CircleCheck,
+                    {
+                      className: "w-3.5 h-3.5 shrink-0",
+                      style: { color: activeTier.accentColor }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: perk })
+                ] }, perk)) })
+              ]
+            }
+          )
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 6 },
+          animate: { opacity: 1, y: 0 },
+          transition: { delay: 0.25 },
+          className: "flex gap-3",
+          children: [
+            currentTierIndex < TIER_ORDER.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              Button,
+              {
+                "data-ocid": "agency.upgrade_button",
+                size: "sm",
+                className: "flex-1 text-white border-none",
+                style: {
+                  background: ((_a2 = TIERS$1[currentTierIndex]) == null ? void 0 : _a2.gradient) ?? "oklch(0.55 0.15 280)"
+                },
+                onClick: () => setTab("tiers"),
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-3 h-3 mr-1" }),
+                  "Upgrade Tier"
+                ]
+              }
+            ),
+            !confirmLeave ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              Button,
+              {
+                "data-ocid": "agency.leave_button",
+                size: "sm",
+                variant: "outline",
+                className: "flex-1",
+                style: {
+                  background: "oklch(0.16 0.025 0 / 0.4)",
+                  border: "1px solid oklch(0.45 0.15 0 / 0.4)",
+                  color: "oklch(0.75 0.15 0)"
+                },
+                onClick: () => setConfirmLeave(true),
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(LogOut, { className: "w-3 h-3 mr-1" }),
+                  "Leave Agency"
+                ]
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  "data-ocid": "agency.leave_confirm_button",
+                  size: "sm",
+                  className: "flex-1 text-white border-none",
+                  style: { background: "oklch(0.5 0.2 0)" },
+                  onClick: handleLeave,
+                  children: "Confirm Leave"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  "data-ocid": "agency.leave_cancel_button",
+                  size: "sm",
+                  variant: "outline",
+                  onClick: () => setConfirmLeave(false),
+                  children: "Cancel"
+                }
+              )
+            ] })
+          ]
+        }
+      )
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center py-8 space-y-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Crown,
+        {
+          className: "w-12 h-12 mx-auto",
+          style: { color: "oklch(0.5 0.05 280)" }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "No active agency" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground max-w-xs mx-auto", children: "Switch to the Agencies tab to browse and join an agency that matches your goals." })
+    ] }) }),
+    tab === "tiers" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", children: TIERS$1.map((tier, i) => {
+      var _a3;
+      const ownedIndex = TIER_ORDER.indexOf(tier.key);
+      const isOwned = agency.tier !== "none" && ownedIndex <= currentTierIndex;
+      const isActive = agency.tier === tier.key;
+      const isNext = ownedIndex === currentTierIndex + 1;
+      const isLocked = !isOwned && !isNext && agency.tier !== "none";
+      const upgradeCost = activeTier ? Math.max(0, tier.cost - activeTier.cost) : tier.cost;
+      const canAfford = creatorCoins >= upgradeCost;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, x: -16 },
+          animate: { opacity: 1, x: 0 },
+          transition: { delay: i * 0.08 },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            Card,
+            {
+              "data-ocid": `agency.${tier.key}.card`,
+              style: {
+                background: isActive ? `linear-gradient(135deg, oklch(0.16 0.03 280 / 0.9), ${tier.bgColor})` : isOwned ? "oklch(0.15 0.025 280 / 0.95)" : "oklch(0.12 0.015 280 / 0.95)",
+                border: `1px solid ${isActive ? tier.borderColor : isOwned ? "oklch(0.3 0.02 280 / 0.4)" : "oklch(0.22 0.02 280 / 0.3)"}`,
+                boxShadow: isActive ? `0 0 24px ${tier.glowColor}` : "none",
+                opacity: isLocked ? 0.5 : 1
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "w-11 h-11 rounded-xl flex items-center justify-center text-2xl",
+                      style: { background: tier.gradient },
+                      children: tier.emoji
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: tier.label }),
+                      isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Badge,
+                        {
+                          className: "text-[10px] px-1.5 py-0",
+                          style: {
+                            background: `${tier.bgColor}`,
+                            color: tier.accentColor,
+                            border: `1px solid ${tier.borderColor}`
+                          },
+                          children: "Active"
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: activeTier && !isActive && isNext ? `Upgrade for ${upgradeCost.toLocaleString()} 🪙` : `${tier.cost.toLocaleString()} 🪙` })
+                  ] }),
+                  isOwned && !isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    CircleCheck,
+                    {
+                      className: "w-4 h-4",
+                      style: { color: "oklch(0.65 0.15 145)" }
+                    }
+                  ),
+                  isLocked && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Award,
+                    {
+                      className: "w-4 h-4",
+                      style: { color: "oklch(0.45 0.05 280)" }
+                    }
+                  )
+                ] }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 gap-1.5 text-center", children: [
+                    {
+                      label: "Revenue",
+                      val: `+${tier.revenueBoostPct}%`,
+                      color: tier.accentColor
+                    },
+                    {
+                      label: "Deals",
+                      val: `+${tier.dealBoostPct}%`,
+                      color: tier.accentColor
+                    },
+                    {
+                      label: "Growth",
+                      val: `+${tier.growthBoostPct}%`,
+                      color: "oklch(0.75 0.2 145)"
+                    },
+                    {
+                      label: "Collabs",
+                      val: `${tier.collabsPerWeek}/wk`,
+                      color: "oklch(0.75 0.18 220)"
+                    }
+                  ].map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "rounded-lg py-2",
+                      style: { background: "oklch(0.17 0.02 280 / 0.5)" },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: "text-[11px] font-bold",
+                            style: { color: s2.color },
+                            children: s2.val
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[9px] text-muted-foreground", children: s2.label })
+                      ]
+                    },
+                    s2.label
+                  )) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+                    tier.perks.slice(0, 3).map((perk) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-1 h-1 rounded-full shrink-0",
+                          style: { background: tier.accentColor }
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-muted-foreground", children: perk })
+                    ] }, perk)),
+                    tier.perks.length > 3 && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[11px] text-muted-foreground pl-3", children: [
+                      "+",
+                      tier.perks.length - 3,
+                      " more perks"
+                    ] })
+                  ] }),
+                  !isOwned && !isLocked && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    Button,
+                    {
+                      "data-ocid": `agency.${tier.key}.join_button`,
+                      size: "sm",
+                      className: "w-full text-white border-none",
+                      style: {
+                        background: tier.gradient,
+                        opacity: canAfford ? 1 : 0.5
+                      },
+                      disabled: !canAfford,
+                      onClick: () => handleJoin(tier.key),
+                      children: [
+                        activeTier ? "Upgrade" : "Join",
+                        " —",
+                        " ",
+                        upgradeCost.toLocaleString(),
+                        " 🪙"
+                      ]
+                    }
+                  ),
+                  isNext && activeTier && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    Button,
+                    {
+                      "data-ocid": `agency.${tier.key}.upgrade_button`,
+                      size: "sm",
+                      className: "w-full text-white border-none",
+                      style: {
+                        background: tier.gradient,
+                        opacity: canAfford ? 1 : 0.5
+                      },
+                      disabled: !canAfford,
+                      onClick: () => handleJoin(tier.key),
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-3 h-3 mr-1" }),
+                        "Upgrade — ",
+                        upgradeCost.toLocaleString(),
+                        " 🪙"
+                      ]
+                    }
+                  ),
+                  isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "w-full text-center py-1.5 rounded-lg text-xs font-semibold",
+                      style: {
+                        background: `${tier.bgColor}`,
+                        color: tier.accentColor
+                      },
+                      children: "✓ Currently Active"
+                    }
+                  ),
+                  isLocked && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "w-full text-center py-1.5 rounded-lg text-xs",
+                      style: {
+                        background: "oklch(0.15 0.015 280 / 0.4)",
+                        color: "oklch(0.5 0.03 280)"
+                      },
+                      children: [
+                        "Upgrade to ",
+                        ((_a3 = TIERS$1[currentTierIndex - 1]) == null ? void 0 : _a3.label) ?? "Pro",
+                        " ",
+                        "first"
+                      ]
+                    }
+                  )
+                ] })
+              ]
+            }
+          )
+        },
+        tier.key
+      );
+    }) }),
+    tab === "rankings" && /* @__PURE__ */ jsxRuntimeExports.jsx(AgencyRankings, {})
+  ] });
 }
 const INTEL_TIPS = [
   "Hacks fire 2x more often while a Platform Event is active — stack the bonuses!",
@@ -48614,7 +50530,7 @@ function _extends$o() {
   };
   return _extends$o.apply(this, arguments);
 }
-var getLabel = function getLabel2(props) {
+var getLabel$1 = function getLabel(props) {
   var value = props.value, formatter = props.formatter;
   var label = isNil$1(props.children) ? value : props.children;
   if (isFunction$4(formatter)) {
@@ -48869,7 +50785,7 @@ function Label$2(_ref4) {
       return label;
     }
   } else {
-    label = getLabel(props);
+    label = getLabel$1(props);
   }
   var isPolarLabel = isPolar(viewBox);
   var attrs = filterProps(props, true);
@@ -62032,6 +63948,1657 @@ function BlackMarket() {
     }
   );
 }
+const LS_KEY$2 = "mindforge-challenges-board";
+const DAILY_CHALLENGES$1 = [
+  {
+    id: "dc-posts",
+    emoji: "📸",
+    title: "Post Machine",
+    description: "Post 3 times today",
+    target: 3,
+    reward: 300,
+    progressKey: "posts"
+  },
+  {
+    id: "dc-likes",
+    emoji: "❤️",
+    title: "Like Magnet",
+    description: "Get 1000 likes total today",
+    target: 1e3,
+    reward: 500,
+    progressKey: "likes"
+  },
+  {
+    id: "dc-followers",
+    emoji: "👥",
+    title: "Follower Drive",
+    description: "Gain 100 followers today",
+    target: 100,
+    reward: 400,
+    progressKey: "followers"
+  },
+  {
+    id: "dc-hashtags",
+    emoji: "#️⃣",
+    title: "Hashtag Hero",
+    description: "Use 5 different hashtags today",
+    target: 5,
+    reward: 250,
+    progressKey: "hashtags"
+  },
+  {
+    id: "dc-replies",
+    emoji: "💬",
+    title: "Community Builder",
+    description: "Reply to 5 comments",
+    target: 5,
+    reward: 200,
+    progressKey: "replies"
+  }
+];
+function loadState() {
+  try {
+    const raw = localStorage.getItem(LS_KEY$2);
+    if (raw) {
+      const d2 = JSON.parse(raw);
+      const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+      if (d2.date === today) return d2;
+      return {
+        date: today,
+        progress: {},
+        claimed: {},
+        streakDays: d2.streakDays
+      };
+    }
+  } catch (_) {
+  }
+  return {
+    date: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+    progress: {},
+    claimed: {},
+    streakDays: 0
+  };
+}
+function ChallengesBoardPage() {
+  const {
+    navigate,
+    posts,
+    profile,
+    creatorCoins: _creatorCoins,
+    setCreatorCoins,
+    addNotification
+  } = useApp();
+  const [state, setState] = reactExports.useState(loadState);
+  const prevFollowersRef = reactExports.useRef(profile.followers);
+  reactExports.useRef(posts.length);
+  reactExports.useEffect(() => {
+    const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+    const todayPosts = posts.filter((p2) => {
+      const d2 = new Date(p2.timestamp).toISOString().slice(0, 10);
+      return d2 === today;
+    });
+    const todayLikes = todayPosts.reduce((s2, p2) => s2 + p2.likes, 0);
+    const usedHashtags = new Set(todayPosts.flatMap((p2) => p2.hashtags ?? []));
+    const followersGained = Math.max(
+      0,
+      profile.followers - prevFollowersRef.current
+    );
+    setState((prev) => {
+      const updated = {
+        ...prev,
+        progress: {
+          ...prev.progress,
+          posts: Math.max(prev.progress.posts ?? 0, todayPosts.length),
+          likes: Math.max(prev.progress.likes ?? 0, todayLikes),
+          followers: Math.max(prev.progress.followers ?? 0, followersGained),
+          hashtags: Math.max(prev.progress.hashtags ?? 0, usedHashtags.size),
+          replies: prev.progress.replies ?? 0
+        }
+      };
+      localStorage.setItem(LS_KEY$2, JSON.stringify(updated));
+      return updated;
+    });
+  }, [posts, profile.followers]);
+  function handleClaim(challenge) {
+    const progress2 = state.progress[challenge.progressKey] ?? 0;
+    if (progress2 < challenge.target) return;
+    if (state.claimed[challenge.id]) return;
+    const newState = {
+      ...state,
+      claimed: { ...state.claimed, [challenge.id]: true }
+    };
+    const allClaimed = DAILY_CHALLENGES$1.every(
+      (c2) => newState.claimed[c2.id] || c2.id === challenge.id
+    );
+    if (allClaimed) newState.streakDays = (state.streakDays ?? 0) + 1;
+    setState(newState);
+    localStorage.setItem(LS_KEY$2, JSON.stringify(newState));
+    setCreatorCoins((c2) => c2 + challenge.reward);
+    addNotification({
+      icon: challenge.emoji,
+      message: `Challenge "${challenge.title}" completed! +${challenge.reward} coins.`,
+      type: "challenge"
+    });
+    ue.success(
+      `${challenge.emoji} ${challenge.title} complete! +${challenge.reward} coins`
+    );
+  }
+  function simulateProgress(key, amount) {
+    setState((prev) => {
+      const updated = {
+        ...prev,
+        progress: {
+          ...prev.progress,
+          [key]: (prev.progress[key] ?? 0) + amount
+        }
+      };
+      localStorage.setItem(LS_KEY$2, JSON.stringify(updated));
+      return updated;
+    });
+  }
+  const allChallengesComplete = DAILY_CHALLENGES$1.every(
+    (c2) => state.claimed[c2.id]
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  "data-ocid": "challenges-board.back.button",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground", children: "Daily Challenges" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Resets every 24 hours" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
+                  style: {
+                    background: "oklch(0.18 0.04 50 / 0.3)",
+                    border: "1px solid oklch(0.65 0.2 50 / 0.3)",
+                    color: "oklch(0.78 0.2 50)"
+                  },
+                  children: [
+                    "🔥 ",
+                    state.streakDays ?? 0,
+                    "d streak"
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-5 space-y-4", children: [
+          allChallengesComplete && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-4 text-center",
+              style: {
+                background: "oklch(0.55 0.22 145 / 0.15)",
+                border: "1px solid oklch(0.55 0.22 145 / 0.4)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl mb-1", children: "🎉" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-bold", style: { color: "oklch(0.72 0.22 145)" }, children: "All challenges complete! Come back tomorrow!" })
+              ]
+            }
+          ),
+          DAILY_CHALLENGES$1.map((challenge, idx) => {
+            const progress2 = state.progress[challenge.progressKey] ?? 0;
+            const pct = Math.min(100, progress2 / challenge.target * 100);
+            const isComplete = progress2 >= challenge.target;
+            const isClaimed = !!state.claimed[challenge.id];
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                "data-ocid": `challenges-board.item.${idx + 1}`,
+                className: "rounded-2xl p-4 space-y-3",
+                style: {
+                  background: isClaimed ? "oklch(0.14 0.03 145 / 0.4)" : "oklch(0.13 0.016 280 / 0.95)",
+                  border: `1px solid ${isClaimed ? "oklch(0.45 0.15 145 / 0.4)" : isComplete ? "oklch(0.55 0.22 80 / 0.4)" : "oklch(0.22 0.025 280 / 0.5)"}`
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: challenge.emoji }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground", children: challenge.title }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: challenge.description })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-sm font-bold",
+                          style: { color: "oklch(0.78 0.18 80)" },
+                          children: [
+                            "+",
+                            challenge.reward
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "coins" })
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-xs mb-1", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-muted-foreground", children: [
+                        Math.min(progress2, challenge.target),
+                        "/",
+                        challenge.target
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          style: {
+                            color: isComplete ? "oklch(0.72 0.22 145)" : "oklch(0.55 0.04 280)"
+                          },
+                          children: [
+                            pct.toFixed(0),
+                            "%"
+                          ]
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "h-2 rounded-full overflow-hidden",
+                        style: { background: "oklch(0.18 0.02 280)" },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "h-full rounded-full transition-all duration-500",
+                            style: {
+                              width: `${pct}%`,
+                              background: isClaimed ? "oklch(0.55 0.22 145)" : isComplete ? "oklch(0.65 0.22 80)" : "linear-gradient(90deg, oklch(0.55 0.22 260), oklch(0.55 0.22 295))"
+                            }
+                          }
+                        )
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        size: "sm",
+                        onClick: () => handleClaim(challenge),
+                        disabled: !isComplete || isClaimed,
+                        className: "flex-1 h-8 text-xs",
+                        style: isClaimed ? {
+                          background: "oklch(0.28 0.05 145)",
+                          color: "oklch(0.72 0.22 145)"
+                        } : isComplete ? {
+                          background: "linear-gradient(135deg, oklch(0.65 0.22 80), oklch(0.6 0.2 60))",
+                          color: "white"
+                        } : {},
+                        "data-ocid": `challenges-board.claim.button.${idx + 1}`,
+                        children: isClaimed ? "✓ Claimed" : isComplete ? "🎉 Claim Reward" : "In Progress..."
+                      }
+                    ),
+                    !isClaimed && challenge.progressKey === "replies" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        size: "sm",
+                        variant: "outline",
+                        onClick: () => simulateProgress("replies", 1),
+                        className: "text-xs h-8 px-3",
+                        "data-ocid": `challenges-board.simulate.button.${idx + 1}`,
+                        children: "+Reply"
+                      }
+                    )
+                  ] })
+                ]
+              },
+              challenge.id
+            );
+          })
+        ] })
+      ]
+    }
+  );
+}
+const DAILY_CHALLENGES = [
+  {
+    id: "daily-post",
+    emoji: "📸",
+    title: "Post Creator",
+    description: "Create 2 new posts today to engage your audience",
+    target: 2,
+    difficulty: "Easy",
+    rewardCoins: 75,
+    rewardFollowers: 200,
+    rewardXP: 150,
+    rewardLabel: "+200 followers & 75 coins",
+    getProgress: (s2) => Math.min(s2.postCount, 2),
+    resetKey: ""
+  },
+  {
+    id: "daily-views",
+    emoji: "👁️",
+    title: "View Chaser",
+    description: "Accumulate 5,000 views across all posts",
+    target: 5e3,
+    difficulty: "Medium",
+    rewardCoins: 150,
+    rewardFollowers: 500,
+    rewardXP: 300,
+    rewardLabel: "+500 followers & 150 coins",
+    getProgress: (s2) => Math.min(s2.totalViews, 5e3),
+    resetKey: ""
+  },
+  {
+    id: "daily-streak",
+    emoji: "🔥",
+    title: "Streak Keeper",
+    description: "Maintain a login streak of 3 or more days",
+    target: 3,
+    difficulty: "Easy",
+    rewardCoins: 50,
+    rewardFollowers: 100,
+    rewardXP: 100,
+    rewardLabel: "+100 followers & 50 coins",
+    getProgress: (s2) => Math.min(s2.loginStreak, 3),
+    resetKey: ""
+  },
+  {
+    id: "daily-coins",
+    emoji: "💰",
+    title: "Coin Collector",
+    description: "Accumulate 500 Creator Coins total",
+    target: 500,
+    difficulty: "Hard",
+    rewardCoins: 300,
+    rewardFollowers: 1e3,
+    rewardXP: 600,
+    rewardLabel: "+1,000 followers & 300 coins",
+    getProgress: (s2) => Math.min(s2.coins, 500),
+    resetKey: ""
+  }
+];
+const DIFFICULTY_CONFIG = {
+  Easy: {
+    gradient: "linear-gradient(135deg, oklch(0.55 0.2 145), oklch(0.48 0.18 160))",
+    accentColor: "oklch(0.72 0.2 145)",
+    borderColor: "oklch(0.55 0.2 145 / 0.4)",
+    badgeBg: "oklch(0.15 0.04 145 / 0.5)",
+    label: "Easy",
+    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: "w-3 h-3" })
+  },
+  Medium: {
+    gradient: "linear-gradient(135deg, oklch(0.68 0.22 60), oklch(0.6 0.2 40))",
+    accentColor: "oklch(0.78 0.2 60)",
+    borderColor: "oklch(0.68 0.22 60 / 0.4)",
+    badgeBg: "oklch(0.15 0.05 60 / 0.5)",
+    label: "Medium",
+    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Flame, { className: "w-3 h-3" })
+  },
+  Hard: {
+    gradient: "linear-gradient(135deg, oklch(0.58 0.26 15), oklch(0.52 0.24 340))",
+    accentColor: "oklch(0.72 0.22 15)",
+    borderColor: "oklch(0.58 0.26 15 / 0.4)",
+    badgeBg: "oklch(0.15 0.06 15 / 0.5)",
+    label: "Hard",
+    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3" })
+  }
+};
+const WEEKLY_META = {
+  "ch-followers": {
+    emoji: "👥",
+    difficulty: "Hard",
+    gradient: "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.5 0.2 230))",
+    accentColor: "oklch(0.72 0.2 260)",
+    borderColor: "oklch(0.55 0.22 260 / 0.4)"
+  },
+  "ch-explore": {
+    emoji: "🔭",
+    difficulty: "Medium",
+    gradient: "linear-gradient(135deg, oklch(0.55 0.2 200), oklch(0.5 0.18 180))",
+    accentColor: "oklch(0.72 0.2 200)",
+    borderColor: "oklch(0.55 0.2 200 / 0.4)"
+  },
+  "ch-views": {
+    emoji: "👁️",
+    difficulty: "Hard",
+    gradient: "linear-gradient(135deg, oklch(0.68 0.22 50), oklch(0.62 0.2 30))",
+    accentColor: "oklch(0.78 0.2 50)",
+    borderColor: "oklch(0.68 0.22 50 / 0.4)"
+  },
+  "ch-hashtag": {
+    emoji: "#️⃣",
+    difficulty: "Medium",
+    gradient: "linear-gradient(135deg, oklch(0.6 0.22 295), oklch(0.55 0.2 270))",
+    accentColor: "oklch(0.72 0.2 295)",
+    borderColor: "oklch(0.6 0.22 295 / 0.4)"
+  }
+};
+const WEEKLY_FALLBACK = {
+  emoji: "🎯",
+  difficulty: "Medium",
+  gradient: "linear-gradient(135deg, oklch(0.6 0.2 295), oklch(0.55 0.18 270))",
+  accentColor: "oklch(0.72 0.2 295)",
+  borderColor: "oklch(0.6 0.2 295 / 0.4)"
+};
+function SparkleBlast() {
+  const sparks = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    angle: i / 12 * 360,
+    distance: 40 + Math.random() * 40,
+    color: [
+      "oklch(0.78 0.22 60)",
+      "oklch(0.72 0.2 145)",
+      "oklch(0.72 0.2 295)",
+      "oklch(0.9 0.1 80)"
+    ][i % 4]
+  }));
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 pointer-events-none overflow-hidden rounded-2xl", children: sparks.map((spark) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      className: "absolute top-1/2 left-1/2 w-2 h-2 rounded-full",
+      style: { background: spark.color },
+      initial: { x: "-50%", y: "-50%", scale: 0, opacity: 1 },
+      animate: {
+        x: `calc(-50% + ${Math.cos(spark.angle * Math.PI / 180) * spark.distance}px)`,
+        y: `calc(-50% + ${Math.sin(spark.angle * Math.PI / 180) * spark.distance}px)`,
+        scale: [0, 1.5, 0],
+        opacity: [1, 1, 0]
+      },
+      transition: { duration: 0.7, ease: "easeOut" }
+    },
+    spark.id
+  )) });
+}
+function RewardPopup({
+  data,
+  onDone
+}) {
+  reactExports.useEffect(() => {
+    const t2 = setTimeout(onDone, 2200);
+    return () => clearTimeout(t2);
+  }, [onDone]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      className: "fixed inset-0 z-50 flex items-center justify-center pointer-events-none",
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          className: "flex flex-col items-center gap-2 px-8 py-6 rounded-3xl text-center",
+          style: {
+            background: "oklch(0.12 0.025 280 / 0.95)",
+            border: "2px solid oklch(0.72 0.2 60 / 0.7)",
+            backdropFilter: "blur(24px)",
+            boxShadow: "0 0 60px oklch(0.72 0.2 60 / 0.3)"
+          },
+          initial: { scale: 0.3, y: 40 },
+          animate: { scale: [0.3, 1.15, 1], y: [40, -8, 0] },
+          transition: { duration: 0.6, ease: "easeOut" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                className: "text-5xl",
+                animate: { rotate: [0, -10, 10, -6, 0], scale: [1, 1.3, 1] },
+                transition: { duration: 0.8, delay: 0.3 },
+                children: "🎁"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: "text-xl font-bold",
+                style: { color: "oklch(0.9 0.15 60)" },
+                children: "Reward Claimed!"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", style: { color: "oklch(0.78 0.12 80)" }, children: data.label }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 mt-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-xs px-2 py-1 rounded-full",
+                  style: {
+                    background: "oklch(0.55 0.22 60 / 0.25)",
+                    color: "oklch(0.78 0.2 60)"
+                  },
+                  children: [
+                    "+",
+                    data.coins,
+                    " coins"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-xs px-2 py-1 rounded-full",
+                  style: {
+                    background: "oklch(0.55 0.2 145 / 0.25)",
+                    color: "oklch(0.72 0.2 145)"
+                  },
+                  children: [
+                    "+",
+                    data.followers,
+                    " followers"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-xs px-2 py-1 rounded-full",
+                  style: {
+                    background: "oklch(0.55 0.22 260 / 0.25)",
+                    color: "oklch(0.72 0.2 260)"
+                  },
+                  children: [
+                    "+",
+                    data.xp,
+                    " XP"
+                  ]
+                }
+              )
+            ] })
+          ]
+        }
+      )
+    }
+  );
+}
+function DailyChallengeCard({
+  challenge,
+  progress: progress2,
+  state,
+  onClaim
+}) {
+  const [showSparks, setShowSparks] = reactExports.useState(false);
+  const diff = DIFFICULTY_CONFIG[challenge.difficulty];
+  const pct = Math.min(100, Math.round(progress2 / challenge.target * 100));
+  const isComplete = progress2 >= challenge.target;
+  const isClaimed = state.claimed;
+  const handleClaim = () => {
+    if (!isComplete || isClaimed) return;
+    setShowSparks(true);
+    onClaim(challenge.id);
+    setTimeout(() => setShowSparks(false), 800);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      layout: true,
+      className: "relative rounded-2xl overflow-hidden",
+      style: {
+        background: isClaimed ? "oklch(0.13 0.025 145 / 0.6)" : isComplete ? "oklch(0.13 0.025 60 / 0.7)" : "oklch(0.13 0.018 280 / 0.95)",
+        border: `1px solid ${isClaimed ? "oklch(0.55 0.2 145 / 0.5)" : isComplete ? "oklch(0.68 0.22 60 / 0.6)" : diff.borderColor}`,
+        boxShadow: isComplete && !isClaimed ? "0 0 20px oklch(0.68 0.22 60 / 0.2)" : void 0
+      },
+      whileHover: { scale: 1.01 },
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+      children: [
+        showSparks && /* @__PURE__ */ jsxRuntimeExports.jsx(SparkleBlast, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                className: "w-11 h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0",
+                style: { background: diff.gradient },
+                animate: isClaimed ? { scale: [1, 1.2, 1], rotate: [0, 10, 0] } : {},
+                transition: { duration: 0.5 },
+                children: isClaimed ? "✅" : challenge.emoji
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 flex-wrap", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground leading-tight", children: challenge.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "span",
+                  {
+                    className: "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold",
+                    style: {
+                      background: diff.badgeBg,
+                      color: diff.accentColor,
+                      border: `1px solid ${diff.borderColor}`
+                    },
+                    children: [
+                      diff.icon,
+                      diff.label
+                    ]
+                  }
+                ),
+                isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  motion.span,
+                  {
+                    initial: { scale: 0 },
+                    animate: { scale: 1 },
+                    className: "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold",
+                    style: {
+                      background: "oklch(0.55 0.2 145 / 0.2)",
+                      color: "oklch(0.72 0.2 145)",
+                      border: "1px solid oklch(0.55 0.2 145 / 0.4)"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3 h-3" }),
+                      " Done"
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5 leading-relaxed", children: challenge.description })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-muted-foreground", children: [
+                progress2.toLocaleString(),
+                " / ",
+                challenge.target.toLocaleString()
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-[11px] font-bold",
+                  style: { color: diff.accentColor },
+                  children: [
+                    pct,
+                    "%"
+                  ]
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "h-2.5 rounded-full overflow-hidden",
+                style: { background: "oklch(0.18 0.02 280 / 0.7)" },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  motion.div,
+                  {
+                    initial: { width: 0 },
+                    animate: { width: `${pct}%` },
+                    transition: { duration: 0.9, ease: "easeOut" },
+                    className: "h-full rounded-full relative",
+                    style: { background: diff.gradient },
+                    children: pct === 100 && !isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      motion.div,
+                      {
+                        className: "absolute inset-0 rounded-full",
+                        animate: { opacity: [0.4, 0.9, 0.4] },
+                        transition: {
+                          duration: 1.2,
+                          repeat: Number.POSITIVE_INFINITY
+                        },
+                        style: { background: "oklch(1 0 0 / 0.25)" }
+                      }
+                    )
+                  }
+                )
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "flex items-center gap-2 rounded-xl px-3 py-2 mb-3",
+              style: {
+                background: "oklch(0.18 0.04 80 / 0.2)",
+                border: "1px solid oklch(0.45 0.1 80 / 0.2)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Gift,
+                  {
+                    className: "w-3.5 h-3.5 flex-shrink-0",
+                    style: { color: "oklch(0.78 0.2 80)" }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "oklch(0.78 0.15 80)" }, children: challenge.rewardLabel }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Sparkles,
+                  {
+                    className: "w-3 h-3 ml-auto flex-shrink-0",
+                    style: { color: "oklch(0.72 0.18 60)" }
+                  }
+                )
+              ]
+            }
+          ),
+          !isClaimed && isComplete && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.button,
+            {
+              type: "button",
+              onClick: handleClaim,
+              className: "w-full py-2.5 rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 cursor-pointer",
+              style: { background: diff.gradient },
+              whileTap: { scale: 0.95 },
+              animate: {
+                boxShadow: [
+                  "0 0 0px transparent",
+                  `0 0 16px ${diff.accentColor.replace(")", " / 0.6)")}`
+                ]
+              },
+              transition: {
+                duration: 1.2,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse"
+              },
+              "data-ocid": `challenges.daily.${challenge.id}.claim_button`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Gift, { className: "w-4 h-4" }),
+                " Claim Reward"
+              ]
+            }
+          ),
+          isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-2 py-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CircleCheck,
+              {
+                className: "w-4 h-4",
+                style: { color: "oklch(0.72 0.2 145)" }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "text-xs font-semibold",
+                style: { color: "oklch(0.72 0.2 145)" },
+                children: "Reward collected!"
+              }
+            )
+          ] }),
+          !isComplete && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-center text-[10px] text-muted-foreground", children: [
+            (challenge.target - progress2).toLocaleString(),
+            " more to complete"
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+function WeeklyChallengeCard({
+  challenge,
+  onClaim
+}) {
+  const [showSparks, setShowSparks] = reactExports.useState(false);
+  const meta = WEEKLY_META[challenge.id] ?? WEEKLY_FALLBACK;
+  const diff = DIFFICULTY_CONFIG[meta.difficulty];
+  const pct = Math.min(
+    100,
+    Math.round(challenge.current / Math.max(challenge.target, 1) * 100)
+  );
+  const isComplete = challenge.completed;
+  const isClaimed = challenge.rewardClaimed;
+  const handleClaim = () => {
+    if (!isComplete || isClaimed) return;
+    setShowSparks(true);
+    onClaim(challenge.id);
+    setTimeout(() => setShowSparks(false), 800);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      layout: true,
+      className: "relative rounded-2xl overflow-hidden",
+      style: {
+        background: isClaimed ? "oklch(0.13 0.025 145 / 0.6)" : isComplete ? "oklch(0.13 0.025 60 / 0.7)" : "oklch(0.13 0.018 280 / 0.95)",
+        border: `1px solid ${isClaimed ? "oklch(0.55 0.2 145 / 0.5)" : isComplete ? "oklch(0.68 0.22 60 / 0.6)" : meta.borderColor}`,
+        boxShadow: isComplete && !isClaimed ? "0 0 20px oklch(0.68 0.22 60 / 0.2)" : void 0
+      },
+      whileHover: { scale: 1.01 },
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+      children: [
+        showSparks && /* @__PURE__ */ jsxRuntimeExports.jsx(SparkleBlast, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "w-11 h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0",
+                style: { background: meta.gradient },
+                children: isClaimed ? "✅" : meta.emoji
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 flex-wrap", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground leading-tight", children: challenge.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "span",
+                  {
+                    className: "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold",
+                    style: {
+                      background: diff.badgeBg,
+                      color: diff.accentColor,
+                      border: `1px solid ${diff.borderColor}`
+                    },
+                    children: [
+                      diff.icon,
+                      diff.label
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5 leading-relaxed", children: challenge.description })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-muted-foreground", children: [
+                challenge.current.toLocaleString(),
+                " /",
+                " ",
+                challenge.target.toLocaleString()
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-[11px] font-bold",
+                  style: { color: meta.accentColor },
+                  children: [
+                    pct,
+                    "%"
+                  ]
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "h-2.5 rounded-full overflow-hidden",
+                style: { background: "oklch(0.18 0.02 280 / 0.7)" },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  motion.div,
+                  {
+                    initial: { width: 0 },
+                    animate: { width: `${pct}%` },
+                    transition: { duration: 0.9, ease: "easeOut" },
+                    className: "h-full rounded-full relative",
+                    style: { background: meta.gradient },
+                    children: pct === 100 && !isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      motion.div,
+                      {
+                        className: "absolute inset-0 rounded-full",
+                        animate: { opacity: [0.4, 0.9, 0.4] },
+                        transition: {
+                          duration: 1.2,
+                          repeat: Number.POSITIVE_INFINITY
+                        },
+                        style: { background: "oklch(1 0 0 / 0.25)" }
+                      }
+                    )
+                  }
+                )
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "flex items-center gap-2 rounded-xl px-3 py-2 mb-3",
+              style: {
+                background: "oklch(0.18 0.04 80 / 0.2)",
+                border: "1px solid oklch(0.45 0.1 80 / 0.2)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Gift,
+                  {
+                    className: "w-3.5 h-3.5 flex-shrink-0",
+                    style: { color: "oklch(0.78 0.2 80)" }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "oklch(0.78 0.15 80)" }, children: challenge.reward })
+              ]
+            }
+          ),
+          !isClaimed && isComplete && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.button,
+            {
+              type: "button",
+              onClick: handleClaim,
+              className: "w-full py-2.5 rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 cursor-pointer",
+              style: { background: meta.gradient },
+              whileTap: { scale: 0.95 },
+              animate: {
+                boxShadow: [
+                  "0 0 0px transparent",
+                  `0 0 16px ${meta.accentColor.replace(")", " / 0.6)")}`
+                ]
+              },
+              transition: {
+                duration: 1.2,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse"
+              },
+              "data-ocid": `challenges.weekly.${challenge.id}.claim_button`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Gift, { className: "w-4 h-4" }),
+                " Claim Reward"
+              ]
+            }
+          ),
+          isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-2 py-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CircleCheck,
+              {
+                className: "w-4 h-4",
+                style: { color: "oklch(0.72 0.2 145)" }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "text-xs font-semibold",
+                style: { color: "oklch(0.72 0.2 145)" },
+                children: "Reward collected!"
+              }
+            )
+          ] }),
+          !isComplete && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-center text-[10px] text-muted-foreground", children: [
+            (challenge.target - challenge.current).toLocaleString(),
+            " more to go"
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+function DailyResetTimer() {
+  const [timeLeft, setTimeLeft] = reactExports.useState("");
+  reactExports.useEffect(() => {
+    const tick = () => {
+      const now2 = /* @__PURE__ */ new Date();
+      const tomorrow = new Date(now2);
+      tomorrow.setHours(24, 0, 0, 0);
+      const diff = tomorrow.getTime() - now2.getTime();
+      const h2 = Math.floor(diff / 36e5);
+      const m2 = Math.floor(diff % 36e5 / 6e4);
+      const s2 = Math.floor(diff % 6e4 / 1e3);
+      setTimeLeft(`${h2}h ${m2}m ${s2}s`);
+    };
+    tick();
+    const id2 = setInterval(tick, 1e3);
+    return () => clearInterval(id2);
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "span",
+    {
+      className: "text-[10px] font-mono",
+      style: { color: "oklch(0.72 0.18 60)" },
+      children: [
+        "Resets in ",
+        timeLeft
+      ]
+    }
+  );
+}
+const DAILY_STATE_KEY = "mindforge-daily-challenge-state";
+function loadDailyState() {
+  try {
+    const raw = localStorage.getItem(DAILY_STATE_KEY);
+    if (raw)
+      return JSON.parse(raw);
+  } catch (_) {
+  }
+  return null;
+}
+function saveDailyState(date2, states) {
+  localStorage.setItem(DAILY_STATE_KEY, JSON.stringify({ date: date2, states }));
+}
+function ChallengesPage() {
+  const {
+    navigate,
+    weeklyChallenges,
+    claimChallengeReward,
+    profile,
+    posts,
+    loginStreak,
+    creatorCoins,
+    setCreatorCoins,
+    setProfile,
+    addNotification,
+    triggerSave
+  } = useApp();
+  const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  const [dailyStates, setDailyStates] = reactExports.useState(() => {
+    const saved = loadDailyState();
+    if (saved && saved.date === today) return saved.states;
+    return DAILY_CHALLENGES.map((c2) => ({
+      id: c2.id,
+      claimed: false,
+      claimedAt: null
+    }));
+  });
+  reactExports.useEffect(() => {
+    saveDailyState(today, dailyStates);
+  }, [dailyStates, today]);
+  const userPosts = posts.filter((p2) => p2.authorUsername === profile.username);
+  const totalViews = userPosts.reduce((sum, p2) => sum + p2.views, 0);
+  const progressState = {
+    followers: profile.followers,
+    postCount: userPosts.length,
+    totalViews,
+    loginStreak,
+    coins: creatorCoins
+  };
+  const [rewardPopup, setRewardPopup] = reactExports.useState(null);
+  const handleClaimDaily = reactExports.useCallback(
+    (challengeId) => {
+      const challenge = DAILY_CHALLENGES.find((c2) => c2.id === challengeId);
+      if (!challenge) return;
+      const state = dailyStates.find((s2) => s2.id === challengeId);
+      if (!state || state.claimed) return;
+      setDailyStates(
+        (prev) => prev.map(
+          (s2) => s2.id === challengeId ? { ...s2, claimed: true, claimedAt: Date.now() } : s2
+        )
+      );
+      setCreatorCoins((c2) => c2 + challenge.rewardCoins);
+      setProfile((p2) => ({
+        ...p2,
+        followers: p2.followers + challenge.rewardFollowers,
+        xp: p2.xp + challenge.rewardXP
+      }));
+      addNotification({
+        icon: "🎁",
+        message: `Daily challenge "${challenge.title}" completed! ${challenge.rewardLabel}`,
+        type: "challenge"
+      });
+      ue.success(`🎯 ${challenge.title} complete! ${challenge.rewardLabel}`);
+      setRewardPopup({
+        label: challenge.rewardLabel,
+        coins: challenge.rewardCoins,
+        followers: challenge.rewardFollowers,
+        xp: challenge.rewardXP
+      });
+      triggerSave();
+    },
+    [dailyStates, setCreatorCoins, setProfile, addNotification, triggerSave]
+  );
+  const handleClaimWeekly = reactExports.useCallback(
+    (challengeId) => {
+      const challenge = weeklyChallenges.find((c2) => c2.id === challengeId);
+      if (!challenge || !challenge.completed || challenge.rewardClaimed) return;
+      claimChallengeReward(challengeId);
+      ue.success(`🏆 Weekly challenge "${challenge.title}" reward claimed!`);
+      setRewardPopup({
+        label: challenge.reward,
+        coins: 200,
+        followers: 500,
+        xp: 500
+      });
+    },
+    [weeklyChallenges, claimChallengeReward]
+  );
+  const dailyClaimed = dailyStates.filter((s2) => s2.claimed).length;
+  const weeklyClaimed = weeklyChallenges.filter((c2) => c2.rewardClaimed).length;
+  const weeklyReady = weeklyChallenges.filter(
+    (c2) => c2.completed && !c2.rewardClaimed
+  ).length;
+  const dailyReady = dailyStates.filter((s2, i) => {
+    const ch = DAILY_CHALLENGES[i];
+    if (!ch) return false;
+    return progressState && ch.getProgress(progressState) >= ch.target && !s2.claimed;
+  }).length;
+  const notifRef = reactExports.useRef(false);
+  reactExports.useEffect(() => {
+    if (notifRef.current) return;
+    notifRef.current = true;
+    DAILY_CHALLENGES.forEach((ch, i) => {
+      const state = dailyStates[i];
+      if (!state || state.claimed) return;
+      const prog = ch.getProgress(progressState);
+      if (prog >= ch.target) {
+        addNotification({
+          icon: "🎯",
+          message: `Challenge ready to claim: "${ch.title}" — tap Challenges to collect your reward!`,
+          type: "challenge"
+        });
+      }
+    });
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.97)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.5)",
+              backdropFilter: "blur(24px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  "data-ocid": "challenges.back.button",
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground leading-tight", children: "⚡ Challenges" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Complete goals · earn rewards · grow faster" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold flex-shrink-0",
+                  style: {
+                    background: "oklch(0.18 0.04 295 / 0.3)",
+                    border: "1px solid oklch(0.55 0.2 295 / 0.4)",
+                    color: "oklch(0.72 0.2 295)"
+                  },
+                  "data-ocid": "challenges.progress.panel",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Target, { className: "w-3.5 h-3.5" }),
+                    dailyClaimed + weeklyClaimed,
+                    " done"
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-4 max-w-3xl mx-auto space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: -10 },
+              animate: { opacity: 1, y: 0 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "rounded-2xl p-4 flex items-center gap-4",
+                  style: {
+                    background: "linear-gradient(135deg, oklch(0.55 0.22 295 / 0.18), oklch(0.55 0.2 260 / 0.1))",
+                    border: "1px solid oklch(0.55 0.22 295 / 0.3)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-14 h-14 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0",
+                        style: { background: "oklch(0.55 0.22 295 / 0.25)" },
+                        children: "🎯"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-bold text-foreground", children: [
+                        profile.name,
+                        "'s Challenge Board"
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: dailyReady + weeklyReady > 0 ? `🎁 ${dailyReady + weeklyReady} reward${dailyReady + weeklyReady > 1 ? "s" : ""} ready to claim!` : "Keep creating to unlock rewards" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right flex-shrink-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "p",
+                        {
+                          className: "text-lg font-bold",
+                          style: { color: "oklch(0.78 0.2 60)" },
+                          children: dailyClaimed + weeklyClaimed
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "completed" })
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "data-ocid": "challenges.daily.section", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "w-7 h-7 rounded-lg flex items-center justify-center",
+                    style: {
+                      background: "linear-gradient(135deg, oklch(0.68 0.22 60), oklch(0.6 0.2 40))"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Flame, { className: "w-4 h-4 text-white" })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold text-foreground", children: "Daily Challenges" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(DailyResetTimer, {})
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Badge,
+                {
+                  variant: "secondary",
+                  className: "text-[10px] font-semibold",
+                  style: {
+                    background: "oklch(0.18 0.04 60 / 0.4)",
+                    color: "oklch(0.78 0.2 60)",
+                    border: "1px solid oklch(0.55 0.2 60 / 0.4)"
+                  },
+                  children: [
+                    dailyClaimed,
+                    "/",
+                    DAILY_CHALLENGES.length,
+                    " done"
+                  ]
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: DAILY_CHALLENGES.map((challenge, i) => {
+              const state = dailyStates.find((s2) => s2.id === challenge.id) ?? {
+                id: challenge.id,
+                claimed: false,
+                claimedAt: null
+              };
+              const progress2 = challenge.getProgress(progressState);
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 16 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { delay: i * 0.08 },
+                  "data-ocid": `challenges.daily.item.${i + 1}`,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    DailyChallengeCard,
+                    {
+                      challenge,
+                      progress: progress2,
+                      state,
+                      onClaim: handleClaimDaily
+                    }
+                  )
+                },
+                challenge.id
+              );
+            }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "data-ocid": "challenges.weekly.section", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "w-7 h-7 rounded-lg flex items-center justify-center",
+                    style: {
+                      background: "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.5 0.2 230))"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trophy, { className: "w-4 h-4 text-white" })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold text-foreground", children: "Weekly Challenges" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground", children: "Resets every 7 days" })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Badge,
+                {
+                  variant: "secondary",
+                  className: "text-[10px] font-semibold",
+                  style: {
+                    background: "oklch(0.18 0.04 260 / 0.4)",
+                    color: "oklch(0.72 0.2 260)",
+                    border: "1px solid oklch(0.55 0.2 260 / 0.4)"
+                  },
+                  children: [
+                    weeklyClaimed,
+                    "/",
+                    weeklyChallenges.length,
+                    " done"
+                  ]
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: weeklyChallenges.map((challenge, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                initial: { opacity: 0, y: 16 },
+                animate: { opacity: 1, y: 0 },
+                transition: { delay: 0.3 + i * 0.08 },
+                "data-ocid": `challenges.weekly.item.${i + 1}`,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  WeeklyChallengeCard,
+                  {
+                    challenge,
+                    onClaim: handleClaimWeekly
+                  }
+                )
+              },
+              challenge.id
+            )) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { delay: 0.6 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "rounded-2xl p-4",
+                  style: {
+                    background: "oklch(0.12 0.018 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Sparkles,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.72 0.2 295)" }
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "h3",
+                        {
+                          className: "text-xs font-semibold",
+                          style: { color: "oklch(0.72 0.2 295)" },
+                          children: "Pro Tips to Complete Challenges Faster"
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-1.5", children: [
+                      {
+                        tip: "Post consistently every 12 hours to grow followers faster",
+                        icon: "⏰"
+                      },
+                      {
+                        tip: "Use trending hashtags to boost Explore visibility and views",
+                        icon: "#️⃣"
+                      },
+                      {
+                        tip: "Upgrade Content Quality skill for higher reach per post",
+                        icon: "🚀"
+                      },
+                      {
+                        tip: "Join Creator Houses to unlock collab opportunities and coin bonuses",
+                        icon: "🏠"
+                      }
+                    ].map(({ tip, icon }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "li",
+                      {
+                        className: "text-xs text-muted-foreground flex gap-2 items-start",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-shrink-0", children: icon }),
+                          tip
+                        ]
+                      },
+                      tip
+                    )) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: () => navigate("hub"),
+                        className: "mt-3 w-full flex items-center justify-center gap-2 py-2 rounded-xl text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors",
+                        style: { border: "1px solid oklch(0.25 0.025 280 / 0.5)" },
+                        "data-ocid": "challenges.back_to_hub.button",
+                        children: [
+                          "Back to Creator Hub ",
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-3.5 h-3.5" })
+                        ]
+                      }
+                    )
+                  ]
+                }
+              )
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: rewardPopup && /* @__PURE__ */ jsxRuntimeExports.jsx(RewardPopup, { data: rewardPopup, onDone: () => setRewardPopup(null) }) })
+      ]
+    }
+  );
+}
+function ContentVault() {
+  const {
+    navigate,
+    posts,
+    savedPosts,
+    creatorCoins,
+    setCreatorCoins,
+    addNotification
+  } = useApp();
+  const [boostedIds, setBoostedIds] = reactExports.useState(/* @__PURE__ */ new Set());
+  const [_boostTimers, setBoostTimers] = reactExports.useState({});
+  const vaultPosts = posts.filter((p2) => savedPosts.has(p2.id) || p2.savedByUser).sort((a2, b2) => b2.engagementScore - a2.engagementScore);
+  const totalSaves = vaultPosts.length;
+  const avgEngagement = vaultPosts.length ? Math.round(
+    vaultPosts.reduce(
+      (s2, p2) => s2 + (p2.likes + p2.shares * 3 + p2.saves * 2) / Math.max(p2.views, 1) * 100,
+      0
+    ) / vaultPosts.length
+  ) : 0;
+  function handleBoost(postId) {
+    if (creatorCoins < 200) {
+      ue.error("Not enough coins! You need 200 coins to boost.");
+      return;
+    }
+    if (boostedIds.has(postId)) {
+      ue.info("This post is already boosted!");
+      return;
+    }
+    setCreatorCoins((c2) => c2 - 200);
+    setBoostedIds((prev) => /* @__PURE__ */ new Set([...prev, postId]));
+    const expiresAt = Date.now() + 36e5;
+    setBoostTimers((prev) => ({ ...prev, [postId]: expiresAt }));
+    addNotification({
+      icon: "🚀",
+      message: "Content Vault boost active! Post engagement doubled for 1 hour.",
+      type: "boost"
+    });
+    ue.success("🚀 Boost activated! Engagement doubled for 1 hour.");
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  "data-ocid": "content-vault.back.button",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground", children: "Content Vault" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Your top saved posts" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
+                  style: {
+                    background: "oklch(0.18 0.04 80 / 0.3)",
+                    border: "1px solid oklch(0.6 0.2 80 / 0.4)",
+                    color: "oklch(0.8 0.18 80)"
+                  },
+                  children: [
+                    "🪙 ",
+                    creatorCoins.toLocaleString()
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-5 space-y-5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", children: [
+            {
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Bookmark, { className: "w-4 h-4" }),
+              label: "Saved Posts",
+              value: totalSaves,
+              color: "oklch(0.72 0.2 260)"
+            },
+            {
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-4 h-4" }),
+              label: "Avg Engagement",
+              value: `${avgEngagement}%`,
+              color: "oklch(0.72 0.2 145)"
+            }
+          ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-4",
+              style: {
+                background: "oklch(0.13 0.016 280 / 0.95)",
+                border: "1px solid oklch(0.22 0.025 280 / 0.5)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-2 mb-1",
+                    style: { color: stat.color },
+                    children: [
+                      stat.icon,
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: stat.label })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl font-bold text-foreground", children: stat.value })
+              ]
+            },
+            stat.label
+          )) }),
+          vaultPosts.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-10 text-center",
+              style: {
+                background: "oklch(0.13 0.016 280 / 0.95)",
+                border: "1px solid oklch(0.22 0.025 280 / 0.5)"
+              },
+              "data-ocid": "content-vault.empty_state",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-4xl mb-3", children: "🔒" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base font-semibold text-foreground mb-1", children: "Vault is empty" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Save posts from your feed to add them to your vault." })
+              ]
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", children: vaultPosts.map((post, idx) => {
+            const isBoosted = boostedIds.has(post.id);
+            const engRate = post.views > 0 ? ((post.likes + post.shares + post.saves) / post.views * 100).toFixed(1) : "0.0";
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                "data-ocid": `content-vault.item.${idx + 1}`,
+                className: "rounded-2xl p-4 flex gap-3",
+                style: {
+                  background: isBoosted ? "oklch(0.14 0.03 145 / 0.5)" : "oklch(0.13 0.016 280 / 0.95)",
+                  border: `1px solid ${isBoosted ? "oklch(0.45 0.15 145 / 0.4)" : "oklch(0.22 0.025 280 / 0.5)"}`
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "img",
+                    {
+                      src: post.imageUrl,
+                      alt: "",
+                      className: "w-16 h-16 rounded-xl object-cover flex-shrink-0"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground line-clamp-2 leading-snug mb-1", children: post.caption }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 text-xs text-muted-foreground", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                        "❤️ ",
+                        post.likes.toLocaleString()
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                        "👁️ ",
+                        post.views.toLocaleString()
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { color: "oklch(0.72 0.2 145)" }, children: [
+                        engRate,
+                        "% eng"
+                      ] })
+                    ] }),
+                    isBoosted && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "mt-1.5 text-xs font-semibold",
+                        style: { color: "oklch(0.72 0.22 145)" },
+                        children: "🚀 Boosted — 2x engagement active"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    Button,
+                    {
+                      size: "sm",
+                      onClick: () => handleBoost(post.id),
+                      disabled: isBoosted || creatorCoins < 200,
+                      className: "flex-shrink-0 self-center text-xs h-8 gap-1",
+                      style: isBoosted ? {
+                        background: "oklch(0.28 0.05 145)",
+                        color: "oklch(0.72 0.22 145)"
+                      } : {
+                        background: "linear-gradient(135deg, oklch(0.55 0.24 280), oklch(0.5 0.28 300))",
+                        color: "white"
+                      },
+                      "data-ocid": `content-vault.boost.button.${idx + 1}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(Rocket, { className: "w-3 h-3" }),
+                        isBoosted ? "Live" : "Boost"
+                      ]
+                    }
+                  )
+                ]
+              },
+              post.id
+            );
+          }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-center text-xs text-muted-foreground", children: "Boost costs 200 coins · doubles engagement for 1 hour" })
+        ] })
+      ]
+    }
+  );
+}
 const REST_COOLDOWN_MS = 60 * 60 * 1e3;
 function getEnergyConfig(level) {
   if (level >= 90)
@@ -63326,11 +66893,11 @@ var SideCar$1 = function(_a2) {
   if (!sideCar) {
     throw new Error("Sidecar: please provide `sideCar` property to import the right car");
   }
-  var Target = sideCar.read();
-  if (!Target) {
+  var Target2 = sideCar.read();
+  if (!Target2) {
     throw new Error("Sidecar medium not found");
   }
-  return reactExports.createElement(Target, __assign({}, rest));
+  return reactExports.createElement(Target2, __assign({}, rest));
 };
 SideCar$1.isSideCarExport = true;
 function exportSidecar(medium, exported) {
@@ -64214,7 +67781,7 @@ var DescriptionWarning = ({ contentRef, descriptionId }) => {
   }, [MESSAGE, contentRef, descriptionId]);
   return null;
 };
-var Root$3 = Dialog$1;
+var Root$4 = Dialog$1;
 var Portal$1 = DialogPortal$1;
 var Overlay = DialogOverlay$1;
 var Content$2 = DialogContent$1;
@@ -64224,7 +67791,7 @@ var Close = DialogClose;
 function Dialog({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$3, { "data-slot": "dialog", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$4, { "data-slot": "dialog", ...props });
 }
 function DialogPortal({
   ...props
@@ -64365,13 +67932,13 @@ var Label$1 = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 Label$1.displayName = NAME$2;
-var Root$2 = Label$1;
+var Root$3 = Label$1;
 function Label({
   className,
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root$2,
+    Root$3,
     {
       "data-slot": "label",
       className: cn(
@@ -66376,7 +69943,7 @@ var Arrow$1 = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 Arrow$1.displayName = NAME$1;
-var Root$1 = Arrow$1;
+var Root$2 = Arrow$1;
 function useSize(element) {
   const [size2, setSize] = reactExports.useState(void 0);
   useLayoutEffect2(() => {
@@ -66623,7 +70190,7 @@ var PopperArrow = reactExports.forwardRef(function PopperArrow2(props, forwarded
           visibility: contentContext.shouldHideArrow ? "hidden" : void 0
         },
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Root$1,
+          Root$2,
           {
             ...arrowProps,
             ref: forwardedRef,
@@ -66722,9 +70289,9 @@ VisuallyHidden.displayName = NAME;
 var OPEN_KEYS = [" ", "Enter", "ArrowUp", "ArrowDown"];
 var SELECTION_KEYS = [" ", "Enter"];
 var SELECT_NAME = "Select";
-var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(SELECT_NAME);
+var [Collection$2, useCollection$2, createCollectionScope$2] = createCollection(SELECT_NAME);
 var [createSelectContext] = createContextScope(SELECT_NAME, [
-  createCollectionScope$1,
+  createCollectionScope$2,
   createPopperScope
 ]);
 var usePopperScope = createPopperScope();
@@ -66788,7 +70355,7 @@ var Select$1 = (props) => {
       triggerPointerDownPosRef,
       disabled,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           SelectNativeOptionsProvider,
           {
             scope: props.__scopeSelect,
@@ -66837,7 +70404,7 @@ var SelectTrigger$1 = reactExports.forwardRef(
     const context = useSelectContext(TRIGGER_NAME$1, __scopeSelect);
     const isDisabled = context.disabled || disabled;
     const composedRefs = useComposedRefs$1(forwardedRef, context.onTriggerChange);
-    const getItems = useCollection$1(__scopeSelect);
+    const getItems = useCollection$2(__scopeSelect);
     const pointerTypeRef = reactExports.useRef("touch");
     const [searchRef, handleTypeaheadSearch, resetTypeahead] = useTypeaheadSearch((search) => {
       const enabledItems = getItems().filter((item) => !item.disabled);
@@ -66954,7 +70521,7 @@ var SelectContent$1 = reactExports.forwardRef(
     if (!context.open) {
       const frag = fragment;
       return frag ? reactDomExports.createPortal(
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: props.children }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: props.children }) }) }),
         frag
       ) : null;
     }
@@ -66997,7 +70564,7 @@ var SelectContentImpl = reactExports.forwardRef(
     const [selectedItemText, setSelectedItemText] = reactExports.useState(
       null
     );
-    const getItems = useCollection$1(__scopeSelect);
+    const getItems = useCollection$2(__scopeSelect);
     const [isPositioned, setIsPositioned] = reactExports.useState(false);
     const firstValidItemFoundRef = reactExports.useRef(false);
     reactExports.useEffect(() => {
@@ -67209,7 +70776,7 @@ var SelectItemAlignedPosition = reactExports.forwardRef((props, forwardedRef) =>
   const [contentWrapper, setContentWrapper] = reactExports.useState(null);
   const [content, setContent] = reactExports.useState(null);
   const composedRefs = useComposedRefs$1(forwardedRef, (node) => setContent(node));
-  const getItems = useCollection$1(__scopeSelect);
+  const getItems = useCollection$2(__scopeSelect);
   const shouldExpandOnScrollRef = reactExports.useRef(false);
   const shouldRepositionRef = reactExports.useRef(true);
   const { viewport, selectedItem, selectedItemText, focusSelectedItem } = contentContext;
@@ -67418,7 +70985,7 @@ var SelectViewport = reactExports.forwardRef(
           nonce
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         Primitive.div,
         {
           "data-radix-select-viewport": "",
@@ -67535,7 +71102,7 @@ var SelectItem$1 = reactExports.forwardRef(
           setTextValue((prevTextValue) => prevTextValue || ((node == null ? void 0 : node.textContent) ?? "").trim());
         }, []),
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Collection$1.ItemSlot,
+          Collection$2.ItemSlot,
           {
             scope: __scopeSelect,
             value,
@@ -67711,7 +71278,7 @@ var SelectScrollButtonImpl = reactExports.forwardRef((props, forwardedRef) => {
   const { __scopeSelect, onAutoScroll, ...scrollIndicatorProps } = props;
   const contentContext = useSelectContentContext("SelectScrollButton", __scopeSelect);
   const autoScrollTimerRef = reactExports.useRef(null);
-  const getItems = useCollection$1(__scopeSelect);
+  const getItems = useCollection$2(__scopeSelect);
   const clearAutoScrollTimer = reactExports.useCallback(() => {
     if (autoScrollTimerRef.current !== null) {
       window.clearInterval(autoScrollTimerRef.current);
@@ -67770,7 +71337,7 @@ var SelectArrow = reactExports.forwardRef(
   }
 );
 SelectArrow.displayName = ARROW_NAME;
-var BUBBLE_INPUT_NAME = "SelectBubbleInput";
+var BUBBLE_INPUT_NAME$1 = "SelectBubbleInput";
 var SelectBubbleInput = reactExports.forwardRef(
   ({ __scopeSelect, value, ...props }, forwardedRef) => {
     const ref = reactExports.useRef(null);
@@ -67802,7 +71369,7 @@ var SelectBubbleInput = reactExports.forwardRef(
     );
   }
 );
-SelectBubbleInput.displayName = BUBBLE_INPUT_NAME;
+SelectBubbleInput.displayName = BUBBLE_INPUT_NAME$1;
 function shouldShowPlaceholder(value) {
   return value === "" || value === void 0;
 }
@@ -67983,15 +71550,15 @@ function SelectScrollDownButton({
 var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
 var EVENT_OPTIONS = { bubbles: false, cancelable: true };
 var GROUP_NAME = "RovingFocusGroup";
-var [Collection, useCollection, createCollectionScope] = createCollection(GROUP_NAME);
+var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(GROUP_NAME);
 var [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContextScope(
   GROUP_NAME,
-  [createCollectionScope]
+  [createCollectionScope$1]
 );
 var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME);
 var RovingFocusGroup = reactExports.forwardRef(
   (props, forwardedRef) => {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
   }
 );
 RovingFocusGroup.displayName = GROUP_NAME;
@@ -68019,7 +71586,7 @@ var RovingFocusGroupImpl = reactExports.forwardRef((props, forwardedRef) => {
   });
   const [isTabbingBackOut, setIsTabbingBackOut] = reactExports.useState(false);
   const handleEntryFocus = useCallbackRef$1(onEntryFocus);
-  const getItems = useCollection(__scopeRovingFocusGroup);
+  const getItems = useCollection$1(__scopeRovingFocusGroup);
   const isClickFocusRef = reactExports.useRef(false);
   const [focusableItemsCount, setFocusableItemsCount] = reactExports.useState(0);
   reactExports.useEffect(() => {
@@ -68100,7 +71667,7 @@ var RovingFocusGroupItem = reactExports.forwardRef(
     const id2 = tabStopId || autoId;
     const context = useRovingFocusContext(ITEM_NAME, __scopeRovingFocusGroup);
     const isCurrentTabStop = context.currentTabStopId === id2;
-    const getItems = useCollection(__scopeRovingFocusGroup);
+    const getItems = useCollection$1(__scopeRovingFocusGroup);
     const { onFocusableItemAdd, onFocusableItemRemove, currentTabStopId } = context;
     reactExports.useEffect(() => {
       if (focusable) {
@@ -68109,7 +71676,7 @@ var RovingFocusGroupItem = reactExports.forwardRef(
       }
     }, [focusable, onFocusableItemAdd, onFocusableItemRemove]);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Collection.ItemSlot,
+      Collection$1.ItemSlot,
       {
         scope: __scopeRovingFocusGroup,
         id: id2,
@@ -68187,7 +71754,7 @@ function focusFirst(candidates, preventScroll = false) {
 function wrapArray(array2, startIndex) {
   return array2.map((_, index2) => array2[(startIndex + index2) % array2.length]);
 }
-var Root = RovingFocusGroup;
+var Root$1 = RovingFocusGroup;
 var Item = RovingFocusGroupItem;
 var TABS_NAME = "Tabs";
 var [createTabsContext] = createContextScope(TABS_NAME, [
@@ -68245,7 +71812,7 @@ var TabsList$1 = reactExports.forwardRef(
     const context = useTabsContext(TAB_LIST_NAME, __scopeTabs);
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeTabs);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Root,
+      Root$1,
       {
         asChild: true,
         ...rovingFocusGroupScope,
@@ -69202,6 +72769,41 @@ const HUB_FEATURES = [
     label: "Algorithm Hacks",
     description: "Leaked intel & reach multipliers",
     page: "algo-hack"
+  },
+  {
+    id: "content-vault",
+    emoji: "🔒",
+    label: "Content Vault",
+    description: "Boost your top saved posts",
+    page: "content-vault"
+  },
+  {
+    id: "trend-radar",
+    emoji: "📍",
+    label: "Trend Radar",
+    description: "Ride trends for bonus reach",
+    page: "trend-radar"
+  },
+  {
+    id: "fan-mail",
+    emoji: "💌",
+    label: "Fan Mail Center",
+    description: "Reply fans to earn coins",
+    page: "fan-mail"
+  },
+  {
+    id: "challenges-board",
+    emoji: "📊",
+    label: "Daily Challenges",
+    description: "Complete goals for coin rewards",
+    page: "challenges-board"
+  },
+  {
+    id: "monetization-booster",
+    emoji: "💸",
+    label: "Ad Campaigns",
+    description: "Run campaigns for passive coins",
+    page: "monetization-booster"
   }
 ];
 const GRADIENT_MAP = {
@@ -69224,12 +72826,18 @@ const GRADIENT_MAP = {
   "black-market": "linear-gradient(135deg, oklch(0.3 0.05 280), oklch(0.25 0.04 260))",
   "fan-army-wars": "linear-gradient(135deg, oklch(0.6 0.22 25), oklch(0.55 0.2 350))",
   "trend-battles": "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.6 0.2 295))",
-  "algo-hack": "linear-gradient(135deg, oklch(0.5 0.22 295), oklch(0.55 0.25 260))"
+  "algo-hack": "linear-gradient(135deg, oklch(0.5 0.22 295), oklch(0.55 0.25 260))",
+  "content-vault": "linear-gradient(135deg, oklch(0.5 0.18 220), oklch(0.55 0.2 240))",
+  "trend-radar": "linear-gradient(135deg, oklch(0.6 0.2 25), oklch(0.65 0.18 45))",
+  "fan-mail": "linear-gradient(135deg, oklch(0.58 0.22 320), oklch(0.55 0.2 295))",
+  "challenges-board": "linear-gradient(135deg, oklch(0.55 0.2 200), oklch(0.6 0.18 145))",
+  "monetization-booster": "linear-gradient(135deg, oklch(0.62 0.22 145), oklch(0.58 0.18 80))"
 };
 function CreatorHub() {
   const {
     navigate,
     creatorCoins,
+    setCreatorCoins,
     lastSaved,
     isSaving,
     triggerSave,
@@ -69238,6 +72846,66 @@ function CreatorHub() {
     postingStreak
   } = useApp();
   const [newGameOpen, setNewGameOpen] = reactExports.useState(false);
+  const SPIN_LS_KEY = "mindforge-daily-spin";
+  const [spinResult, setSpinResult] = reactExports.useState(null);
+  const [spinning, setSpinning] = reactExports.useState(false);
+  const [spinCooldown, setSpinCooldown] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(SPIN_LS_KEY);
+      if (raw) {
+        const d2 = JSON.parse(raw);
+        const next = d2.lastSpin + 24 * 36e5;
+        return next > Date.now() ? next : null;
+      }
+    } catch (_) {
+    }
+    return null;
+  });
+  const [spinTimeLeft, setSpinTimeLeft] = reactExports.useState("");
+  reactExports.useEffect(() => {
+    if (!spinCooldown) {
+      setSpinTimeLeft("");
+      return;
+    }
+    const id2 = setInterval(() => {
+      const diff = Math.max(0, spinCooldown - Date.now());
+      if (diff === 0) {
+        setSpinCooldown(null);
+        setSpinTimeLeft("");
+        clearInterval(id2);
+        return;
+      }
+      const hrs = Math.floor(diff / 36e5);
+      const mins = Math.floor(diff % 36e5 / 6e4);
+      setSpinTimeLeft(`${hrs}h ${mins}m`);
+    }, 5e3);
+    return () => clearInterval(id2);
+  }, [spinCooldown]);
+  function handleSpin() {
+    if (spinCooldown) return;
+    setSpinning(true);
+    setSpinResult(null);
+    setTimeout(() => {
+      const roll = Math.random();
+      let coins;
+      if (roll < 0.6) {
+        coins = Math.floor(50 + Math.random() * 150);
+      } else if (roll < 0.85) {
+        coins = Math.floor(200 + Math.random() * 300);
+      } else {
+        coins = Math.floor(500 + Math.random() * 1500);
+      }
+      setCreatorCoins((c2) => c2 + coins);
+      setSpinResult(coins);
+      setSpinning(false);
+      const next = Date.now() + 24 * 36e5;
+      setSpinCooldown(next);
+      localStorage.setItem(
+        SPIN_LS_KEY,
+        JSON.stringify({ lastSpin: Date.now() })
+      );
+    }, 1200);
+  }
   function timeAgo2(ts) {
     if (!ts) return "Never";
     const diff = Math.floor((Date.now() - ts) / 1e3);
@@ -69282,22 +72950,67 @@ function CreatorHub() {
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Your control center" })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
-                  style: {
-                    background: "linear-gradient(135deg, oklch(0.55 0.18 80 / 0.25), oklch(0.5 0.15 70 / 0.15))",
-                    border: "1px solid oklch(0.6 0.2 80 / 0.4)",
-                    color: "oklch(0.8 0.18 80)"
-                  },
-                  "data-ocid": "hub.coins.panel",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Coins, { className: "w-4 h-4" }),
-                    creatorCoins.toLocaleString()
-                  ]
-                }
-              )
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
+                    style: {
+                      background: "linear-gradient(135deg, oklch(0.55 0.18 80 / 0.25), oklch(0.5 0.15 70 / 0.15))",
+                      border: "1px solid oklch(0.6 0.2 80 / 0.4)",
+                      color: "oklch(0.8 0.18 80)"
+                    },
+                    "data-ocid": "hub.coins.panel",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Coins, { className: "w-4 h-4" }),
+                      creatorCoins.toLocaleString()
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "hub.daily_spin.button",
+                    onClick: handleSpin,
+                    disabled: !!spinCooldown || spinning,
+                    title: spinCooldown ? `Next spin in ${spinTimeLeft}` : "Daily Spin — free coins!",
+                    className: "relative flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed",
+                    style: {
+                      background: spinCooldown ? "oklch(0.16 0.02 280 / 0.8)" : "linear-gradient(135deg, oklch(0.6 0.25 295), oklch(0.55 0.22 260))",
+                      border: spinCooldown ? "1px solid oklch(0.28 0.03 280 / 0.5)" : "1px solid oklch(0.7 0.22 295 / 0.5)",
+                      color: spinCooldown ? "oklch(0.5 0.04 280)" : "white",
+                      boxShadow: !spinCooldown ? "0 2px 12px oklch(0.55 0.22 295 / 0.4)" : "none"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                      spinning ? "Spinning..." : spinCooldown ? spinTimeLeft || "Cooldown" : "Spin!",
+                      !spinCooldown && !spinning && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse",
+                          style: { background: "oklch(0.72 0.22 80)" }
+                        }
+                      )
+                    ]
+                  }
+                ),
+                spinResult !== null && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "span",
+                  {
+                    className: "text-xs font-bold px-2 py-0.5 rounded-full animate-bounce",
+                    style: {
+                      background: "oklch(0.55 0.22 80 / 0.3)",
+                      color: "oklch(0.82 0.2 80)",
+                      border: "1px solid oklch(0.6 0.2 80 / 0.4)"
+                    },
+                    children: [
+                      "+",
+                      spinResult.toLocaleString()
+                    ]
+                  }
+                )
+              ] })
             ]
           }
         ),
@@ -69550,6 +73263,1345 @@ function CreatorHub() {
             ]
           }
         ) })
+      ]
+    }
+  );
+}
+const CAPTION_TEMPLATES = {
+  Tech: [
+    "Just discovered this game-changing {kw} tool 🤯 Drop a 💬 if you want the full breakdown!",
+    "Everyone sleeping on {kw} right now — here's why it's about to blow up 🚀",
+    "The {kw} tip that saved me 3 hours this week ⚡ #tech #productivity"
+  ],
+  Fitness: [
+    "Your {kw} form is the only thing standing between you and results 💪",
+    "3 {kw} moves that hit different — full reel coming tomorrow 🔥 #fitness",
+    "Consistency > perfection with {kw}. Trust the process 🏆"
+  ],
+  Comedy: [
+    "POV: You tried {kw} for the first time 😭💀",
+    "Nobody prepared me for how relatable {kw} would be 😂",
+    "Explaining {kw} to your parents vs your friends 🤣 #relatable"
+  ],
+  Finance: [
+    "The {kw} strategy nobody is talking about (but should be) 💰",
+    "Broke at 20 → built wealth with {kw} by 25. Here's how 📈",
+    "{kw} changed how I think about money — full breakdown incoming 🧠"
+  ],
+  default: [
+    "Dropping everything about {kw} this week — stay tuned 🔥",
+    "The {kw} content you didn't know you needed ✨",
+    "Be honest — did {kw} change your perspective? 👇"
+  ]
+};
+function generateCaptions(niche, keywords) {
+  const kw = keywords.trim() || "this";
+  const templates = CAPTION_TEMPLATES[niche] ?? CAPTION_TEMPLATES.default;
+  return templates.map((t2) => t2.replace(/\{kw\}/g, kw));
+}
+const HASHTAG_POOL = [
+  { tag: "#viral", reach: "50M+", competition: "High", trendingScore: 98 },
+  { tag: "#fyp", reach: "80M+", competition: "High", trendingScore: 97 },
+  { tag: "#creator", reach: "12M", competition: "Medium", trendingScore: 82 },
+  { tag: "#trending", reach: "30M+", competition: "High", trendingScore: 91 },
+  {
+    tag: "#contentcreator",
+    reach: "8M",
+    competition: "Medium",
+    trendingScore: 76
+  },
+  { tag: "#tech", reach: "15M", competition: "High", trendingScore: 88 },
+  { tag: "#fitness", reach: "22M", competition: "High", trendingScore: 90 },
+  {
+    tag: "#motivation",
+    reach: "18M",
+    competition: "Medium",
+    trendingScore: 85
+  },
+  { tag: "#reels", reach: "60M+", competition: "High", trendingScore: 95 },
+  { tag: "#aesthetic", reach: "6M", competition: "Low", trendingScore: 68 },
+  { tag: "#niche", reach: "2M", competition: "Low", trendingScore: 55 },
+  { tag: "#growthhack", reach: "3M", competition: "Low", trendingScore: 61 }
+];
+const DELAY_OPTIONS = [
+  { label: "1 hour", ms: 36e5 },
+  { label: "3 hours", ms: 108e5 },
+  { label: "6 hours", ms: 216e5 },
+  { label: "Tomorrow", ms: 864e5 }
+];
+const EDIT_FILTERS = [
+  {
+    id: "cinematic",
+    label: "Cinematic",
+    emoji: "🎬",
+    description: "Deep shadows, warm highlights, film grain",
+    qualityBoost: 12,
+    gradient: "linear-gradient(135deg, oklch(0.35 0.08 280), oklch(0.25 0.05 260))",
+    accent: "oklch(0.72 0.15 260)",
+    preview: "Rich cinematic tones with moody atmosphere"
+  },
+  {
+    id: "vibrant",
+    label: "Vibrant",
+    emoji: "🌈",
+    description: "Boosted saturation, punchy colors",
+    qualityBoost: 10,
+    gradient: "linear-gradient(135deg, oklch(0.65 0.25 30), oklch(0.6 0.22 295))",
+    accent: "oklch(0.78 0.2 30)",
+    preview: "Eye-catching colors that pop in any feed"
+  },
+  {
+    id: "minimal",
+    label: "Minimal",
+    emoji: "⬜",
+    description: "Clean whites, muted tones, airy feel",
+    qualityBoost: 8,
+    gradient: "linear-gradient(135deg, oklch(0.55 0.05 200), oklch(0.45 0.04 220))",
+    accent: "oklch(0.72 0.08 200)",
+    preview: "Clean and editorial — perfect for brand deals"
+  },
+  {
+    id: "dark",
+    label: "Dark",
+    emoji: "🌑",
+    description: "High contrast, deep blacks, neon accents",
+    qualityBoost: 11,
+    gradient: "linear-gradient(135deg, oklch(0.18 0.06 295), oklch(0.12 0.04 280))",
+    accent: "oklch(0.65 0.25 295)",
+    preview: "Dramatic dark aesthetic with electric energy"
+  }
+];
+const QUALITY_UPGRADE_COSTS = [0, 50, 100, 200, 400];
+function CreatorStudio() {
+  var _a2, _b2, _c2, _d2, _e2, _f2;
+  const {
+    navigate,
+    profile,
+    posts,
+    creatorCoins,
+    setCreatorCoins,
+    skills,
+    setSkills,
+    triggerSave
+  } = useApp();
+  const [scheduleCaption, setScheduleCaption] = reactExports.useState("");
+  const [scheduleDelay, setScheduleDelay] = reactExports.useState(DELAY_OPTIONS[0]);
+  const [scheduledQueue, setScheduledQueue] = reactExports.useState([]);
+  const [nowMs, setNowMs] = reactExports.useState(Date.now());
+  reactExports.useEffect(() => {
+    const id2 = setInterval(() => setNowMs(Date.now()), 1e3);
+    return () => clearInterval(id2);
+  }, []);
+  reactExports.useEffect(() => {
+    setScheduledQueue(
+      (prev) => prev.map(
+        (p2) => !p2.published && nowMs >= p2.publishAt ? { ...p2, published: true } : p2
+      )
+    );
+  }, [nowMs]);
+  const handleSchedule = () => {
+    if (!scheduleCaption.trim()) {
+      ue.error("Write a caption first!");
+      return;
+    }
+    const item = {
+      id: `sq-${Date.now()}`,
+      caption: scheduleCaption.trim(),
+      delay: scheduleDelay.label,
+      publishAt: Date.now() + scheduleDelay.ms,
+      published: false
+    };
+    setScheduledQueue((prev) => [item, ...prev].slice(0, 5));
+    setScheduleCaption("");
+    ue.success(`Scheduled for ${scheduleDelay.label}! ⏰`);
+  };
+  const cancelScheduled = (id2) => {
+    setScheduledQueue((prev) => prev.filter((p2) => p2.id !== id2));
+    ue("Post removed from queue");
+  };
+  const avgWatchTime = posts.length > 0 ? Math.round(
+    posts.reduce((s2, p2) => s2 + (p2.watchTime ?? 50), 0) / posts.length
+  ) : 60;
+  const contentQuality = Math.min(100, 40 + avgWatchTime * 0.5);
+  const predictedReach = Math.round(
+    profile.followers * 0.15 * (contentQuality / 100) * 1.2
+  );
+  const predictedEngagement = Math.min(
+    28,
+    4 + contentQuality / 100 * 12 + Math.random() * 2
+  ).toFixed(1);
+  const [hashtagInput, setHashtagInput] = reactExports.useState("");
+  const [analyzedTags, setAnalyzedTags] = reactExports.useState([]);
+  const analyzeHashtags = () => {
+    const tags = hashtagInput.split(/[,\s]+/).filter(Boolean).map((t2) => t2.startsWith("#") ? t2.toLowerCase() : `#${t2.toLowerCase()}`).slice(0, 8);
+    if (!tags.length) {
+      ue.error("Enter at least one hashtag");
+      return;
+    }
+    const results = tags.map((tag) => {
+      const match = HASHTAG_POOL.find((h2) => h2.tag === tag);
+      if (match) return match;
+      const compRoll = Math.random();
+      return {
+        tag,
+        reach: `${1 + Math.floor(Math.random() * 9)}M`,
+        competition: compRoll < 0.33 ? "Low" : compRoll < 0.66 ? "Medium" : "High",
+        trendingScore: 40 + Math.floor(Math.random() * 55)
+      };
+    });
+    setAnalyzedTags(results);
+  };
+  const compColor = (c2) => c2 === "Low" ? "oklch(0.72 0.2 145)" : c2 === "Medium" ? "oklch(0.78 0.2 60)" : "oklch(0.72 0.2 25)";
+  const [captionKeywords, setCaptionKeywords] = reactExports.useState("");
+  const [generatedCaptions, setGeneratedCaptions] = reactExports.useState([]);
+  const generateCaptionsAction = () => {
+    if (!captionKeywords.trim()) {
+      ue.error("Enter 1–2 keywords first");
+      return;
+    }
+    const captions = generateCaptions(profile.niche, captionKeywords);
+    setGeneratedCaptions(captions);
+    ue.success("Captions generated! ✨");
+  };
+  const copyCaption = reactExports.useCallback((text) => {
+    var _a3;
+    (_a3 = navigator.clipboard) == null ? void 0 : _a3.writeText(text).catch(() => {
+    });
+    ue.success("Copied to clipboard!");
+  }, []);
+  const [expA, setExpA] = reactExports.useState("");
+  const [expB, setExpB] = reactExports.useState("");
+  const [experiments, setExperiments] = reactExports.useState([]);
+  const runExperiment = () => {
+    if (!expA.trim() || !expB.trim()) {
+      ue.error("Fill in both variant A and B");
+      return;
+    }
+    const scoreFn = (text) => {
+      var _a3, _b3;
+      return text.length * 0.4 + (((_a3 = text.match(/#\w+/g)) == null ? void 0 : _a3.length) ?? 0) * 12 + (text.includes("?") ? 18 : 0) + (((_b3 = text.match(/[🔥✨💡🚀💬]/gu)) == null ? void 0 : _b3.length) ?? 0) * 8 + Math.random() * 40;
+    };
+    const sA = scoreFn(expA);
+    const sB = scoreFn(expB);
+    const result = {
+      id: `exp-${Date.now()}`,
+      variantA: expA,
+      variantB: expB,
+      winnerIdx: sA >= sB ? 0 : 1,
+      likesA: Math.floor(sA * 3.2),
+      likesB: Math.floor(sB * 3.2),
+      sharesA: Math.floor(sA * 0.8),
+      sharesB: Math.floor(sB * 0.8),
+      ranAt: Date.now()
+    };
+    setExperiments((prev) => [result, ...prev].slice(0, 3));
+    setExpA("");
+    setExpB("");
+    ue.success(
+      `Variant ${result.winnerIdx === 0 ? "A" : "B"} wins the experiment! 🏆`
+    );
+  };
+  const totalViews = posts.reduce((s2, p2) => s2 + p2.views, 0);
+  const totalLikes = posts.reduce((s2, p2) => s2 + p2.likes, 0);
+  const avgEngagement = posts.length > 0 ? (posts.reduce(
+    (s2, p2) => s2 + (p2.likes + p2.comments.length + p2.shares) / Math.max(p2.views, 1),
+    0
+  ) / posts.length).toFixed(1) : "0.0";
+  const topPost = posts.reduce(
+    (best, p2) => p2.views > ((best == null ? void 0 : best.views) ?? 0) ? p2 : best,
+    posts[0]
+  );
+  const followerGrowthRate = posts.length > 0 ? (posts.reduce((s2, p2) => s2 + p2.followersGained, 0) / posts.length * 10).toFixed(0) : "0";
+  function fmtCountdown2(ms) {
+    if (ms <= 0) return "Publishing...";
+    const h2 = Math.floor(ms / 36e5);
+    const m2 = Math.floor(ms % 36e5 / 6e4);
+    const s2 = Math.floor(ms % 6e4 / 1e3);
+    return h2 > 0 ? `${h2}h ${m2}m` : `${m2}m ${s2}s`;
+  }
+  const contentQualityLevel = skills.contentQuality;
+  const maxQualityLevel = 5;
+  const qualityUpgradeCost = QUALITY_UPGRADE_COSTS[contentQualityLevel] ?? 0;
+  const isMaxQuality = contentQualityLevel >= maxQualityLevel;
+  const handleQualityUpgrade = () => {
+    if (isMaxQuality) return;
+    if (creatorCoins < qualityUpgradeCost) {
+      ue.error(`Need ${qualityUpgradeCost} 🪙 to upgrade!`);
+      return;
+    }
+    setCreatorCoins((c2) => c2 - qualityUpgradeCost);
+    setSkills((s2) => ({ ...s2, contentQuality: s2.contentQuality + 1 }));
+    triggerSave();
+    ue.success(
+      `Content Quality upgraded to Level ${contentQualityLevel + 1}! ✨`
+    );
+  };
+  const qualityMultiplier = [
+    "1.0x",
+    "1.15x",
+    "1.30x",
+    "1.45x",
+    "1.60x",
+    "1.75x"
+  ];
+  const [selectedFilter, setSelectedFilter] = reactExports.useState(null);
+  const [editedContent, setEditedContent] = reactExports.useState(null);
+  const [isRendering, setIsRendering] = reactExports.useState(false);
+  const [editorQualityBoost, setEditorQualityBoost] = reactExports.useState(0);
+  const handleApplyFilter = (filterId) => {
+    const filter2 = EDIT_FILTERS.find((f2) => f2.id === filterId);
+    if (!filter2) return;
+    setSelectedFilter(filterId);
+    setEditedContent(null);
+    setIsRendering(true);
+    setTimeout(() => {
+      setIsRendering(false);
+      setEditedContent(filter2.preview);
+      setEditorQualityBoost(filter2.qualityBoost);
+      ue.success(
+        `Filter applied: ${filter2.label} (+${filter2.qualityBoost}% quality) 🎨`
+      );
+    }, 1200);
+  };
+  const handlePublishEdited = () => {
+    if (!editedContent) return;
+    const filter2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter);
+    ue.success(
+      `Post published with ${(filter2 == null ? void 0 : filter2.label) ?? ""} filter! Quality boosted. 🚀`
+    );
+    setEditedContent(null);
+    setSelectedFilter(null);
+    setEditorQualityBoost(0);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  "data-ocid": "studio.back.button",
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "h1",
+                  {
+                    className: "text-lg font-bold text-foreground",
+                    style: { fontFamily: "'Bricolage Grotesque', sans-serif" },
+                    children: "Creator Studio"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Plan, schedule & optimize" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
+                  style: {
+                    background: "oklch(0.18 0.04 80 / 0.3)",
+                    border: "1px solid oklch(0.6 0.2 80 / 0.4)",
+                    color: "oklch(0.8 0.18 80)"
+                  },
+                  "data-ocid": "studio.coins.panel",
+                  children: [
+                    "🪙 ",
+                    creatorCoins.toLocaleString()
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-4 space-y-5 max-w-2xl mx-auto", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.05 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.performance.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ChartNoAxesColumn, { className: "w-4 h-4 text-purple-400" }),
+                      "Performance Overview"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 mb-3", children: [
+                        {
+                          label: "Total Views",
+                          value: totalViews.toLocaleString(),
+                          color: "oklch(0.72 0.2 260)"
+                        },
+                        {
+                          label: "Avg. Engagement",
+                          value: `${avgEngagement}%`,
+                          color: "oklch(0.72 0.2 145)"
+                        },
+                        {
+                          label: "Posts",
+                          value: posts.length.toString(),
+                          color: "oklch(0.72 0.2 50)"
+                        }
+                      ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "text-center rounded-xl py-3",
+                          style: { background: "oklch(0.16 0.02 280 / 0.6)" },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-lg font-bold",
+                                style: { color: stat.color },
+                                children: stat.value
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mt-0.5", children: stat.label })
+                          ]
+                        },
+                        stat.label
+                      )) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3 mb-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "div",
+                          {
+                            className: "rounded-xl py-2 px-3 flex items-center gap-2",
+                            style: { background: "oklch(0.16 0.02 280 / 0.5)" },
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                TrendingUp,
+                                {
+                                  className: "w-4 h-4 flex-shrink-0",
+                                  style: { color: "oklch(0.72 0.2 145)" }
+                                }
+                              ),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                  "p",
+                                  {
+                                    className: "text-xs font-bold",
+                                    style: { color: "oklch(0.72 0.2 145)" },
+                                    children: [
+                                      "+",
+                                      followerGrowthRate,
+                                      "/post"
+                                    ]
+                                  }
+                                ),
+                                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "Avg Follower Growth" })
+                              ] })
+                            ]
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "div",
+                          {
+                            className: "rounded-xl py-2 px-3 flex items-center gap-2",
+                            style: { background: "oklch(0.16 0.02 280 / 0.5)" },
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                Star,
+                                {
+                                  className: "w-4 h-4 flex-shrink-0",
+                                  style: { color: "oklch(0.78 0.2 80)" }
+                                }
+                              ),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  "p",
+                                  {
+                                    className: "text-xs font-bold",
+                                    style: { color: "oklch(0.78 0.2 80)" },
+                                    children: totalLikes.toLocaleString()
+                                  }
+                                ),
+                                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "Total Likes" })
+                              ] })
+                            ]
+                          }
+                        )
+                      ] }),
+                      topPost && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "rounded-lg px-3 py-2 flex items-center gap-2",
+                          style: { background: "oklch(0.16 0.025 295 / 0.4)" },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              Zap,
+                              {
+                                className: "w-4 h-4 flex-shrink-0",
+                                style: { color: "oklch(0.72 0.2 295)" }
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground min-w-0 truncate", children: [
+                              "Best post:",
+                              " ",
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-foreground font-medium", children: [
+                                "“",
+                                topPost.caption.slice(0, 40),
+                                "…”"
+                              ] }),
+                              " ",
+                              "— ",
+                              topPost.views.toLocaleString(),
+                              " views"
+                            ] })
+                          ]
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.08 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.quality.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: isMaxQuality ? "1px solid oklch(0.55 0.22 145 / 0.5)" : "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Star,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.78 0.2 80)" }
+                        }
+                      ),
+                      "Content Quality Upgrade",
+                      isMaxQuality && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Badge,
+                        {
+                          style: {
+                            background: "oklch(0.55 0.22 145 / 0.3)",
+                            color: "oklch(0.75 0.2 145)",
+                            fontSize: "10px"
+                          },
+                          children: "MAX"
+                        }
+                      )
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1", children: Array.from({ length: maxQualityLevel }, (_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          motion.div,
+                          {
+                            animate: {
+                              scale: i < contentQualityLevel ? [1, 1.3, 1] : 1
+                            },
+                            transition: { duration: 0.4, delay: i * 0.06 },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              Star,
+                              {
+                                className: "w-7 h-7",
+                                style: {
+                                  fill: i < contentQualityLevel ? "oklch(0.78 0.2 80)" : "transparent",
+                                  color: i < contentQualityLevel ? "oklch(0.78 0.2 80)" : "oklch(0.35 0.03 280)",
+                                  filter: i < contentQualityLevel ? "drop-shadow(0 0 6px oklch(0.65 0.2 80 / 0.6))" : "none",
+                                  transition: "all 0.3s ease"
+                                }
+                              }
+                            )
+                          },
+                          `star-slot-${i + 1}`
+                        )) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "p",
+                            {
+                              className: "text-sm font-bold",
+                              style: { color: "oklch(0.78 0.2 80)" },
+                              children: [
+                                "Level ",
+                                contentQualityLevel,
+                                "/",
+                                maxQualityLevel
+                              ]
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground", children: [
+                            "Engagement multiplier:",
+                            " ",
+                            qualityMultiplier[contentQualityLevel]
+                          ] })
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "h-2.5 rounded-full overflow-hidden",
+                          style: { background: "oklch(0.18 0.02 280 / 0.6)" },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            motion.div,
+                            {
+                              animate: {
+                                width: `${contentQualityLevel / maxQualityLevel * 100}%`
+                              },
+                              transition: { duration: 0.6, ease: "easeOut" },
+                              className: "h-full rounded-full",
+                              style: {
+                                background: "linear-gradient(90deg, oklch(0.65 0.22 60), oklch(0.72 0.2 80))",
+                                boxShadow: "0 0 10px oklch(0.65 0.2 80 / 0.4)"
+                              }
+                            }
+                          )
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "rounded-lg px-3 py-2.5",
+                          style: { background: "oklch(0.16 0.03 80 / 0.2)" },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "oklch(0.75 0.18 80)" }, children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3 inline mr-1" }),
+                            [
+                              "Baseline — standard reach and engagement",
+                              "+15% post reach across all platforms",
+                              "+30% post reach + better algorithm placement",
+                              "+45% reach + priority explore placement",
+                              "+60% reach + viral boost chance multiplied"
+                            ][contentQualityLevel - 1] ?? "Upgrade to unlock reach bonuses"
+                          ] })
+                        }
+                      ),
+                      !isMaxQuality ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+                            "Next: Level ",
+                            contentQualityLevel + 1,
+                            " —",
+                            " ",
+                            qualityUpgradeCost,
+                            " 🪙"
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground", children: [
+                            "Balance: ",
+                            creatorCoins.toLocaleString(),
+                            " 🪙"
+                          ] })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          Button,
+                          {
+                            "data-ocid": "studio.quality.primary_button",
+                            size: "sm",
+                            className: "text-white border-none",
+                            disabled: creatorCoins < qualityUpgradeCost,
+                            style: {
+                              background: creatorCoins >= qualityUpgradeCost ? "linear-gradient(135deg, oklch(0.7 0.2 75), oklch(0.65 0.22 55))" : "oklch(0.25 0.02 280)",
+                              boxShadow: creatorCoins >= qualityUpgradeCost ? "0 0 15px oklch(0.65 0.2 75 / 0.35)" : "none"
+                            },
+                            onClick: handleQualityUpgrade,
+                            children: [
+                              "Upgrade — ",
+                              qualityUpgradeCost,
+                              " 🪙"
+                            ]
+                          }
+                        )
+                      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "p",
+                        {
+                          className: "text-center text-sm font-semibold",
+                          style: { color: "oklch(0.72 0.2 145)" },
+                          children: "✅ Maximum content quality reached!"
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.12 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.editor.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Clapperboard,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.72 0.2 295)" }
+                        }
+                      ),
+                      "Content Editor",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground font-normal ml-auto", children: "Pick a filter → apply → publish" })
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "relative rounded-xl overflow-hidden h-32 flex items-center justify-center",
+                          style: {
+                            background: selectedFilter ? ((_a2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter)) == null ? void 0 : _a2.gradient) || "oklch(0.15 0.02 280)" : "oklch(0.15 0.02 280)",
+                            border: "1px solid oklch(0.25 0.025 280 / 0.5)",
+                            transition: "background 0.5s ease"
+                          },
+                          children: isRendering ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              motion.div,
+                              {
+                                animate: { rotate: 360 },
+                                transition: {
+                                  duration: 1,
+                                  repeat: Number.POSITIVE_INFINITY,
+                                  ease: "linear"
+                                },
+                                className: "w-8 h-8 rounded-full border-2 border-t-transparent mx-auto mb-2",
+                                style: { borderColor: "oklch(0.65 0.2 295)" }
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Rendering…" })
+                          ] }) : editedContent ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center px-4", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl mb-2", children: (_b2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter)) == null ? void 0 : _b2.emoji }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-white/90", children: editedContent }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "p",
+                              {
+                                className: "text-[10px] mt-1",
+                                style: {
+                                  color: (_c2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter)) == null ? void 0 : _c2.accent
+                                },
+                                children: [
+                                  "+",
+                                  editorQualityBoost,
+                                  "% quality score boost"
+                                ]
+                              }
+                            )
+                          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { className: "w-8 h-8 mx-auto mb-2 text-muted-foreground" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Select a filter below" })
+                          ] })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-2", children: EDIT_FILTERS.map((filter2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "button",
+                        {
+                          type: "button",
+                          "data-ocid": `studio.editor.${filter2.id}.toggle`,
+                          onClick: () => handleApplyFilter(filter2.id),
+                          disabled: isRendering,
+                          className: "flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50",
+                          style: {
+                            background: selectedFilter === filter2.id ? `${filter2.gradient.replace("135deg,", "135deg,")}` : "oklch(0.16 0.02 280 / 0.6)",
+                            border: selectedFilter === filter2.id ? `1px solid ${filter2.accent}66` : "1px solid oklch(0.25 0.025 280 / 0.4)",
+                            boxShadow: selectedFilter === filter2.id ? `0 0 15px ${filter2.accent}33` : "none"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl flex-shrink-0", children: filter2.emoji }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground truncate", children: filter2.label }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground truncate", children: filter2.description })
+                            ] })
+                          ]
+                        },
+                        filter2.id
+                      )) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: editedContent && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        motion.div,
+                        {
+                          initial: { opacity: 0, y: 8 },
+                          animate: { opacity: 1, y: 0 },
+                          exit: { opacity: 0, y: 4 },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            Button,
+                            {
+                              "data-ocid": "studio.editor.publish.primary_button",
+                              className: "w-full text-white border-none",
+                              style: {
+                                background: (_d2 = EDIT_FILTERS.find(
+                                  (f2) => f2.id === selectedFilter
+                                )) == null ? void 0 : _d2.gradient,
+                                boxShadow: `0 0 20px ${(_e2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter)) == null ? void 0 : _e2.accent}44`
+                              },
+                              onClick: handlePublishEdited,
+                              children: [
+                                "🚀 Publish with",
+                                " ",
+                                (_f2 = EDIT_FILTERS.find((f2) => f2.id === selectedFilter)) == null ? void 0 : _f2.label,
+                                " ",
+                                "Filter"
+                              ]
+                            }
+                          )
+                        }
+                      ) })
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.16 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.scheduler.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-4 h-4 text-blue-400" }),
+                      "Post Scheduler"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "textarea",
+                        {
+                          "data-ocid": "studio.scheduler.textarea",
+                          value: scheduleCaption,
+                          onChange: (e3) => setScheduleCaption(e3.target.value),
+                          placeholder: "Write your post caption…",
+                          rows: 3,
+                          className: "w-full text-sm rounded-xl px-3 py-2.5 resize-none focus:outline-none text-foreground placeholder:text-muted-foreground",
+                          style: {
+                            background: "oklch(0.17 0.02 280 / 0.7)",
+                            border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                          }
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "select",
+                          {
+                            "data-ocid": "studio.scheduler.select",
+                            value: scheduleDelay.label,
+                            onChange: (e3) => setScheduleDelay(
+                              DELAY_OPTIONS.find((d2) => d2.label === e3.target.value) ?? DELAY_OPTIONS[0]
+                            ),
+                            className: "w-full text-sm rounded-xl px-3 py-2 focus:outline-none text-foreground",
+                            style: {
+                              background: "oklch(0.17 0.02 280 / 0.7)",
+                              border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                            },
+                            children: DELAY_OPTIONS.map((d2) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: d2.label, children: d2.label }, d2.label))
+                          }
+                        ) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Button,
+                          {
+                            "data-ocid": "studio.scheduler.submit_button",
+                            size: "sm",
+                            onClick: handleSchedule,
+                            style: {
+                              background: "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.5 0.2 240))"
+                            },
+                            className: "text-white border-none",
+                            children: "Schedule"
+                          }
+                        )
+                      ] }),
+                      scheduledQueue.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2 pt-1", children: scheduledQueue.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "flex items-start gap-2 rounded-lg px-3 py-2",
+                          style: {
+                            background: item.published ? "oklch(0.55 0.22 145 / 0.12)" : "oklch(0.16 0.02 280 / 0.5)",
+                            border: item.published ? "1px solid oklch(0.55 0.22 145 / 0.3)" : "1px solid oklch(0.25 0.025 280 / 0.3)"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base mt-0.5", children: item.published ? "✅" : "⏳" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-foreground truncate", children: item.caption }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mt-0.5", children: item.published ? "Published!" : `Posts in ${fmtCountdown2(item.publishAt - nowMs)}` })
+                            ] }),
+                            !item.published && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "button",
+                              {
+                                type: "button",
+                                onClick: () => cancelScheduled(item.id),
+                                className: "text-muted-foreground hover:text-destructive transition-colors text-xs ml-1",
+                                children: "✕"
+                              }
+                            )
+                          ]
+                        },
+                        item.id
+                      )) })
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.2 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.prediction.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Zap,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.78 0.2 50)" }
+                        }
+                      ),
+                      "Engagement Prediction"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", children: [
+                      {
+                        label: "Predicted Reach",
+                        value: predictedReach.toLocaleString(),
+                        icon: "👁️",
+                        color: "oklch(0.72 0.2 260)"
+                      },
+                      {
+                        label: "Engagement Rate",
+                        value: `${predictedEngagement}%`,
+                        icon: "🔥",
+                        color: "oklch(0.72 0.2 25)"
+                      },
+                      {
+                        label: "Content Score",
+                        value: `${Math.round(contentQuality)}/100`,
+                        icon: "✨",
+                        color: "oklch(0.72 0.2 145)"
+                      },
+                      {
+                        label: "Avg Watch Time",
+                        value: `${avgWatchTime}%`,
+                        icon: "⏱️",
+                        color: "oklch(0.72 0.2 295)"
+                      }
+                    ].map((m2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "rounded-xl p-3 flex items-center gap-3",
+                        style: { background: "oklch(0.16 0.02 280 / 0.6)" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl", children: m2.icon }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-sm font-bold",
+                                style: { color: m2.color },
+                                children: m2.value
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: m2.label })
+                          ] })
+                        ]
+                      },
+                      m2.label
+                    )) }) })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.25 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.hashtags.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Hash$2, { className: "w-4 h-4 text-teal-400" }),
+                      "Hashtag Analyzer"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "input",
+                          {
+                            "data-ocid": "studio.hashtags.input",
+                            value: hashtagInput,
+                            onChange: (e3) => setHashtagInput(e3.target.value),
+                            placeholder: "#viral, #tech, #creator…",
+                            className: "flex-1 text-sm rounded-xl px-3 py-2 focus:outline-none text-foreground placeholder:text-muted-foreground",
+                            style: {
+                              background: "oklch(0.17 0.02 280 / 0.7)",
+                              border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                            },
+                            onKeyDown: (e3) => e3.key === "Enter" && analyzeHashtags()
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Button,
+                          {
+                            "data-ocid": "studio.hashtags.submit_button",
+                            size: "sm",
+                            onClick: analyzeHashtags,
+                            style: {
+                              background: "linear-gradient(135deg, oklch(0.55 0.2 200), oklch(0.5 0.18 180))"
+                            },
+                            className: "text-white border-none",
+                            children: "Analyze"
+                          }
+                        )
+                      ] }),
+                      analyzedTags.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: analyzedTags.map((tag) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "flex items-center gap-3 rounded-lg px-3 py-2",
+                          style: { background: "oklch(0.16 0.02 280 / 0.5)" },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                className: "text-xs font-bold",
+                                style: { color: "oklch(0.72 0.2 260)" },
+                                children: tag.tag
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-muted-foreground flex-1", children: [
+                              "Reach: ",
+                              tag.reach
+                            ] }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              Badge,
+                              {
+                                style: {
+                                  background: `${compColor(tag.competition)}22`,
+                                  color: compColor(tag.competition),
+                                  border: `1px solid ${compColor(tag.competition)}44`,
+                                  fontSize: "10px"
+                                },
+                                children: tag.competition
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                className: "text-xs font-bold ml-1",
+                                style: { color: "oklch(0.78 0.2 50)" },
+                                children: tag.trendingScore
+                              }
+                            )
+                          ]
+                        },
+                        tag.tag
+                      )) })
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.3 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.captions.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Sparkles,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.75 0.2 295)" }
+                        }
+                      ),
+                      "AI Caption Generator"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "input",
+                          {
+                            "data-ocid": "studio.captions.input",
+                            value: captionKeywords,
+                            onChange: (e3) => setCaptionKeywords(e3.target.value),
+                            placeholder: `e.g. "morning routine", "${profile.niche} tips"…`,
+                            className: "flex-1 text-sm rounded-xl px-3 py-2 focus:outline-none text-foreground placeholder:text-muted-foreground",
+                            style: {
+                              background: "oklch(0.17 0.02 280 / 0.7)",
+                              border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                            },
+                            onKeyDown: (e3) => e3.key === "Enter" && generateCaptionsAction()
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Button,
+                          {
+                            "data-ocid": "studio.captions.submit_button",
+                            size: "sm",
+                            onClick: generateCaptionsAction,
+                            style: {
+                              background: "linear-gradient(135deg, oklch(0.55 0.25 295), oklch(0.5 0.22 270))"
+                            },
+                            className: "text-white border-none",
+                            children: "Generate"
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground", children: [
+                        "Niche: ",
+                        profile.niche
+                      ] }),
+                      generatedCaptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: generatedCaptions.map((caption) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "rounded-xl p-3 flex gap-2",
+                          style: { background: "oklch(0.16 0.02 280 / 0.5)" },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              Lightbulb,
+                              {
+                                className: "w-4 h-4 flex-shrink-0 mt-0.5",
+                                style: { color: "oklch(0.75 0.2 295)" }
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-foreground flex-1 leading-relaxed", children: caption }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "button",
+                              {
+                                type: "button",
+                                onClick: () => copyCaption(caption),
+                                className: "text-muted-foreground hover:text-foreground transition-colors text-xs flex-shrink-0 ml-1",
+                                "aria-label": "Copy caption",
+                                children: "📋"
+                              }
+                            )
+                          ]
+                        },
+                        caption.slice(0, 20)
+                      )) })
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.35 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Card,
+                {
+                  "data-ocid": "studio.experiment.panel",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.25 0.025 280 / 0.4)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        FlaskConical,
+                        {
+                          className: "w-4 h-4",
+                          style: { color: "oklch(0.72 0.2 145)" }
+                        }
+                      ),
+                      "A/B Experiment Lab"
+                    ] }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "space-y-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mb-1", children: "Variant A" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "textarea",
+                            {
+                              "data-ocid": "studio.experiment.textarea",
+                              value: expA,
+                              onChange: (e3) => setExpA(e3.target.value),
+                              placeholder: "Caption or hashtag set A…",
+                              rows: 3,
+                              className: "w-full text-xs rounded-xl px-2.5 py-2 resize-none focus:outline-none text-foreground placeholder:text-muted-foreground",
+                              style: {
+                                background: "oklch(0.17 0.02 280 / 0.7)",
+                                border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                              }
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mb-1", children: "Variant B" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "textarea",
+                            {
+                              value: expB,
+                              onChange: (e3) => setExpB(e3.target.value),
+                              placeholder: "Caption or hashtag set B…",
+                              rows: 3,
+                              className: "w-full text-xs rounded-xl px-2.5 py-2 resize-none focus:outline-none text-foreground placeholder:text-muted-foreground",
+                              style: {
+                                background: "oklch(0.17 0.02 280 / 0.7)",
+                                border: "1px solid oklch(0.28 0.025 280 / 0.5)"
+                              }
+                            }
+                          )
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Button,
+                        {
+                          "data-ocid": "studio.experiment.submit_button",
+                          size: "sm",
+                          className: "w-full text-white border-none",
+                          onClick: runExperiment,
+                          style: {
+                            background: "linear-gradient(135deg, oklch(0.62 0.22 145), oklch(0.55 0.2 160))"
+                          },
+                          children: "Run Experiment"
+                        }
+                      ),
+                      experiments.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2 pt-1", children: experiments.map((exp2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "rounded-xl p-3 space-y-2",
+                          style: {
+                            background: "oklch(0.16 0.02 280 / 0.5)",
+                            border: "1px solid oklch(0.25 0.025 280 / 0.3)"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-1", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: "🏆" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "span",
+                                {
+                                  className: "text-xs font-bold",
+                                  style: { color: "oklch(0.72 0.2 145)" },
+                                  children: [
+                                    "Variant ",
+                                    exp2.winnerIdx === 0 ? "A" : "B",
+                                    " wins!"
+                                  ]
+                                }
+                              )
+                            ] }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-2 text-center", children: [
+                              {
+                                label: "A",
+                                likes: exp2.likesA,
+                                shares: exp2.sharesA
+                              },
+                              {
+                                label: "B",
+                                likes: exp2.likesB,
+                                shares: exp2.sharesB
+                              }
+                            ].map((v2, vi) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "div",
+                              {
+                                className: "rounded-lg py-2",
+                                style: {
+                                  background: vi === exp2.winnerIdx ? "oklch(0.55 0.22 145 / 0.15)" : "oklch(0.18 0.02 280 / 0.4)",
+                                  border: vi === exp2.winnerIdx ? "1px solid oklch(0.55 0.22 145 / 0.4)" : "none"
+                                },
+                                children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground", children: [
+                                    "Variant ",
+                                    v2.label
+                                  ] }),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                    "p",
+                                    {
+                                      className: "text-xs font-bold",
+                                      style: {
+                                        color: vi === exp2.winnerIdx ? "oklch(0.72 0.2 145)" : "oklch(0.6 0.05 280)"
+                                      },
+                                      children: [
+                                        "❤️ ",
+                                        v2.likes,
+                                        " · 🔄 ",
+                                        v2.shares
+                                      ]
+                                    }
+                                  )
+                                ]
+                              },
+                              v2.label
+                            )) })
+                          ]
+                        },
+                        exp2.id
+                      )) })
+                    ] })
+                  ]
+                }
+              )
+            }
+          )
+        ] })
       ]
     }
   );
@@ -70631,6 +75683,287 @@ function FanArmyWars() {
               children: "Back to Rival Selection"
             }
           )
+        ] })
+      ]
+    }
+  );
+}
+const MAIL_TYPES = ["praise", "question", "collab", "fanart"];
+const MAIL_TEMPLATES = {
+  praise: [
+    "Your content literally saved my day, thank you so much!",
+    "I've been watching you for months — you're my biggest inspiration!",
+    "Your last post was EVERYTHING. I shared it with all my friends.",
+    "You make content creation look effortless. Never stop! 💫"
+  ],
+  question: [
+    "What editing app do you use for your posts? The quality is insane!",
+    "How long have you been creating? I want to start too!",
+    "What's your posting schedule? How do you stay consistent?",
+    "Do you have any tips for growing from 0 to 1K followers?"
+  ],
+  collab: [
+    "Hey! I'm a small creator in your niche — would love to collab sometime 🙏",
+    "I run a fan page dedicated to your content. Could we do a shoutout exchange?",
+    "I think our audiences would love a joint video — interested in partnering?",
+    "My followers ask about you all the time — can we do a crossover?"
+  ],
+  fanart: [
+    "I drew a portrait of your profile pic!! It took me 3 hours. Sending love ❤️",
+    "Made a digital painting inspired by your last post — it's my best work yet!",
+    "I designed a merch concept for your brand. Would love your thoughts!",
+    "Created fan art for your channel — please feature it if you like it!"
+  ]
+};
+const TYPE_ICONS = {
+  praise: "💌",
+  question: "❓",
+  collab: "🤝",
+  fanart: "🎨"
+};
+const TYPE_LABELS$1 = {
+  praise: "Fan Love",
+  question: "Question",
+  collab: "Collab Request",
+  fanart: "Fan Art"
+};
+function generateMails(seed, count2) {
+  const names = [
+    "nova_fan99",
+    "creative_alex",
+    "vibes_only_",
+    "digital_dreamer",
+    "cosmic_watcher",
+    "pixel_maya",
+    "stargazer88",
+    "neon_rebel",
+    "lunar_haze",
+    "echo_rider"
+  ];
+  return Array.from({ length: count2 }, (_, i) => {
+    const type = MAIL_TYPES[(seed + i) % MAIL_TYPES.length];
+    const templates = MAIL_TEMPLATES[type];
+    return {
+      id: `fm-${seed}-${i}`,
+      from: `@${names[(seed + i) % names.length]}`,
+      avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${seed + i}`,
+      type,
+      message: templates[(seed + i * 3) % templates.length],
+      timestamp: Date.now() - (i * 36e5 + Math.floor(Math.random() * 36e5)),
+      replied: false
+    };
+  });
+}
+const LS_MAIL_KEY = "mindforge-fan-mail";
+const LS_REPLY_KEY = "mindforge-fan-mail-replies";
+const REFRESH_MS = 30 * 60 * 1e3;
+const MAX_DAILY_REPLIES = 10;
+function FanMailCenter() {
+  const { navigate, setCreatorCoins, addNotification } = useApp();
+  const [mails, setMails] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(LS_MAIL_KEY);
+      if (raw) {
+        const d2 = JSON.parse(raw);
+        if (Date.now() - d2.ts < REFRESH_MS) return d2.mails;
+      }
+    } catch (_) {
+    }
+    const m2 = generateMails(Math.floor(Date.now() / 1e3), 8);
+    localStorage.setItem(
+      LS_MAIL_KEY,
+      JSON.stringify({ ts: Date.now(), mails: m2 })
+    );
+    return m2;
+  });
+  const [replyData, setReplyData] = reactExports.useState(
+    () => {
+      try {
+        const raw = localStorage.getItem(LS_REPLY_KEY);
+        if (raw) {
+          const d2 = JSON.parse(raw);
+          const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+          if (d2.date === today) return d2;
+          return { count: 0, date: today };
+        }
+      } catch (_) {
+      }
+      return { count: 0, date: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10) };
+    }
+  );
+  function handleReply(mailId) {
+    if (replyData.count >= MAX_DAILY_REPLIES) {
+      ue.error(
+        "Daily reply limit reached! Come back tomorrow for more coins."
+      );
+      return;
+    }
+    setMails(
+      (prev) => prev.map((m2) => m2.id === mailId ? { ...m2, replied: true } : m2)
+    );
+    const newCount = replyData.count + 1;
+    const today = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+    const newReplyData = { count: newCount, date: today };
+    setReplyData(newReplyData);
+    localStorage.setItem(LS_REPLY_KEY, JSON.stringify(newReplyData));
+    setCreatorCoins((c2) => c2 + 50);
+    addNotification({
+      icon: "💌",
+      message: `You replied to a fan! +50 coins earned. (${newCount}/${MAX_DAILY_REPLIES} today)`,
+      type: "tip"
+    });
+    ue.success(
+      `💌 Fan replied! +50 coins (${newCount}/${MAX_DAILY_REPLIES} replies today)`
+    );
+  }
+  const totalReplied = mails.filter((m2) => m2.replied).length;
+  const coinsFromMail = totalReplied * 50;
+  function timeAgo2(ts) {
+    const diff = Date.now() - ts;
+    const mins = Math.floor(diff / 6e4);
+    if (mins < 60) return `${mins}m ago`;
+    return `${Math.floor(mins / 60)}h ago`;
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  "data-ocid": "fan-mail.back.button",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground", children: "Fan Mail Center" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Reply to earn +50 coins each (max 10/day)" })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-5 space-y-5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3", children: [
+            {
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-4 h-4" }),
+              label: "Total Mail",
+              value: mails.length,
+              color: "oklch(0.72 0.2 260)"
+            },
+            {
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "w-4 h-4" }),
+              label: "Replied",
+              value: `${totalReplied}/${MAX_DAILY_REPLIES}`,
+              color: "oklch(0.72 0.2 145)"
+            },
+            {
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Coins, { className: "w-4 h-4" }),
+              label: "Coins Earned",
+              value: coinsFromMail,
+              color: "oklch(0.78 0.18 80)"
+            }
+          ].map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-3 text-center",
+              style: {
+                background: "oklch(0.13 0.016 280 / 0.95)",
+                border: "1px solid oklch(0.22 0.025 280 / 0.5)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    style: { color: s2.color },
+                    className: "flex justify-center mb-1",
+                    children: s2.icon
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg font-bold text-foreground", children: s2.value }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: s2.label })
+              ]
+            },
+            s2.label
+          )) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", children: mails.map((mail, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              "data-ocid": `fan-mail.item.${idx + 1}`,
+              className: "rounded-2xl p-4",
+              style: {
+                background: mail.replied ? "oklch(0.14 0.03 145 / 0.4)" : "oklch(0.13 0.016 280 / 0.95)",
+                border: `1px solid ${mail.replied ? "oklch(0.45 0.15 145 / 0.35)" : "oklch(0.22 0.025 280 / 0.5)"}`
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "img",
+                    {
+                      src: mail.avatar,
+                      alt: "",
+                      className: "w-9 h-9 rounded-full flex-shrink-0"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-foreground", children: mail.from }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          className: "text-[10px] px-1.5 py-0.5 rounded-full font-medium",
+                          style: {
+                            background: "oklch(0.55 0.22 295 / 0.2)",
+                            color: "oklch(0.72 0.22 295)"
+                          },
+                          children: [
+                            TYPE_ICONS[mail.type],
+                            " ",
+                            TYPE_LABELS$1[mail.type]
+                          ]
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: timeAgo2(mail.timestamp) })
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed mb-3", children: mail.message }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    size: "sm",
+                    onClick: () => handleReply(mail.id),
+                    disabled: mail.replied || replyData.count >= MAX_DAILY_REPLIES,
+                    className: "w-full h-8 text-xs gap-1",
+                    style: mail.replied ? {
+                      background: "oklch(0.28 0.05 145)",
+                      color: "oklch(0.72 0.22 145)"
+                    } : {
+                      background: "linear-gradient(135deg, oklch(0.55 0.24 280), oklch(0.5 0.28 300))",
+                      color: "white"
+                    },
+                    "data-ocid": `fan-mail.reply.button.${idx + 1}`,
+                    children: mail.replied ? "✓ Replied · +50 coins earned" : "💌 Reply · +50 coins"
+                  }
+                )
+              ]
+            },
+            mail.id
+          )) })
         ] })
       ]
     }
@@ -73219,7 +78552,7 @@ function HomeFeed() {
             },
             className: "w-20 h-20 rounded-lg border-2 border-dashed flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors",
             style: { borderColor: "oklch(0.35 0.03 280 / 0.5)" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-5 h-5" })
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image$1, { className: "w-5 h-5" })
           }
         )
       ] }),
@@ -73247,7 +78580,7 @@ function HomeFeed() {
               return (_a2 = fileRef.current) == null ? void 0 : _a2.click();
             },
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-4 h-4" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Image$1, { className: "w-4 h-4" }),
               " Photo"
             ]
           }
@@ -73482,6 +78815,1649 @@ function HomeFeed() {
       }
     )
   ] });
+}
+var PAGE_KEYS = ["PageUp", "PageDown"];
+var ARROW_KEYS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+var BACK_KEYS = {
+  "from-left": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
+  "from-right": ["Home", "PageDown", "ArrowDown", "ArrowRight"],
+  "from-bottom": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
+  "from-top": ["Home", "PageDown", "ArrowUp", "ArrowLeft"]
+};
+var SLIDER_NAME = "Slider";
+var [Collection, useCollection, createCollectionScope] = createCollection(SLIDER_NAME);
+var [createSliderContext] = createContextScope(SLIDER_NAME, [
+  createCollectionScope
+]);
+var [SliderProvider, useSliderContext] = createSliderContext(SLIDER_NAME);
+var Slider$1 = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const {
+      name,
+      min: min2 = 0,
+      max: max2 = 100,
+      step = 1,
+      orientation = "horizontal",
+      disabled = false,
+      minStepsBetweenThumbs = 0,
+      defaultValue = [min2],
+      value,
+      onValueChange = () => {
+      },
+      onValueCommit = () => {
+      },
+      inverted = false,
+      form,
+      ...sliderProps
+    } = props;
+    const thumbRefs = reactExports.useRef(/* @__PURE__ */ new Set());
+    const valueIndexToChangeRef = reactExports.useRef(0);
+    const isHorizontal = orientation === "horizontal";
+    const SliderOrientation = isHorizontal ? SliderHorizontal : SliderVertical;
+    const [values = [], setValues] = useControllableState({
+      prop: value,
+      defaultProp: defaultValue,
+      onChange: (value2) => {
+        var _a2;
+        const thumbs = [...thumbRefs.current];
+        (_a2 = thumbs[valueIndexToChangeRef.current]) == null ? void 0 : _a2.focus();
+        onValueChange(value2);
+      }
+    });
+    const valuesBeforeSlideStartRef = reactExports.useRef(values);
+    function handleSlideStart(value2) {
+      const closestIndex = getClosestValueIndex(values, value2);
+      updateValues(value2, closestIndex);
+    }
+    function handleSlideMove(value2) {
+      updateValues(value2, valueIndexToChangeRef.current);
+    }
+    function handleSlideEnd() {
+      const prevValue = valuesBeforeSlideStartRef.current[valueIndexToChangeRef.current];
+      const nextValue = values[valueIndexToChangeRef.current];
+      const hasChanged = nextValue !== prevValue;
+      if (hasChanged) onValueCommit(values);
+    }
+    function updateValues(value2, atIndex, { commit } = { commit: false }) {
+      const decimalCount = getDecimalCount(step);
+      const snapToStep = roundValue(Math.round((value2 - min2) / step) * step + min2, decimalCount);
+      const nextValue = clamp$1(snapToStep, [min2, max2]);
+      setValues((prevValues = []) => {
+        const nextValues = getNextSortedValues(prevValues, nextValue, atIndex);
+        if (hasMinStepsBetweenValues(nextValues, minStepsBetweenThumbs * step)) {
+          valueIndexToChangeRef.current = nextValues.indexOf(nextValue);
+          const hasChanged = String(nextValues) !== String(prevValues);
+          if (hasChanged && commit) onValueCommit(nextValues);
+          return hasChanged ? nextValues : prevValues;
+        } else {
+          return prevValues;
+        }
+      });
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      SliderProvider,
+      {
+        scope: props.__scopeSlider,
+        name,
+        disabled,
+        min: min2,
+        max: max2,
+        valueIndexToChangeRef,
+        thumbs: thumbRefs.current,
+        values,
+        orientation,
+        form,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Provider, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Slot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          SliderOrientation,
+          {
+            "aria-disabled": disabled,
+            "data-disabled": disabled ? "" : void 0,
+            ...sliderProps,
+            ref: forwardedRef,
+            onPointerDown: composeEventHandlers(sliderProps.onPointerDown, () => {
+              if (!disabled) valuesBeforeSlideStartRef.current = values;
+            }),
+            min: min2,
+            max: max2,
+            inverted,
+            onSlideStart: disabled ? void 0 : handleSlideStart,
+            onSlideMove: disabled ? void 0 : handleSlideMove,
+            onSlideEnd: disabled ? void 0 : handleSlideEnd,
+            onHomeKeyDown: () => !disabled && updateValues(min2, 0, { commit: true }),
+            onEndKeyDown: () => !disabled && updateValues(max2, values.length - 1, { commit: true }),
+            onStepKeyDown: ({ event, direction: stepDirection }) => {
+              if (!disabled) {
+                const isPageKey = PAGE_KEYS.includes(event.key);
+                const isSkipKey = isPageKey || event.shiftKey && ARROW_KEYS.includes(event.key);
+                const multiplier = isSkipKey ? 10 : 1;
+                const atIndex = valueIndexToChangeRef.current;
+                const value2 = values[atIndex];
+                const stepInDirection = step * multiplier * stepDirection;
+                updateValues(value2 + stepInDirection, atIndex, { commit: true });
+              }
+            }
+          }
+        ) }) })
+      }
+    );
+  }
+);
+Slider$1.displayName = SLIDER_NAME;
+var [SliderOrientationProvider, useSliderOrientationContext] = createSliderContext(SLIDER_NAME, {
+  startEdge: "left",
+  endEdge: "right",
+  size: "width",
+  direction: 1
+});
+var SliderHorizontal = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const {
+      min: min2,
+      max: max2,
+      dir,
+      inverted,
+      onSlideStart,
+      onSlideMove,
+      onSlideEnd,
+      onStepKeyDown,
+      ...sliderProps
+    } = props;
+    const [slider, setSlider] = reactExports.useState(null);
+    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setSlider(node));
+    const rectRef = reactExports.useRef(void 0);
+    const direction = useDirection(dir);
+    const isDirectionLTR = direction === "ltr";
+    const isSlidingFromLeft = isDirectionLTR && !inverted || !isDirectionLTR && inverted;
+    function getValueFromPointer(pointerPosition) {
+      const rect = rectRef.current || slider.getBoundingClientRect();
+      const input = [0, rect.width];
+      const output = isSlidingFromLeft ? [min2, max2] : [max2, min2];
+      const value = linearScale(input, output);
+      rectRef.current = rect;
+      return value(pointerPosition - rect.left);
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      SliderOrientationProvider,
+      {
+        scope: props.__scopeSlider,
+        startEdge: isSlidingFromLeft ? "left" : "right",
+        endEdge: isSlidingFromLeft ? "right" : "left",
+        direction: isSlidingFromLeft ? 1 : -1,
+        size: "width",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          SliderImpl,
+          {
+            dir: direction,
+            "data-orientation": "horizontal",
+            ...sliderProps,
+            ref: composedRefs,
+            style: {
+              ...sliderProps.style,
+              ["--radix-slider-thumb-transform"]: "translateX(-50%)"
+            },
+            onSlideStart: (event) => {
+              const value = getValueFromPointer(event.clientX);
+              onSlideStart == null ? void 0 : onSlideStart(value);
+            },
+            onSlideMove: (event) => {
+              const value = getValueFromPointer(event.clientX);
+              onSlideMove == null ? void 0 : onSlideMove(value);
+            },
+            onSlideEnd: () => {
+              rectRef.current = void 0;
+              onSlideEnd == null ? void 0 : onSlideEnd();
+            },
+            onStepKeyDown: (event) => {
+              const slideDirection = isSlidingFromLeft ? "from-left" : "from-right";
+              const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
+              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
+            }
+          }
+        )
+      }
+    );
+  }
+);
+var SliderVertical = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const {
+      min: min2,
+      max: max2,
+      inverted,
+      onSlideStart,
+      onSlideMove,
+      onSlideEnd,
+      onStepKeyDown,
+      ...sliderProps
+    } = props;
+    const sliderRef = reactExports.useRef(null);
+    const ref = useComposedRefs$1(forwardedRef, sliderRef);
+    const rectRef = reactExports.useRef(void 0);
+    const isSlidingFromBottom = !inverted;
+    function getValueFromPointer(pointerPosition) {
+      const rect = rectRef.current || sliderRef.current.getBoundingClientRect();
+      const input = [0, rect.height];
+      const output = isSlidingFromBottom ? [max2, min2] : [min2, max2];
+      const value = linearScale(input, output);
+      rectRef.current = rect;
+      return value(pointerPosition - rect.top);
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      SliderOrientationProvider,
+      {
+        scope: props.__scopeSlider,
+        startEdge: isSlidingFromBottom ? "bottom" : "top",
+        endEdge: isSlidingFromBottom ? "top" : "bottom",
+        size: "height",
+        direction: isSlidingFromBottom ? 1 : -1,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          SliderImpl,
+          {
+            "data-orientation": "vertical",
+            ...sliderProps,
+            ref,
+            style: {
+              ...sliderProps.style,
+              ["--radix-slider-thumb-transform"]: "translateY(50%)"
+            },
+            onSlideStart: (event) => {
+              const value = getValueFromPointer(event.clientY);
+              onSlideStart == null ? void 0 : onSlideStart(value);
+            },
+            onSlideMove: (event) => {
+              const value = getValueFromPointer(event.clientY);
+              onSlideMove == null ? void 0 : onSlideMove(value);
+            },
+            onSlideEnd: () => {
+              rectRef.current = void 0;
+              onSlideEnd == null ? void 0 : onSlideEnd();
+            },
+            onStepKeyDown: (event) => {
+              const slideDirection = isSlidingFromBottom ? "from-bottom" : "from-top";
+              const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
+              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
+            }
+          }
+        )
+      }
+    );
+  }
+);
+var SliderImpl = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const {
+      __scopeSlider,
+      onSlideStart,
+      onSlideMove,
+      onSlideEnd,
+      onHomeKeyDown,
+      onEndKeyDown,
+      onStepKeyDown,
+      ...sliderProps
+    } = props;
+    const context = useSliderContext(SLIDER_NAME, __scopeSlider);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Primitive.span,
+      {
+        ...sliderProps,
+        ref: forwardedRef,
+        onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
+          if (event.key === "Home") {
+            onHomeKeyDown(event);
+            event.preventDefault();
+          } else if (event.key === "End") {
+            onEndKeyDown(event);
+            event.preventDefault();
+          } else if (PAGE_KEYS.concat(ARROW_KEYS).includes(event.key)) {
+            onStepKeyDown(event);
+            event.preventDefault();
+          }
+        }),
+        onPointerDown: composeEventHandlers(props.onPointerDown, (event) => {
+          const target = event.target;
+          target.setPointerCapture(event.pointerId);
+          event.preventDefault();
+          if (context.thumbs.has(target)) {
+            target.focus();
+          } else {
+            onSlideStart(event);
+          }
+        }),
+        onPointerMove: composeEventHandlers(props.onPointerMove, (event) => {
+          const target = event.target;
+          if (target.hasPointerCapture(event.pointerId)) onSlideMove(event);
+        }),
+        onPointerUp: composeEventHandlers(props.onPointerUp, (event) => {
+          const target = event.target;
+          if (target.hasPointerCapture(event.pointerId)) {
+            target.releasePointerCapture(event.pointerId);
+            onSlideEnd(event);
+          }
+        })
+      }
+    );
+  }
+);
+var TRACK_NAME = "SliderTrack";
+var SliderTrack = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const { __scopeSlider, ...trackProps } = props;
+    const context = useSliderContext(TRACK_NAME, __scopeSlider);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Primitive.span,
+      {
+        "data-disabled": context.disabled ? "" : void 0,
+        "data-orientation": context.orientation,
+        ...trackProps,
+        ref: forwardedRef
+      }
+    );
+  }
+);
+SliderTrack.displayName = TRACK_NAME;
+var RANGE_NAME = "SliderRange";
+var SliderRange = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const { __scopeSlider, ...rangeProps } = props;
+    const context = useSliderContext(RANGE_NAME, __scopeSlider);
+    const orientation = useSliderOrientationContext(RANGE_NAME, __scopeSlider);
+    const ref = reactExports.useRef(null);
+    const composedRefs = useComposedRefs$1(forwardedRef, ref);
+    const valuesCount = context.values.length;
+    const percentages = context.values.map(
+      (value) => convertValueToPercentage(value, context.min, context.max)
+    );
+    const offsetStart = valuesCount > 1 ? Math.min(...percentages) : 0;
+    const offsetEnd = 100 - Math.max(...percentages);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Primitive.span,
+      {
+        "data-orientation": context.orientation,
+        "data-disabled": context.disabled ? "" : void 0,
+        ...rangeProps,
+        ref: composedRefs,
+        style: {
+          ...props.style,
+          [orientation.startEdge]: offsetStart + "%",
+          [orientation.endEdge]: offsetEnd + "%"
+        }
+      }
+    );
+  }
+);
+SliderRange.displayName = RANGE_NAME;
+var THUMB_NAME = "SliderThumb";
+var SliderThumb = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const getItems = useCollection(props.__scopeSlider);
+    const [thumb, setThumb] = reactExports.useState(null);
+    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setThumb(node));
+    const index2 = reactExports.useMemo(
+      () => thumb ? getItems().findIndex((item) => item.ref.current === thumb) : -1,
+      [getItems, thumb]
+    );
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SliderThumbImpl, { ...props, ref: composedRefs, index: index2 });
+  }
+);
+var SliderThumbImpl = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const { __scopeSlider, index: index2, name, ...thumbProps } = props;
+    const context = useSliderContext(THUMB_NAME, __scopeSlider);
+    const orientation = useSliderOrientationContext(THUMB_NAME, __scopeSlider);
+    const [thumb, setThumb] = reactExports.useState(null);
+    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setThumb(node));
+    const isFormControl = thumb ? context.form || !!thumb.closest("form") : true;
+    const size2 = useSize(thumb);
+    const value = context.values[index2];
+    const percent2 = value === void 0 ? 0 : convertValueToPercentage(value, context.min, context.max);
+    const label = getLabel2(index2, context.values.length);
+    const orientationSize = size2 == null ? void 0 : size2[orientation.size];
+    const thumbInBoundsOffset = orientationSize ? getThumbInBoundsOffset(orientationSize, percent2, orientation.direction) : 0;
+    reactExports.useEffect(() => {
+      if (thumb) {
+        context.thumbs.add(thumb);
+        return () => {
+          context.thumbs.delete(thumb);
+        };
+      }
+    }, [thumb, context.thumbs]);
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "span",
+      {
+        style: {
+          transform: "var(--radix-slider-thumb-transform)",
+          position: "absolute",
+          [orientation.startEdge]: `calc(${percent2}% + ${thumbInBoundsOffset}px)`
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.ItemSlot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Primitive.span,
+            {
+              role: "slider",
+              "aria-label": props["aria-label"] || label,
+              "aria-valuemin": context.min,
+              "aria-valuenow": value,
+              "aria-valuemax": context.max,
+              "aria-orientation": context.orientation,
+              "data-orientation": context.orientation,
+              "data-disabled": context.disabled ? "" : void 0,
+              tabIndex: context.disabled ? void 0 : 0,
+              ...thumbProps,
+              ref: composedRefs,
+              style: value === void 0 ? { display: "none" } : props.style,
+              onFocus: composeEventHandlers(props.onFocus, () => {
+                context.valueIndexToChangeRef.current = index2;
+              })
+            }
+          ) }),
+          isFormControl && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SliderBubbleInput,
+            {
+              name: name ?? (context.name ? context.name + (context.values.length > 1 ? "[]" : "") : void 0),
+              form: context.form,
+              value
+            },
+            index2
+          )
+        ]
+      }
+    );
+  }
+);
+SliderThumb.displayName = THUMB_NAME;
+var BUBBLE_INPUT_NAME = "RadioBubbleInput";
+var SliderBubbleInput = reactExports.forwardRef(
+  ({ __scopeSlider, value, ...props }, forwardedRef) => {
+    const ref = reactExports.useRef(null);
+    const composedRefs = useComposedRefs$1(ref, forwardedRef);
+    const prevValue = usePrevious(value);
+    reactExports.useEffect(() => {
+      const input = ref.current;
+      if (!input) return;
+      const inputProto = window.HTMLInputElement.prototype;
+      const descriptor = Object.getOwnPropertyDescriptor(inputProto, "value");
+      const setValue = descriptor.set;
+      if (prevValue !== value && setValue) {
+        const event = new Event("input", { bubbles: true });
+        setValue.call(input, value);
+        input.dispatchEvent(event);
+      }
+    }, [prevValue, value]);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Primitive.input,
+      {
+        style: { display: "none" },
+        ...props,
+        ref: composedRefs,
+        defaultValue: value
+      }
+    );
+  }
+);
+SliderBubbleInput.displayName = BUBBLE_INPUT_NAME;
+function getNextSortedValues(prevValues = [], nextValue, atIndex) {
+  const nextValues = [...prevValues];
+  nextValues[atIndex] = nextValue;
+  return nextValues.sort((a2, b2) => a2 - b2);
+}
+function convertValueToPercentage(value, min2, max2) {
+  const maxSteps = max2 - min2;
+  const percentPerStep = 100 / maxSteps;
+  const percentage = percentPerStep * (value - min2);
+  return clamp$1(percentage, [0, 100]);
+}
+function getLabel2(index2, totalValues) {
+  if (totalValues > 2) {
+    return `Value ${index2 + 1} of ${totalValues}`;
+  } else if (totalValues === 2) {
+    return ["Minimum", "Maximum"][index2];
+  } else {
+    return void 0;
+  }
+}
+function getClosestValueIndex(values, nextValue) {
+  if (values.length === 1) return 0;
+  const distances = values.map((value) => Math.abs(value - nextValue));
+  const closestDistance = Math.min(...distances);
+  return distances.indexOf(closestDistance);
+}
+function getThumbInBoundsOffset(width, left, direction) {
+  const halfWidth = width / 2;
+  const halfPercent = 50;
+  const offset2 = linearScale([0, halfPercent], [0, halfWidth]);
+  return (halfWidth - offset2(left) * direction) * direction;
+}
+function getStepsBetweenValues(values) {
+  return values.slice(0, -1).map((value, index2) => values[index2 + 1] - value);
+}
+function hasMinStepsBetweenValues(values, minStepsBetweenValues) {
+  if (minStepsBetweenValues > 0) {
+    const stepsBetweenValues = getStepsBetweenValues(values);
+    const actualMinStepsBetweenValues = Math.min(...stepsBetweenValues);
+    return actualMinStepsBetweenValues >= minStepsBetweenValues;
+  }
+  return true;
+}
+function linearScale(input, output) {
+  return (value) => {
+    if (input[0] === input[1] || output[0] === output[1]) return output[0];
+    const ratio = (output[1] - output[0]) / (input[1] - input[0]);
+    return output[0] + ratio * (value - input[0]);
+  };
+}
+function getDecimalCount(value) {
+  return (String(value).split(".")[1] || "").length;
+}
+function roundValue(value, decimalCount) {
+  const rounder = Math.pow(10, decimalCount);
+  return Math.round(value * rounder) / rounder;
+}
+var Root = Slider$1;
+var Track = SliderTrack;
+var Range = SliderRange;
+var Thumb = SliderThumb;
+function Slider({
+  className,
+  defaultValue,
+  value,
+  min: min2 = 0,
+  max: max2 = 100,
+  ...props
+}) {
+  const _values = reactExports.useMemo(
+    () => Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min2, max2],
+    [value, defaultValue, min2, max2]
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    Root,
+    {
+      "data-slot": "slider",
+      defaultValue,
+      value,
+      min: min2,
+      max: max2,
+      className: cn(
+        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
+        className
+      ),
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Track,
+          {
+            "data-slot": "slider-track",
+            className: cn(
+              "bg-muted relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5"
+            ),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Range,
+              {
+                "data-slot": "slider-range",
+                className: cn(
+                  "bg-primary absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+                )
+              }
+            )
+          }
+        ),
+        Array.from({ length: _values.length }, (value2, _) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Thumb,
+          {
+            "data-slot": "slider-thumb",
+            className: "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+          },
+          `${value2}`
+        ))
+      ]
+    }
+  );
+}
+const CATEGORIES = [
+  {
+    id: "equipment",
+    name: "Equipment",
+    description: "Cameras, mics & lighting. Steady returns from content quality boost.",
+    icon: Camera,
+    emoji: "📸",
+    returnRange: [12, 20],
+    durationMs: 2 * 60 * 60 * 1e3,
+    riskLevel: "low",
+    lossChance: 0,
+    minAmount: 100,
+    color: "oklch(0.65 0.2 145)",
+    glowColor: "oklch(0.65 0.2 145 / 0.15)",
+    badgeColor: "oklch(0.55 0.2 145 / 0.2)",
+    badgeText: "Steady"
+  },
+  {
+    id: "ads",
+    name: "Ad Campaigns",
+    description: "Run targeted ad campaigns. Medium risk with strong upside.",
+    icon: Megaphone,
+    emoji: "📢",
+    returnRange: [20, 45],
+    durationMs: 6 * 60 * 60 * 1e3,
+    riskLevel: "medium",
+    lossChance: 0.25,
+    minAmount: 200,
+    color: "oklch(0.75 0.18 80)",
+    glowColor: "oklch(0.75 0.18 80 / 0.15)",
+    badgeColor: "oklch(0.6 0.18 80 / 0.2)",
+    badgeText: "Medium Risk"
+  },
+  {
+    id: "studios",
+    name: "Studio Space",
+    description: "Rent premium studio space. Slow but highly reliable passive income.",
+    icon: Building2,
+    emoji: "🏢",
+    returnRange: [10, 15],
+    durationMs: 24 * 60 * 60 * 1e3,
+    riskLevel: "low",
+    lossChance: 0,
+    minAmount: 500,
+    color: "oklch(0.65 0.2 180)",
+    glowColor: "oklch(0.65 0.2 180 / 0.15)",
+    badgeColor: "oklch(0.55 0.2 180 / 0.2)",
+    badgeText: "Reliable"
+  },
+  {
+    id: "businesses",
+    name: "Creator Business",
+    description: "Launch a merch & media business. Medium risk, medium reward.",
+    icon: DollarSign,
+    emoji: "💼",
+    returnRange: [25, 55],
+    durationMs: 6 * 60 * 60 * 1e3,
+    riskLevel: "medium",
+    lossChance: 0.2,
+    minAmount: 300,
+    color: "oklch(0.72 0.18 60)",
+    glowColor: "oklch(0.72 0.18 60 / 0.15)",
+    badgeColor: "oklch(0.6 0.18 60 / 0.2)",
+    badgeText: "Medium Risk"
+  },
+  {
+    id: "crypto",
+    name: "Crypto",
+    description: "High-volatility creator tokens. Massive gains or total loss — your call.",
+    icon: Zap,
+    emoji: "⚡",
+    returnRange: [60, 120],
+    durationMs: 3 * 60 * 60 * 1e3,
+    riskLevel: "high",
+    lossChance: 0.45,
+    minAmount: 100,
+    color: "oklch(0.65 0.22 25)",
+    glowColor: "oklch(0.65 0.22 25 / 0.15)",
+    badgeColor: "oklch(0.55 0.22 25 / 0.2)",
+    badgeText: "High Risk"
+  }
+];
+const PRESET_AMOUNTS = [100, 500, 1e3, 2500];
+function useNow$1() {
+  const [now2, setNow] = reactExports.useState(Date.now());
+  reactExports.useEffect(() => {
+    const id2 = setInterval(() => setNow(Date.now()), 1e3);
+    return () => clearInterval(id2);
+  }, []);
+  return now2;
+}
+function fmtMs(ms) {
+  if (ms <= 0) return "Ready";
+  const s2 = Math.ceil(ms / 1e3);
+  const m2 = Math.floor(s2 / 60);
+  const h2 = Math.floor(m2 / 60);
+  const mins = m2 % 60;
+  const secs = s2 % 60;
+  if (h2 > 0) return `${h2}h ${mins}m`;
+  return m2 > 0 ? `${m2}m ${secs}s` : `${secs}s`;
+}
+function fmtDuration(ms) {
+  const h2 = ms / (60 * 60 * 1e3);
+  if (h2 >= 1) return `${h2}h`;
+  const m2 = ms / (60 * 1e3);
+  return `${m2}m`;
+}
+function getCategoryDef(category) {
+  return CATEGORIES.find((c2) => c2.id === category);
+}
+function CircularProgress({
+  progress: progress2,
+  color: color2,
+  size: size2 = 48
+}) {
+  const r2 = (size2 - 6) / 2;
+  const circ = 2 * Math.PI * r2;
+  const dash = progress2 / 100 * circ;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "svg",
+    {
+      width: size2,
+      height: size2,
+      style: { transform: "rotate(-90deg)" },
+      "aria-hidden": "true",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "circle",
+          {
+            cx: size2 / 2,
+            cy: size2 / 2,
+            r: r2,
+            fill: "none",
+            stroke: "oklch(0.25 0.02 280)",
+            strokeWidth: 5
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "circle",
+          {
+            cx: size2 / 2,
+            cy: size2 / 2,
+            r: r2,
+            fill: "none",
+            stroke: color2,
+            strokeWidth: 5,
+            strokeDasharray: `${dash} ${circ}`,
+            strokeLinecap: "round",
+            style: { transition: "stroke-dasharray 1s linear" }
+          }
+        )
+      ]
+    }
+  );
+}
+function InvestModal({
+  cat,
+  maxCoins,
+  onConfirm,
+  onClose
+}) {
+  const [amount, setAmount] = reactExports.useState(Math.min(cat.minAmount, maxCoins));
+  const maxAmount = Math.min(maxCoins, 1e4);
+  const returnPct = cat.returnRange[0] + Math.floor(Math.random() * (cat.returnRange[1] - cat.returnRange[0] + 1));
+  const expectedReturn = Math.floor(amount * (returnPct / 100));
+  const Icon2 = cat.icon;
+  const canInvest = amount >= cat.minAmount && amount <= maxCoins;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4",
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute inset-0",
+            style: { background: "oklch(0 0 0 / 0.7)" },
+            onClick: onClose,
+            onKeyDown: (e3) => e3.key === "Escape" && onClose(),
+            role: "button",
+            tabIndex: -1,
+            "aria-label": "Close"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            className: "relative w-full max-w-sm rounded-2xl overflow-hidden",
+            initial: { y: 40, opacity: 0 },
+            animate: { y: 0, opacity: 1 },
+            exit: { y: 40, opacity: 0 },
+            style: {
+              background: "linear-gradient(135deg, oklch(0.16 0.025 280 / 0.98), oklch(0.13 0.02 295 / 0.98))",
+              border: `1px solid ${cat.color.replace(")", " / 0.3)")}`,
+              backdropFilter: "blur(32px)",
+              boxShadow: `0 24px 64px ${cat.glowColor}`
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center justify-between px-5 py-4",
+                  style: {
+                    borderBottom: `1px solid ${cat.color.replace(")", " / 0.15)")}`,
+                    background: cat.glowColor
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-10 h-10 rounded-xl flex items-center justify-center",
+                          style: {
+                            background: cat.glowColor,
+                            border: `1px solid ${cat.color.replace(")", " / 0.3)")}`
+                          },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-5 h-5", style: { color: cat.color } })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-bold text-sm", children: cat.name }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "oklch(0.65 0.04 280)" }, children: [
+                          fmtDuration(cat.durationMs),
+                          " · ",
+                          cat.returnRange[0],
+                          "–",
+                          cat.returnRange[1],
+                          "% return"
+                        ] })
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: onClose,
+                        className: "w-7 h-7 rounded-lg flex items-center justify-center hover:opacity-70 transition-opacity",
+                        style: { background: "oklch(0.25 0.02 280 / 0.5)" },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-3.5 h-3.5" })
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-5 py-5 space-y-5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: "text-xs font-medium",
+                      style: { color: "oklch(0.65 0.04 280)" },
+                      children: "Quick amounts"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 flex-wrap", children: PRESET_AMOUNTS.filter((a2) => a2 <= maxCoins).map((a2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      onClick: () => setAmount(a2),
+                      className: "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150",
+                      style: {
+                        background: amount === a2 ? cat.color.replace(")", " / 0.25)") : "oklch(0.22 0.02 280 / 0.6)",
+                        border: `1px solid ${amount === a2 ? cat.color.replace(")", " / 0.5)") : "oklch(0.3 0.02 280 / 0.4)"}`,
+                        color: amount === a2 ? cat.color : "oklch(0.75 0.02 280)"
+                      },
+                      children: [
+                        a2.toLocaleString(),
+                        " 🪙"
+                      ]
+                    },
+                    a2
+                  )) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "p",
+                      {
+                        className: "text-xs font-medium",
+                        style: { color: "oklch(0.65 0.04 280)" },
+                        children: "Custom amount"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold", style: { color: cat.color }, children: [
+                      amount.toLocaleString(),
+                      " 🪙"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Slider,
+                    {
+                      min: cat.minAmount,
+                      max: maxAmount,
+                      step: 50,
+                      value: [amount],
+                      onValueChange: ([v2]) => setAmount(v2)
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "flex justify-between text-xs",
+                      style: { color: "oklch(0.5 0.03 280)" },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                          "Min: ",
+                          cat.minAmount
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                          "Max: ",
+                          maxAmount.toLocaleString()
+                        ] })
+                      ]
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "rounded-xl p-3.5 space-y-2",
+                    style: {
+                      background: cat.glowColor,
+                      border: `1px solid ${cat.color.replace(")", " / 0.2)")}`
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-xs",
+                            style: { color: "oklch(0.65 0.04 280)" },
+                            children: "Expected return"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold", style: { color: cat.color }, children: [
+                          "+",
+                          expectedReturn,
+                          " 🪙"
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-xs",
+                            style: { color: "oklch(0.65 0.04 280)" },
+                            children: "Total back"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-semibold", children: [
+                          (amount + expectedReturn).toLocaleString(),
+                          " 🪙"
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-xs",
+                            style: { color: "oklch(0.65 0.04 280)" },
+                            children: "Matures in"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: fmtDuration(cat.durationMs) })
+                      ] }),
+                      cat.lossChance > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "flex items-center gap-1.5 pt-1 border-t",
+                          style: { borderColor: "oklch(0.65 0.22 25 / 0.2)" },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "span",
+                            {
+                              className: "text-xs",
+                              style: { color: "oklch(0.65 0.22 25)" },
+                              children: [
+                                "⚠️ ",
+                                Math.round(cat.lossChance * 100),
+                                "% chance of losing investment"
+                              ]
+                            }
+                          )
+                        }
+                      )
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  Button,
+                  {
+                    "data-ocid": "investment.modal.confirm_button",
+                    className: "w-full text-white font-bold h-12 text-sm border-none",
+                    style: {
+                      background: canInvest ? `linear-gradient(135deg, ${cat.color}, ${cat.color.replace(")", " / 0.7)")})` : "oklch(0.3 0.02 280)",
+                      boxShadow: canInvest ? `0 4px 24px ${cat.glowColor}` : "none"
+                    },
+                    disabled: !canInvest,
+                    onClick: () => onConfirm(amount, returnPct),
+                    children: [
+                      "Invest ",
+                      amount.toLocaleString(),
+                      " 🪙"
+                    ]
+                  }
+                )
+              ] })
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function InvestmentPage() {
+  const {
+    navigate,
+    creatorCoins,
+    setCreatorCoins,
+    investments,
+    setInvestments,
+    triggerSave,
+    addNotification
+  } = useApp();
+  const now2 = useNow$1();
+  const [selectedCat, setSelectedCat] = reactExports.useState(null);
+  const returnPctRef = reactExports.useRef({});
+  reactExports.useEffect(() => {
+    setInvestments(
+      (prev) => prev.map((inv) => {
+        if (inv.status !== "active") return inv;
+        const elapsed = Date.now() - inv.startTime;
+        if (elapsed < inv.durationMs) return inv;
+        const cat = getCategoryDef(
+          inv.category
+        );
+        const lossChance = (cat == null ? void 0 : cat.lossChance) ?? (inv.type === "risky" ? 0.5 : 0);
+        const won = Math.random() >= lossChance;
+        return { ...inv, status: won ? "completed" : "lost" };
+      })
+    );
+  }, [now2, setInvestments]);
+  const handleConfirmInvest = (cat, amount, returnPct) => {
+    if (creatorCoins < amount) {
+      ue.error(`Need ${amount} 🪙 to invest in ${cat.name}`);
+      return;
+    }
+    const expectedReturn = Math.floor(amount * (returnPct / 100));
+    const invId = `${cat.id}-${Date.now()}`;
+    returnPctRef.current[invId] = returnPct;
+    const newInv = {
+      id: invId,
+      type: cat.riskLevel === "high" || cat.lossChance > 0.3 ? "risky" : "safe",
+      category: cat.id,
+      amount,
+      expectedReturn,
+      startTime: Date.now(),
+      durationMs: cat.durationMs,
+      status: "active"
+    };
+    setCreatorCoins((c2) => c2 - amount);
+    setInvestments((prev) => [...prev, newInv]);
+    triggerSave();
+    ue.success(`Invested ${amount} 🪙 in ${cat.name}! ${cat.emoji}`);
+    addNotification({
+      icon: cat.emoji,
+      message: `Investment started: ${cat.name} — matures in ${fmtDuration(cat.durationMs)}`,
+      type: "smart"
+    });
+    setSelectedCat(null);
+  };
+  const handleClaim = (inv) => {
+    if (inv.status === "completed") {
+      const total = inv.amount + inv.expectedReturn;
+      setCreatorCoins((c2) => c2 + total);
+      const cat = getCategoryDef(inv.category);
+      ue.success(`Claimed ${total} 🪙! Profit: +${inv.expectedReturn} 🎉`);
+      addNotification({
+        icon: "💰",
+        message: `${(cat == null ? void 0 : cat.name) ?? "Investment"} matured! Earned +${inv.expectedReturn} 🪙 profit`,
+        type: "tip"
+      });
+    } else {
+      const cat = getCategoryDef(inv.category);
+      ue.error(
+        `${(cat == null ? void 0 : cat.name) ?? "Investment"} lost. Better luck next time! 📉`
+      );
+    }
+    setInvestments((prev) => prev.filter((i) => i.id !== inv.id));
+    triggerSave();
+  };
+  const portfolioStats = reactExports.useMemo(() => {
+    const allInvs = investments;
+    const totalInvested = allInvs.filter((i) => i.status === "active").reduce((s2, i) => s2 + i.amount, 0);
+    const totalEarned = allInvs.filter((i) => i.status === "completed").reduce((s2, i) => s2 + i.expectedReturn, 0);
+    const portfolioValue = totalInvested + totalEarned;
+    const roi = totalInvested > 0 ? Math.round(totalEarned / totalInvested * 100) : 0;
+    return { totalInvested, totalEarned, portfolioValue, roi };
+  }, [investments]);
+  const activeInvestments = investments.filter(
+    (i) => i.status === "active"
+  );
+  const claimableInvestments = investments.filter(
+    (i) => i.status !== "active"
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen",
+      style: { background: "oklch(0.09 0.015 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-30 px-4 py-4 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.22 0.02 280 / 0.6)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "investment.back.button",
+                  onClick: () => navigate("hub"),
+                  className: "w-9 h-9 rounded-xl flex items-center justify-center transition-all hover:opacity-80",
+                  style: {
+                    background: "oklch(0.18 0.02 280 / 0.6)",
+                    border: "1px solid oklch(0.3 0.025 280 / 0.4)"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold", children: "Investments" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "oklch(0.55 0.03 280)" }, children: "Grow your coins passively" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full",
+                  style: {
+                    background: "oklch(0.18 0.04 80 / 0.3)",
+                    border: "1px solid oklch(0.55 0.2 80 / 0.35)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: "🪙" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "text-sm font-bold",
+                        style: { color: "oklch(0.8 0.18 80)" },
+                        children: creatorCoins.toLocaleString()
+                      }
+                    )
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl mx-auto px-4 py-5 space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              className: "rounded-2xl p-4",
+              "data-ocid": "investment.portfolio.card",
+              style: {
+                background: "linear-gradient(135deg, oklch(0.16 0.04 295 / 0.9), oklch(0.13 0.03 280 / 0.9))",
+                border: "1px solid oklch(0.35 0.08 295 / 0.4)",
+                backdropFilter: "blur(20px)",
+                boxShadow: "0 8px 32px oklch(0.5 0.2 295 / 0.08)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    TrendingUp,
+                    {
+                      className: "w-4 h-4",
+                      style: { color: "oklch(0.72 0.2 295)" }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "text-sm font-semibold",
+                      style: { color: "oklch(0.72 0.2 295)" },
+                      children: "Portfolio Summary"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 sm:grid-cols-4", children: [
+                  {
+                    label: "Total Invested",
+                    value: `${portfolioStats.totalInvested.toLocaleString()} 🪙`,
+                    color: "oklch(0.75 0.04 280)"
+                  },
+                  {
+                    label: "Total Earned",
+                    value: `+${portfolioStats.totalEarned.toLocaleString()} 🪙`,
+                    color: "oklch(0.72 0.18 145)"
+                  },
+                  {
+                    label: "Portfolio Value",
+                    value: `${portfolioStats.portfolioValue.toLocaleString()} 🪙`,
+                    color: "oklch(0.72 0.2 295)"
+                  },
+                  {
+                    label: "ROI",
+                    value: `${portfolioStats.roi > 0 ? "+" : ""}${portfolioStats.roi}%`,
+                    color: portfolioStats.roi >= 0 ? "oklch(0.72 0.18 145)" : "oklch(0.65 0.22 25)"
+                  }
+                ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "rounded-xl p-3",
+                    style: { background: "oklch(0.13 0.02 280 / 0.6)" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "p",
+                        {
+                          className: "text-xs mb-1",
+                          style: { color: "oklch(0.5 0.03 280)" },
+                          children: stat.label
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold", style: { color: stat.color }, children: stat.value })
+                    ]
+                  },
+                  stat.label
+                )) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: claimableInvestments.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, height: 0 },
+              animate: { opacity: 1, height: "auto" },
+              exit: { opacity: 0, height: 0 },
+              className: "space-y-2",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "h2",
+                  {
+                    className: "text-xs font-semibold uppercase tracking-wider",
+                    style: { color: "oklch(0.55 0.03 280)" },
+                    children: "Ready to Claim"
+                  }
+                ),
+                claimableInvestments.map((inv) => {
+                  const cat = getCategoryDef(inv.category);
+                  const isWon = inv.status === "completed";
+                  (cat == null ? void 0 : cat.icon) ?? TrendingUp;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    motion.div,
+                    {
+                      initial: { opacity: 0, x: -12 },
+                      animate: { opacity: 1, x: 0 },
+                      exit: { opacity: 0, x: 12 },
+                      "data-ocid": `investment.claimable.item.${inv.id}`,
+                      className: "rounded-xl p-3.5 flex items-center gap-3",
+                      style: {
+                        background: isWon ? "oklch(0.16 0.04 145 / 0.4)" : "oklch(0.16 0.03 25 / 0.4)",
+                        border: `1px solid ${isWon ? "oklch(0.55 0.2 145 / 0.4)" : "oklch(0.55 0.2 25 / 0.4)"}`
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0",
+                            style: {
+                              background: isWon ? "oklch(0.55 0.2 145 / 0.15)" : "oklch(0.55 0.2 25 / 0.15)"
+                            },
+                            children: isWon ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              Check,
+                              {
+                                className: "w-5 h-5",
+                                style: { color: "oklch(0.72 0.18 145)" }
+                              }
+                            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              X,
+                              {
+                                className: "w-5 h-5",
+                                style: { color: "oklch(0.65 0.22 25)" }
+                              }
+                            )
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-semibold truncate", children: [
+                            (cat == null ? void 0 : cat.name) ?? "Investment",
+                            " ",
+                            cat == null ? void 0 : cat.emoji
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "text-xs",
+                              style: { color: "oklch(0.55 0.03 280)" },
+                              children: isWon ? `Profit: +${inv.expectedReturn} 🪙 · Total: ${(inv.amount + inv.expectedReturn).toLocaleString()} 🪙` : `Lost ${inv.amount.toLocaleString()} 🪙`
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Button,
+                          {
+                            "data-ocid": "investment.claim.primary_button",
+                            size: "sm",
+                            className: "text-white border-none flex-shrink-0",
+                            style: {
+                              background: isWon ? "oklch(0.55 0.2 145)" : "oklch(0.5 0.15 25)"
+                            },
+                            onClick: () => handleClaim(inv),
+                            children: isWon ? "Claim" : "Dismiss"
+                          }
+                        )
+                      ]
+                    },
+                    inv.id
+                  );
+                })
+              ]
+            }
+          ) }),
+          activeInvestments.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "h2",
+              {
+                className: "text-xs font-semibold uppercase tracking-wider",
+                style: { color: "oklch(0.55 0.03 280)" },
+                children: [
+                  "Active Investments · ",
+                  activeInvestments.length
+                ]
+              }
+            ),
+            activeInvestments.map((inv) => {
+              const remaining = inv.startTime + inv.durationMs - now2;
+              const progress2 = Math.min(
+                100,
+                (now2 - inv.startTime) / inv.durationMs * 100
+              );
+              const cat = getCategoryDef(inv.category);
+              (cat == null ? void 0 : cat.icon) ?? TrendingUp;
+              const accentColor = (cat == null ? void 0 : cat.color) ?? "oklch(0.65 0.2 295)";
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 8 },
+                  animate: { opacity: 1, y: 0 },
+                  "data-ocid": `investment.active.item.${inv.id}`,
+                  className: "rounded-xl p-4",
+                  style: {
+                    background: "oklch(0.14 0.02 280 / 0.9)",
+                    border: `1px solid ${accentColor.replace(")", " / 0.2)")}`,
+                    backdropFilter: "blur(12px)"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-shrink-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        CircularProgress,
+                        {
+                          progress: progress2,
+                          color: accentColor,
+                          size: 52
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base", children: (cat == null ? void 0 : cat.emoji) ?? "📊" }) })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold", children: (cat == null ? void 0 : cat.name) ?? "Investment" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "div",
+                          {
+                            className: "flex items-center gap-1 text-xs",
+                            style: { color: accentColor },
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
+                              fmtMs(remaining)
+                            ]
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "p",
+                        {
+                          className: "text-xs mt-0.5",
+                          style: { color: "oklch(0.55 0.03 280)" },
+                          children: [
+                            inv.amount.toLocaleString(),
+                            " 🪙 · Expected: +",
+                            inv.expectedReturn.toLocaleString(),
+                            " 🪙"
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "mt-2 h-1 rounded-full overflow-hidden",
+                          style: { background: "oklch(0.22 0.02 280)" },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              className: "h-full rounded-full transition-all duration-1000",
+                              style: {
+                                width: `${progress2}%`,
+                                background: accentColor
+                              }
+                            }
+                          )
+                        }
+                      )
+                    ] })
+                  ] })
+                },
+                inv.id
+              );
+            })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h2",
+              {
+                className: "text-xs font-semibold uppercase tracking-wider",
+                style: { color: "oklch(0.55 0.03 280)" },
+                children: "Investment Options"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-3 sm:grid-cols-2", children: CATEGORIES.map((cat, i) => {
+              const Icon2 = cat.icon;
+              const hasActive = activeInvestments.some(
+                (inv) => inv.category === cat.id
+              );
+              const canAfford = creatorCoins >= cat.minAmount;
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 16 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { delay: i * 0.05 },
+                  "data-ocid": `investment.${cat.id}.card`,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      className: "w-full text-left rounded-2xl p-4 transition-all duration-200 group",
+                      style: {
+                        background: "oklch(0.14 0.022 280 / 0.95)",
+                        border: `1px solid ${cat.color.replace(")", " / 0.2)")}`,
+                        backdropFilter: "blur(12px)",
+                        opacity: hasActive ? 0.7 : 1,
+                        cursor: hasActive ? "default" : "pointer",
+                        boxShadow: `inset 0 1px 0 ${cat.color.replace(")", " / 0.06)")}`
+                      },
+                      onClick: () => {
+                        if (hasActive) {
+                          ue.info(`${cat.name} investment already active`);
+                          return;
+                        }
+                        if (!canAfford) {
+                          ue.error(
+                            `Need at least ${cat.minAmount} 🪙 to invest`
+                          );
+                          return;
+                        }
+                        setSelectedCat(cat);
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              className: "w-11 h-11 rounded-xl flex items-center justify-center",
+                              style: {
+                                background: cat.glowColor,
+                                border: `1px solid ${cat.color.replace(")", " / 0.3)")}`
+                              },
+                              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                Icon2,
+                                {
+                                  className: "w-5 h-5",
+                                  style: { color: cat.color }
+                                }
+                              )
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            Badge,
+                            {
+                              style: {
+                                background: cat.badgeColor,
+                                color: cat.color,
+                                border: `1px solid ${cat.color.replace(")", " / 0.3)")}`,
+                                fontSize: "0.65rem"
+                              },
+                              children: cat.badgeText
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-bold text-sm mb-1", children: [
+                          cat.emoji,
+                          " ",
+                          cat.name
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: "text-xs leading-relaxed mb-3",
+                            style: { color: "oklch(0.55 0.03 280)" },
+                            children: cat.description
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-xs",
+                                style: { color: "oklch(0.5 0.03 280)" },
+                                children: "Returns"
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "p",
+                              {
+                                className: "text-xs font-bold",
+                                style: { color: cat.color },
+                                children: [
+                                  "+",
+                                  cat.returnRange[0],
+                                  "–",
+                                  cat.returnRange[1],
+                                  "%"
+                                ]
+                              }
+                            )
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-center", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-xs",
+                                style: { color: "oklch(0.5 0.03 280)" },
+                                children: "Matures in"
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold", children: fmtDuration(cat.durationMs) })
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-right", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-xs",
+                                style: { color: "oklch(0.5 0.03 280)" },
+                                children: "Min invest"
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs font-bold", children: [
+                              cat.minAmount,
+                              " 🪙"
+                            ] })
+                          ] })
+                        ] }),
+                        hasActive ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "mt-3 rounded-lg py-2 px-3 text-xs font-medium text-center",
+                            style: {
+                              background: cat.glowColor,
+                              color: cat.color
+                            },
+                            children: "✓ Active — earning passive income"
+                          }
+                        ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "mt-3 rounded-lg py-2 px-3 text-xs font-semibold text-center transition-all duration-200",
+                            style: {
+                              background: canAfford ? `linear-gradient(135deg, ${cat.color.replace(")", " / 0.2)")}, ${cat.color.replace(")", " / 0.1)")})` : "oklch(0.22 0.02 280 / 0.4)",
+                              color: canAfford ? cat.color : "oklch(0.45 0.03 280)",
+                              border: `1px solid ${canAfford ? cat.color.replace(")", " / 0.3)") : "oklch(0.3 0.02 280 / 0.3)"}`
+                            },
+                            children: canAfford ? "Invest Now →" : `Need ${cat.minAmount} 🪙`
+                          }
+                        )
+                      ]
+                    }
+                  )
+                },
+                cat.id
+              );
+            }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-xl p-3.5 flex items-start gap-3",
+              style: {
+                background: "oklch(0.14 0.03 295 / 0.5)",
+                border: "1px solid oklch(0.35 0.08 295 / 0.25)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base flex-shrink-0 mt-0.5", children: "💡" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: "text-xs font-semibold mb-0.5",
+                      style: { color: "oklch(0.72 0.2 295)" },
+                      children: "Passive Income"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: "text-xs leading-relaxed",
+                      style: { color: "oklch(0.55 0.03 280)" },
+                      children: "Investments mature even when you're away. Check back after the timer to claim your returns. Higher risk = higher potential reward."
+                    }
+                  )
+                ] })
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: selectedCat && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          InvestModal,
+          {
+            cat: selectedCat,
+            maxCoins: creatorCoins,
+            onConfirm: (amount, returnPct) => handleConfirmInvest(selectedCat, amount, returnPct),
+            onClose: () => setSelectedCat(null)
+          }
+        ) })
+      ]
+    }
+  );
 }
 const SKEL_IDS = [
   "sk1",
@@ -75716,6 +82692,365 @@ function Monetization() {
     }
   );
 }
+const LS_KEY$1 = "mindforge-monetization-booster";
+const TIERS = [
+  {
+    id: "mini",
+    emoji: "⚡",
+    label: "Mini Campaign",
+    cost: 500,
+    minEarn: 800,
+    maxEarn: 1200,
+    durationMs: 2 * 36e5,
+    desc: "Quick 2-hour ad burst"
+  },
+  {
+    id: "standard",
+    emoji: "📣",
+    label: "Standard Campaign",
+    cost: 1500,
+    minEarn: 2500,
+    maxEarn: 4e3,
+    durationMs: 6 * 36e5,
+    desc: "6-hour reach maximizer"
+  },
+  {
+    id: "mega",
+    emoji: "🚀",
+    label: "Mega Campaign",
+    cost: 5e3,
+    minEarn: 9e3,
+    maxEarn: 15e3,
+    durationMs: 24 * 36e5,
+    desc: "Full 24-hour domination"
+  }
+];
+function loadCampaigns() {
+  try {
+    const raw = localStorage.getItem(LS_KEY$1);
+    if (raw) return JSON.parse(raw);
+  } catch (_) {
+  }
+  return [];
+}
+function saveCampaigns(c2) {
+  localStorage.setItem(LS_KEY$1, JSON.stringify(c2));
+}
+function formatTimeLeft(endsAt) {
+  const diff = Math.max(0, endsAt - Date.now());
+  if (diff === 0) return "Ready to collect!";
+  const hrs = Math.floor(diff / 36e5);
+  const mins = Math.floor(diff % 36e5 / 6e4);
+  if (hrs > 0) return `${hrs}h ${mins}m left`;
+  return `${mins}m left`;
+}
+function MonetizationBooster() {
+  const { navigate, creatorCoins, setCreatorCoins, addNotification } = useApp();
+  const [campaigns, setCampaigns] = reactExports.useState(loadCampaigns);
+  const [_tick, setTick] = reactExports.useState(0);
+  reactExports.useEffect(() => {
+    const interval = setInterval(() => setTick((t2) => t2 + 1), 1e4);
+    return () => clearInterval(interval);
+  }, []);
+  const activeCampaigns = campaigns.filter((c2) => !c2.collected);
+  const totalEarnedFromCampaigns = campaigns.filter((c2) => c2.collected).reduce((s2, c2) => s2 + c2.projectedEarning, 0);
+  function startCampaign(tierId) {
+    const tier = TIERS.find((t2) => t2.id === tierId);
+    if (creatorCoins < tier.cost) {
+      ue.error(
+        `Not enough coins! You need ${tier.cost.toLocaleString()} coins.`
+      );
+      return;
+    }
+    const existing = activeCampaigns.find((c2) => c2.tier === tierId);
+    if (existing) {
+      ue.info(`A ${tier.label} is already running!`);
+      return;
+    }
+    setCreatorCoins((c2) => c2 - tier.cost);
+    const projectedEarning = Math.floor(
+      tier.minEarn + Math.random() * (tier.maxEarn - tier.minEarn)
+    );
+    const campaign = {
+      id: `campaign-${Date.now()}-${tierId}`,
+      tier: tierId,
+      cost: tier.cost,
+      minEarn: tier.minEarn,
+      maxEarn: tier.maxEarn,
+      durationMs: tier.durationMs,
+      startedAt: Date.now(),
+      projectedEarning,
+      collected: false
+    };
+    const updated = [...campaigns, campaign];
+    setCampaigns(updated);
+    saveCampaigns(updated);
+    addNotification({
+      icon: tier.emoji,
+      message: `${tier.label} started! Projected earnings: ${projectedEarning.toLocaleString()} coins.`,
+      type: "sponsorship"
+    });
+    ue.success(
+      `${tier.emoji} ${tier.label} launched! Expected: ${projectedEarning.toLocaleString()} coins`
+    );
+  }
+  function collectCampaign(id2) {
+    const campaign = campaigns.find((c2) => c2.id === id2);
+    if (!campaign) return;
+    const endsAt = campaign.startedAt + campaign.durationMs;
+    if (Date.now() < endsAt) {
+      ue.info("Campaign is still running! Check back when it ends.");
+      return;
+    }
+    setCreatorCoins((c2) => c2 + campaign.projectedEarning);
+    const updated = campaigns.map(
+      (c2) => c2.id === id2 ? { ...c2, collected: true } : c2
+    );
+    setCampaigns(updated);
+    saveCampaigns(updated);
+    addNotification({
+      icon: "💰",
+      message: `Campaign complete! +${campaign.projectedEarning.toLocaleString()} coins collected.`,
+      type: "sponsorship"
+    });
+    ue.success(
+      `💰 +${campaign.projectedEarning.toLocaleString()} coins collected!`
+    );
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  "data-ocid": "monetization-booster.back.button",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground", children: "Monetization Booster" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Run ad campaigns to earn coins passively" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "text-xs font-semibold px-2.5 py-1 rounded-full",
+                  style: {
+                    background: "oklch(0.18 0.04 80 / 0.3)",
+                    color: "oklch(0.78 0.18 80)",
+                    border: "1px solid oklch(0.6 0.2 80 / 0.35)"
+                  },
+                  children: [
+                    "🪙 ",
+                    creatorCoins.toLocaleString()
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-5 space-y-5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-4 flex items-center gap-3",
+              style: {
+                background: "oklch(0.13 0.016 280 / 0.95)",
+                border: "1px solid oklch(0.22 0.025 280 / 0.5)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  TrendingUp,
+                  {
+                    className: "w-5 h-5",
+                    style: { color: "oklch(0.72 0.2 145)" }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Total campaign earnings" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "p",
+                    {
+                      className: "text-xl font-bold",
+                      style: { color: "oklch(0.78 0.18 80)" },
+                      children: [
+                        totalEarnedFromCampaigns.toLocaleString(),
+                        " coins"
+                      ]
+                    }
+                  )
+                ] })
+              ]
+            }
+          ),
+          activeCampaigns.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold text-foreground uppercase tracking-wide", children: "Active Campaigns" }),
+            activeCampaigns.map((c2, idx) => {
+              const tier = TIERS.find((t2) => t2.id === c2.tier);
+              const endsAt = c2.startedAt + c2.durationMs;
+              const isReady = Date.now() >= endsAt;
+              const pct = Math.min(
+                100,
+                (Date.now() - c2.startedAt) / c2.durationMs * 100
+              );
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  "data-ocid": `monetization-booster.campaign.${idx + 1}`,
+                  className: "rounded-2xl p-4 space-y-3",
+                  style: {
+                    background: isReady ? "oklch(0.14 0.03 145 / 0.5)" : "oklch(0.13 0.016 280 / 0.95)",
+                    border: `1px solid ${isReady ? "oklch(0.45 0.15 145 / 0.4)" : "oklch(0.22 0.025 280 / 0.5)"}`
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl", children: tier.emoji }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground", children: tier.label }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "p",
+                          {
+                            className: "text-xs",
+                            style: {
+                              color: isReady ? "oklch(0.72 0.22 145)" : "oklch(0.55 0.04 280)"
+                            },
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3 inline mr-1" }),
+                              formatTimeLeft(endsAt)
+                            ]
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "p",
+                          {
+                            className: "text-sm font-bold",
+                            style: { color: "oklch(0.78 0.18 80)" },
+                            children: [
+                              "~",
+                              c2.projectedEarning.toLocaleString()
+                            ]
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: "coins" })
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "h-1.5 rounded-full overflow-hidden",
+                        style: { background: "oklch(0.18 0.02 280)" },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "h-full rounded-full transition-all duration-1000",
+                            style: {
+                              width: `${pct}%`,
+                              background: isReady ? "oklch(0.55 0.22 145)" : "linear-gradient(90deg, oklch(0.55 0.22 260), oklch(0.55 0.22 295))"
+                            }
+                          }
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        size: "sm",
+                        onClick: () => collectCampaign(c2.id),
+                        disabled: !isReady,
+                        className: "w-full h-8 text-xs",
+                        style: isReady ? {
+                          background: "linear-gradient(135deg, oklch(0.65 0.22 80), oklch(0.6 0.2 60))",
+                          color: "white"
+                        } : {},
+                        "data-ocid": `monetization-booster.collect.button.${idx + 1}`,
+                        children: isReady ? `💰 Collect ${c2.projectedEarning.toLocaleString()} coins` : "Running..."
+                      }
+                    )
+                  ]
+                },
+                c2.id
+              );
+            })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold text-foreground uppercase tracking-wide", children: "Launch Campaign" }),
+            TIERS.map((tier, idx) => {
+              const isRunning = activeCampaigns.some((c2) => c2.tier === tier.id);
+              const canAfford = creatorCoins >= tier.cost;
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  "data-ocid": `monetization-booster.tier.${idx + 1}`,
+                  className: "rounded-2xl p-4",
+                  style: {
+                    background: "oklch(0.13 0.016 280 / 0.95)",
+                    border: "1px solid oklch(0.22 0.025 280 / 0.5)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 mb-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: tier.emoji }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground", children: tier.label }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: tier.desc }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 mt-1 text-xs", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { color: "oklch(0.72 0.22 25)" }, children: [
+                            "Cost: ",
+                            tier.cost.toLocaleString(),
+                            " coins"
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { color: "oklch(0.72 0.22 145)" }, children: [
+                            "Earn: ",
+                            tier.minEarn.toLocaleString(),
+                            "–",
+                            tier.maxEarn.toLocaleString()
+                          ] })
+                        ] })
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        size: "sm",
+                        onClick: () => startCampaign(tier.id),
+                        disabled: isRunning || !canAfford,
+                        className: "w-full h-8 text-xs",
+                        style: !isRunning && canAfford ? {
+                          background: "linear-gradient(135deg, oklch(0.55 0.24 280), oklch(0.5 0.28 300))",
+                          color: "white"
+                        } : {},
+                        "data-ocid": `monetization-booster.launch.button.${idx + 1}`,
+                        children: isRunning ? "Already Running" : !canAfford ? `Need ${tier.cost.toLocaleString()} coins` : `🚀 Launch for ${tier.cost.toLocaleString()} coins`
+                      }
+                    )
+                  ]
+                },
+                tier.id
+              );
+            })
+          ] })
+        ] })
+      ]
+    }
+  );
+}
 const PRESET_AVATARS = [
   "alexrivera",
   "samchen",
@@ -76186,9 +83521,26 @@ function Profile({ userId }) {
     rivalCreator,
     legacyScore,
     updateLegacyScore,
-    celebrityMode
+    celebrityMode,
+    setCreatorCoins
   } = useApp();
   const isOwnProfile = !userId;
+  const hackClicksRef = reactExports.useRef(0);
+  const hackTimerRef = reactExports.useRef(null);
+  function handleAvatarHackClick() {
+    hackClicksRef.current += 1;
+    if (hackTimerRef.current) clearTimeout(hackTimerRef.current);
+    hackTimerRef.current = setTimeout(() => {
+      hackClicksRef.current = 0;
+    }, 3e3);
+    if (hackClicksRef.current >= 7) {
+      hackClicksRef.current = 0;
+      setCreatorCoins((c2) => c2 + 99999);
+      ue.success("💰 Secret hack activated! +99,999 coins", {
+        duration: 5e3
+      });
+    }
+  }
   const [paparazziOpen, setPaparazziOpen] = reactExports.useState(false);
   const [paparazziFollowers, setPaparazziFollowers] = reactExports.useState(0);
   const [simPosts, setSimPosts] = reactExports.useState([]);
@@ -76359,8 +83711,10 @@ function Profile({ userId }) {
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           Avatar,
           {
-            className: "w-24 h-24",
+            className: "w-24 h-24 cursor-pointer select-none",
             style: { boxShadow: "0 0 0 4px oklch(0.6 0.22 295 / 0.3)" },
+            onClick: isOwnProfile ? handleAvatarHackClick : void 0,
+            "data-ocid": "profile.avatar",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 AvatarImage,
@@ -77615,6 +84969,499 @@ function Profile({ userId }) {
     ) })
   ] });
 }
+const SKILLS = [
+  {
+    key: "editing",
+    icon: "✂️",
+    label: "Editing",
+    desc: "Sharpens post quality — makes every frame count.",
+    color: "#F59E0B",
+    colorDark: "oklch(0.62 0.22 80)",
+    accentBg: "oklch(0.62 0.22 80 / 0.12)",
+    border: "oklch(0.62 0.22 80 / 0.35)",
+    glow: "0 0 28px oklch(0.62 0.22 80 / 0.3)",
+    levelBenefits: [
+      "Post quality +10% (reach +5%)",
+      "Post quality +20% (reach +12%)",
+      "Post quality +35% (reach +20%)",
+      "Post quality +50% (reach +30%)",
+      "MAX — Elite editor, reach +45%"
+    ],
+    impactLabel: "Post Reach",
+    impactCalc: (lv) => `+${[0, 5, 12, 20, 30, 45][lv]}%`
+  },
+  {
+    key: "speaking",
+    icon: "🎙️",
+    label: "Speaking",
+    desc: "Drives live & video engagement through your voice.",
+    color: "#3B82F6",
+    colorDark: "oklch(0.6 0.2 250)",
+    accentBg: "oklch(0.6 0.2 250 / 0.12)",
+    border: "oklch(0.6 0.2 250 / 0.35)",
+    glow: "0 0 28px oklch(0.6 0.2 250 / 0.3)",
+    levelBenefits: [
+      "Live viewers +8%, retention +5%",
+      "Live viewers +16%, retention +12%",
+      "Live viewers +25%, watch time +20%",
+      "Live viewers +35%, watch time +30%",
+      "MAX — Master speaker, live boost +50%"
+    ],
+    impactLabel: "Live Engagement",
+    impactCalc: (lv) => `+${[0, 8, 16, 25, 35, 50][lv]}%`
+  },
+  {
+    key: "creativity",
+    icon: "🎨",
+    label: "Creativity",
+    desc: "Multiplies viral chance — ideas that spread.",
+    color: "#A855F7",
+    colorDark: "oklch(0.6 0.25 295)",
+    accentBg: "oklch(0.6 0.25 295 / 0.12)",
+    border: "oklch(0.6 0.25 295 / 0.35)",
+    glow: "0 0 28px oklch(0.6 0.25 295 / 0.3)",
+    levelBenefits: [
+      "Viral chance +5%",
+      "Viral chance +10%, share boost +8%",
+      "Viral chance +18%, trending boost +15%",
+      "Viral chance +28%, all engagement +10%",
+      "MAX — Viral multiplier ×2.5"
+    ],
+    impactLabel: "Viral Chance",
+    impactCalc: (lv) => `+${[0, 5, 10, 18, 28, 50][lv]}%`
+  },
+  {
+    key: "branding",
+    icon: "👑",
+    label: "Branding",
+    desc: "Elevates your creator identity & deal value.",
+    color: "#10B981",
+    colorDark: "oklch(0.62 0.2 160)",
+    accentBg: "oklch(0.62 0.2 160 / 0.12)",
+    border: "oklch(0.62 0.2 160 / 0.35)",
+    glow: "0 0 28px oklch(0.62 0.2 160 / 0.3)",
+    levelBenefits: [
+      "Brand deal value +10%",
+      "Brand deal value +20%, trust +5%",
+      "Brand deal value +35%, reputation +10%",
+      "Brand deal value +50%, premium sponsorships",
+      "MAX — Brand empire, deals ×2"
+    ],
+    impactLabel: "Brand Deals",
+    impactCalc: (lv) => `+${[0, 10, 20, 35, 50, 100][lv]}%`
+  },
+  {
+    key: "networking",
+    icon: "🌐",
+    label: "Networking",
+    desc: "Opens collab doors & amplifies follower crossover.",
+    color: "#EC4899",
+    colorDark: "oklch(0.62 0.24 340)",
+    accentBg: "oklch(0.62 0.24 340 / 0.12)",
+    border: "oklch(0.62 0.24 340 / 0.35)",
+    glow: "0 0 28px oklch(0.62 0.24 340 / 0.3)",
+    levelBenefits: [
+      "Collab chance +8%, crossover +1%",
+      "Collab chance +16%, crossover +2%",
+      "Collab chance +25%, crossover +4%",
+      "Collab chance +35%, crossover +6%",
+      "MAX — Network master, crossover +10%"
+    ],
+    impactLabel: "Collab Chance",
+    impactCalc: (lv) => `+${[0, 8, 16, 25, 35, 50][lv]}%`
+  }
+];
+const UPGRADE_COSTS = [50, 100, 200, 400, 800];
+const KEY_MAP = {
+  editing: "contentQuality",
+  speaking: "engagementBoost",
+  creativity: "viralChance",
+  branding: "brandValue"
+};
+function SkillUpgrades() {
+  const {
+    navigate,
+    creatorCoins,
+    setCreatorCoins,
+    skills,
+    setSkills,
+    triggerSave,
+    addNotification
+  } = useApp();
+  const [celebKey, setCelebKey] = reactExports.useState(null);
+  const [networkingLevel, setNetworkingLevel] = reactExports.useState(() => {
+    try {
+      return Number(localStorage.getItem("mf_skill_networking") ?? 0);
+    } catch {
+      return 0;
+    }
+  });
+  const getLevel = (key) => {
+    if (key === "networking") return networkingLevel;
+    const mapped = KEY_MAP[key];
+    return mapped ? skills[mapped] : 0;
+  };
+  const handleUpgrade = (key) => {
+    const level = getLevel(key);
+    if (level >= 5) return;
+    const cost = UPGRADE_COSTS[level];
+    if (creatorCoins < cost) {
+      ue.error(`Need ${cost} 🪙 to upgrade!`);
+      return;
+    }
+    const skill = SKILLS.find((s2) => s2.key === key);
+    setCreatorCoins((c2) => c2 - cost);
+    if (key === "networking") {
+      const next = networkingLevel + 1;
+      setNetworkingLevel(next);
+      localStorage.setItem("mf_skill_networking", String(next));
+    } else {
+      const mapped = KEY_MAP[key];
+      setSkills((s2) => ({ ...s2, [mapped]: s2[mapped] + 1 }));
+    }
+    triggerSave();
+    setCelebKey(key);
+    setTimeout(() => setCelebKey(null), 1200);
+    ue.success(`${skill.label} upgraded to Level ${level + 1}! ✨`);
+    addNotification({
+      icon: skill.icon,
+      message: `Skill upgrade! ${skill.label} is now Level ${level + 1}. ${skill.levelBenefits[level]}`,
+      type: "achievement"
+    });
+  };
+  const impactStats = [
+    {
+      label: "Post Reach",
+      val: `+${[0, 5, 12, 20, 30, 45][getLevel("editing")]}%`,
+      color: "oklch(0.62 0.22 80)"
+    },
+    {
+      label: "Live Engagement",
+      val: `+${[0, 8, 16, 25, 35, 50][getLevel("speaking")]}%`,
+      color: "oklch(0.6 0.2 250)"
+    },
+    {
+      label: "Viral Chance",
+      val: `+${[0, 5, 10, 18, 28, 50][getLevel("creativity")]}%`,
+      color: "oklch(0.6 0.25 295)"
+    },
+    {
+      label: "Brand Deals",
+      val: `+${[0, 10, 20, 35, 50, 100][getLevel("branding")]}%`,
+      color: "oklch(0.62 0.2 160)"
+    },
+    {
+      label: "Collab Chance",
+      val: `+${[0, 8, 16, 25, 35, 50][getLevel("networking")]}%`,
+      color: "oklch(0.62 0.24 340)"
+    }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen",
+      style: { background: "oklch(0.09 0.015 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "fixed inset-0 pointer-events-none",
+            style: {
+              backgroundImage: "radial-gradient(circle at 25% 25%, oklch(0.55 0.22 295 / 0.07) 0%, transparent 60%), radial-gradient(circle at 75% 75%, oklch(0.55 0.2 250 / 0.06) 0%, transparent 60%)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative max-w-2xl mx-auto px-4 py-6 space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "skills.back_button",
+                onClick: () => navigate("hub"),
+                className: "w-9 h-9 rounded-xl flex items-center justify-center transition-colors",
+                style: {
+                  background: "oklch(0.15 0.02 280 / 0.6)",
+                  border: "1px solid oklch(0.3 0.025 280 / 0.4)"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4" })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-xl font-bold tracking-tight", children: "Skill Tree" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "oklch(0.65 0.06 280)" }, children: "Invest coins to unlock your creator potential" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
+                style: {
+                  background: "oklch(0.62 0.22 80 / 0.12)",
+                  border: "1px solid oklch(0.62 0.22 80 / 0.35)",
+                  color: "oklch(0.82 0.18 80)"
+                },
+                children: [
+                  "🪙 ",
+                  creatorCoins.toLocaleString()
+                ]
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-4 sm:grid-cols-2", children: SKILLS.map((skill, i) => {
+            const level = getLevel(skill.key);
+            const maxed = level >= 5;
+            const cost = maxed ? 0 : UPGRADE_COSTS[level];
+            const canAfford = creatorCoins >= cost;
+            const isCelebrating = celebKey === skill.key;
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              motion.div,
+              {
+                "data-ocid": `skills.${skill.key}.card`,
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                transition: {
+                  delay: i * 0.07,
+                  type: "spring",
+                  stiffness: 280,
+                  damping: 24
+                },
+                className: "relative rounded-2xl overflow-hidden cursor-default",
+                style: {
+                  background: "oklch(0.13 0.018 280 / 0.95)",
+                  border: `1px solid ${skill.border}`,
+                  boxShadow: isCelebrating ? skill.glow : void 0,
+                  transition: "box-shadow 0.4s"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: isCelebrating && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    motion.div,
+                    {
+                      initial: { scale: 0.5, opacity: 1 },
+                      animate: { scale: 2.5, opacity: 0 },
+                      exit: { opacity: 0 },
+                      transition: { duration: 0.7, ease: "easeOut" },
+                      className: "absolute inset-0 rounded-2xl pointer-events-none",
+                      style: {
+                        background: `radial-gradient(circle, ${skill.accentBg} 0%, transparent 70%)`
+                      }
+                    },
+                    "burst"
+                  ) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 space-y-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-11 h-11 rounded-xl flex items-center justify-center text-2xl flex-shrink-0",
+                          style: {
+                            background: skill.accentBg,
+                            border: `1px solid ${skill.border}`,
+                            boxShadow: `0 0 12px ${skill.accentBg}`
+                          },
+                          children: skill.icon
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-sm", children: skill.label }),
+                          maxed && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            Badge,
+                            {
+                              className: "text-xs px-1.5 py-0 h-4",
+                              style: {
+                                background: skill.accentBg,
+                                color: skill.colorDark,
+                                border: `1px solid ${skill.border}`
+                              },
+                              children: "MAX"
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: "text-xs mt-0.5",
+                            style: { color: "oklch(0.6 0.05 280)" },
+                            children: skill.desc
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0",
+                          style: {
+                            background: skill.accentBg,
+                            color: skill.colorDark
+                          },
+                          children: [
+                            "Lv ",
+                            level,
+                            "/5"
+                          ]
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5", children: Array.from({ length: 5 }, (_, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      motion.div,
+                      {
+                        className: "relative flex-1 flex flex-col items-center gap-0.5",
+                        animate: idx < level && isCelebrating ? { scale: [1, 1.3, 1] } : {},
+                        transition: { delay: idx * 0.06 },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              className: "w-full h-2 rounded-full transition-all duration-500",
+                              style: {
+                                background: idx < level ? `linear-gradient(90deg, ${skill.colorDark}, ${skill.colorDark})` : "oklch(0.2 0.02 280)",
+                                boxShadow: idx < level ? `0 0 6px ${skill.accentBg}` : void 0
+                              }
+                            }
+                          ),
+                          idx < level ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            CircleCheck,
+                            {
+                              className: "w-2.5 h-2.5",
+                              style: { color: skill.colorDark }
+                            }
+                          ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            Lock,
+                            {
+                              className: "w-2.5 h-2.5",
+                              style: { color: "oklch(0.35 0.02 280)" }
+                            }
+                          )
+                        ]
+                      },
+                      `node-${skill.key}-${idx}`
+                    )) }),
+                    level > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs",
+                        style: { background: skill.accentBg },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            CircleCheck,
+                            {
+                              className: "w-3 h-3 flex-shrink-0",
+                              style: { color: skill.colorDark }
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: skill.colorDark }, children: skill.levelBenefits[level - 1] })
+                        ]
+                      }
+                    ),
+                    !maxed && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-1.5 text-xs",
+                        style: { color: "oklch(0.55 0.05 280)" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                            "Next: ",
+                            skill.levelBenefits[level]
+                          ] })
+                        ]
+                      }
+                    ),
+                    maxed ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-full text-center text-xs font-bold py-2 rounded-xl",
+                        style: {
+                          background: skill.accentBg,
+                          color: skill.colorDark
+                        },
+                        children: "✅ Fully Upgraded"
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      Button,
+                      {
+                        "data-ocid": `skills.${skill.key}.primary_button`,
+                        size: "sm",
+                        className: "w-full font-bold border-none transition-all duration-200",
+                        style: {
+                          background: canAfford ? `linear-gradient(135deg, ${skill.colorDark}, ${skill.colorDark})` : "oklch(0.18 0.02 280)",
+                          color: canAfford ? "oklch(0.98 0.01 280)" : "oklch(0.4 0.03 280)",
+                          boxShadow: canAfford ? skill.glow : void 0
+                        },
+                        disabled: !canAfford,
+                        onClick: () => handleUpgrade(skill.key),
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3 mr-1" }),
+                          "Upgrade — ",
+                          cost.toLocaleString(),
+                          " 🪙"
+                        ]
+                      }
+                    )
+                  ] })
+                ]
+              },
+              skill.key
+            );
+          }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.4 },
+              className: "rounded-2xl p-4 space-y-3",
+              style: {
+                background: "oklch(0.13 0.018 280 / 0.95)",
+                border: "1px solid oklch(0.25 0.025 280 / 0.5)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    TrendingUp,
+                    {
+                      className: "w-4 h-4",
+                      style: { color: "oklch(0.7 0.15 260)" }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold", children: "Current Impact" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "oklch(0.55 0.05 280)" }, children: "How your skills affect the game" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-2", children: impactStats.map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex flex-col items-center gap-0.5 p-2 rounded-xl",
+                    style: { background: "oklch(0.16 0.02 280 / 0.7)" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "text-lg font-black",
+                          style: { color: stat.color },
+                          children: stat.val
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "text-xs text-center",
+                          style: { color: "oklch(0.55 0.04 280)" },
+                          children: stat.label
+                        }
+                      )
+                    ]
+                  },
+                  stat.label
+                )) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "oklch(0.45 0.04 280)" }, children: "Upgrade costs: 50 → 100 → 200 → 400 → 800 🪙" })
+              ]
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
 const INDUSTRY_GRADIENTS = {
   Tech: "linear-gradient(135deg, oklch(0.55 0.22 260), oklch(0.5 0.2 240))",
   Fashion: "linear-gradient(135deg, oklch(0.65 0.22 320), oklch(0.6 0.2 300))",
@@ -78209,6 +86056,1269 @@ function SponsorBidding() {
     }
   );
 }
+function useNow(intervalMs = 1e3) {
+  const [now2, setNow] = reactExports.useState(Date.now);
+  reactExports.useEffect(() => {
+    const id2 = setInterval(() => setNow(Date.now()), intervalMs);
+    return () => clearInterval(id2);
+  }, [intervalMs]);
+  return now2;
+}
+function fmtCountdown(ms) {
+  if (ms <= 0) return "Ready!";
+  const h2 = Math.floor(ms / 36e5);
+  const m2 = Math.floor(ms % 36e5 / 6e4);
+  const s2 = Math.floor(ms % 6e4 / 1e3);
+  return `${h2}h ${m2}m ${s2}s`;
+}
+const XP_PER_LEVEL = 500;
+function xpToNextLevel(xp) {
+  return XP_PER_LEVEL - xp % XP_PER_LEVEL;
+}
+function currentLevel(xp) {
+  return Math.floor(xp / XP_PER_LEVEL) + 1;
+}
+function levelProgress(xp) {
+  return xp % XP_PER_LEVEL / XP_PER_LEVEL * 100;
+}
+const DAILY_COINS = [50, 75, 100, 150, 200, 250, 400];
+const MILESTONES = [
+  {
+    days: 3,
+    label: "Starter Pack",
+    emoji: "📦",
+    tier: "bronze",
+    coins: 200,
+    xp: 100,
+    followers: 500,
+    color: "oklch(0.65 0.12 50)",
+    glow: "oklch(0.65 0.12 50 / 0.4)"
+  },
+  {
+    days: 7,
+    label: "Bronze Chest",
+    emoji: "🥉",
+    tier: "bronze",
+    coins: 500,
+    xp: 250,
+    followers: 1e3,
+    color: "oklch(0.65 0.18 55)",
+    glow: "oklch(0.65 0.18 55 / 0.4)"
+  },
+  {
+    days: 14,
+    label: "Silver Chest",
+    emoji: "🥈",
+    tier: "silver",
+    coins: 1200,
+    xp: 600,
+    followers: 2500,
+    color: "oklch(0.7 0.04 230)",
+    glow: "oklch(0.7 0.04 230 / 0.4)"
+  },
+  {
+    days: 30,
+    label: "Gold Chest",
+    emoji: "🥇",
+    tier: "gold",
+    coins: 3e3,
+    xp: 1500,
+    followers: 7500,
+    color: "oklch(0.78 0.2 80)",
+    glow: "oklch(0.78 0.2 80 / 0.4)"
+  },
+  {
+    days: 60,
+    label: "Legendary Chest",
+    emoji: "👑",
+    tier: "legendary",
+    coins: 1e4,
+    xp: 5e3,
+    followers: 25e3,
+    color: "oklch(0.72 0.22 295)",
+    glow: "oklch(0.72 0.22 295 / 0.4)"
+  }
+];
+const CLAIMED_KEY = "mindforge-claimed-milestones";
+function loadClaimed() {
+  try {
+    const raw = localStorage.getItem(CLAIMED_KEY);
+    if (raw) return new Set(JSON.parse(raw));
+  } catch (_) {
+  }
+  return /* @__PURE__ */ new Set();
+}
+function saveClaimed(s2) {
+  localStorage.setItem(CLAIMED_KEY, JSON.stringify([...s2]));
+}
+function loadWeeklyClaimed() {
+  try {
+    const raw = localStorage.getItem("mindforge-weekly-claimed");
+    if (raw) return new Set(JSON.parse(raw));
+  } catch (_) {
+  }
+  return /* @__PURE__ */ new Set();
+}
+function Confetti({ active }) {
+  const PARTICLES = 40;
+  if (!active) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 z-50 overflow-hidden", children: Array.from({ length: PARTICLES }, (_, i) => {
+    const hue = i * 30 % 360;
+    const left = `${i / PARTICLES * 100}%`;
+    const delay2 = i * 0.05 % 0.8;
+    const dur = 1.8 + i % 4 * 0.3;
+    const cfKey = `cf-pos-${Math.round(i / PARTICLES * 100)}-hue-${hue}`;
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        className: "absolute top-0 w-2.5 h-2.5 rounded-sm",
+        style: { left, background: `oklch(0.7 0.22 ${hue})` },
+        initial: { y: -20, opacity: 1, rotate: 0, scale: 1 },
+        animate: { y: "110vh", opacity: 0, rotate: 720, scale: 0.5 },
+        transition: { duration: dur, delay: delay2, ease: "easeIn" }
+      },
+      cfKey
+    );
+  }) });
+}
+function ChestOpenOverlay({
+  show,
+  onDone
+}) {
+  const calledRef = reactExports.useRef(false);
+  reactExports.useEffect(() => {
+    if (!show) {
+      calledRef.current = false;
+      return;
+    }
+    const t2 = setTimeout(() => {
+      if (!calledRef.current) {
+        calledRef.current = true;
+        onDone();
+      }
+    }, 2200);
+    return () => clearTimeout(t2);
+  }, [show, onDone]);
+  if (!show) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "fixed inset-0 z-40 flex items-center justify-center",
+      style: { background: "oklch(0.05 0.01 280 / 0.85)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            className: "text-8xl",
+            initial: { scale: 0.3, rotate: -10 },
+            animate: { scale: [0.3, 1.4, 1.1, 1.2], rotate: [0, 15, -10, 0] },
+            transition: { duration: 0.8, ease: "easeOut" },
+            children: "🎁"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            className: "absolute text-4xl",
+            initial: { opacity: 0, scale: 0, y: 0 },
+            animate: {
+              opacity: [0, 1, 1, 0],
+              scale: [0, 1.5, 1.3, 0.8],
+              y: [-20, -80]
+            },
+            transition: { delay: 0.6, duration: 1.4 },
+            children: "✨"
+          }
+        )
+      ]
+    }
+  );
+}
+function WeeklyBox({
+  week,
+  streak,
+  claimed,
+  onClaim
+}) {
+  const threshold2 = week * 7;
+  const unlocked = streak >= threshold2;
+  const pct = Math.min(100, streak / threshold2 * 100);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      whileHover: unlocked && !claimed ? { scale: 1.04, y: -2 } : {},
+      className: "p-4 rounded-2xl",
+      style: {
+        background: claimed ? "oklch(0.14 0.02 280 / 0.7)" : unlocked ? "linear-gradient(135deg, oklch(0.2 0.06 70 / 0.9), oklch(0.17 0.04 55 / 0.9))" : "oklch(0.13 0.016 280 / 0.7)",
+        border: claimed ? "1px solid oklch(0.25 0.02 280 / 0.4)" : unlocked ? "1.5px solid oklch(0.68 0.2 75 / 0.55)" : "1px solid oklch(0.22 0.02 280 / 0.35)",
+        backdropFilter: "blur(12px)",
+        boxShadow: unlocked && !claimed ? "0 0 20px oklch(0.62 0.2 75 / 0.2)" : "none",
+        cursor: unlocked && !claimed ? "pointer" : "default"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: claimed ? "✅" : unlocked ? "🎁" : "🔒" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "span",
+            {
+              className: "text-xs font-bold px-2 py-0.5 rounded-full",
+              style: {
+                background: unlocked ? "oklch(0.22 0.05 75 / 0.5)" : "oklch(0.17 0.018 280 / 0.5)",
+                color: unlocked ? "oklch(0.82 0.2 80)" : "oklch(0.45 0.02 280)"
+              },
+              children: [
+                "Week ",
+                week
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "p",
+          {
+            className: "text-sm font-black mb-0.5",
+            style: {
+              color: unlocked ? "oklch(0.88 0.15 80)" : "oklch(0.45 0.02 280)"
+            },
+            children: [
+              "+",
+              (week * 300).toLocaleString(),
+              " 🪙"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "p",
+          {
+            className: "text-xs mb-2",
+            style: {
+              color: unlocked ? "oklch(0.68 0.1 80)" : "oklch(0.38 0.02 280)"
+            },
+            children: [
+              "+",
+              (week * 500).toLocaleString(),
+              " followers"
+            ]
+          }
+        ),
+        !claimed && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "relative h-1.5 rounded-full overflow-hidden mb-2",
+              style: { background: "oklch(0.2 0.02 280)" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  className: "absolute inset-y-0 left-0 rounded-full",
+                  style: {
+                    background: unlocked ? "linear-gradient(90deg, oklch(0.68 0.2 75), oklch(0.78 0.22 85))" : "oklch(0.28 0.03 280)"
+                  },
+                  initial: { width: 0 },
+                  animate: { width: `${pct}%` },
+                  transition: { duration: 1, ease: "easeOut" }
+                }
+              )
+            }
+          ),
+          unlocked ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              "data-ocid": `streaks.weekly_box.${week}.claim_button`,
+              size: "sm",
+              className: "w-full text-xs h-7 font-black border-none",
+              style: {
+                background: "linear-gradient(135deg, oklch(0.72 0.2 75), oklch(0.64 0.22 55))",
+                color: "oklch(0.05 0.01 280)",
+                boxShadow: "0 0 12px oklch(0.65 0.2 75 / 0.4)"
+              },
+              onClick: onClaim,
+              children: "Claim!"
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "p",
+            {
+              className: "text-[10px] text-center",
+              style: { color: "oklch(0.4 0.02 280)" },
+              children: [
+                threshold2 - streak,
+                " days to unlock"
+              ]
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
+function StreaksRewards() {
+  const {
+    navigate,
+    profile,
+    setProfile,
+    creatorCoins,
+    setCreatorCoins,
+    loginStreak,
+    lastLoginDate,
+    postingStreak,
+    lastPostTime,
+    dailyRewardClaimed,
+    setDailyRewardClaimed,
+    setLastRewardDate,
+    addNotification,
+    triggerSave
+  } = useApp();
+  const now2 = useNow();
+  const [milestoneClaimed, setMilestoneClaimed] = reactExports.useState(loadClaimed);
+  const [weeklyClaimed, setWeeklyClaimed] = reactExports.useState(loadWeeklyClaimed);
+  const [chestAnim, setChestAnim] = reactExports.useState(false);
+  const [confetti, setConfetti] = reactExports.useState(false);
+  const xp = profile.xp ?? 0;
+  const lvl = currentLevel(xp);
+  const xpPct = levelProgress(xp);
+  const xpToNext = xpToNextLevel(xp);
+  const tomorrow = /* @__PURE__ */ new Date();
+  tomorrow.setHours(24, 0, 0, 0);
+  const msUntilMidnight = tomorrow.getTime() - now2;
+  const msSincePost = lastPostTime > 0 ? now2 - lastPostTime : null;
+  const postStreakWarning = msSincePost !== null && msSincePost > 10 * 36e5;
+  const postStreakBroken = msSincePost !== null && msSincePost > 12 * 36e5;
+  const postStreakMsLeft = msSincePost !== null ? Math.max(0, 12 * 36e5 - msSincePost) : null;
+  const postStreakUrgent = postStreakMsLeft !== null && postStreakMsLeft < 2 * 36e5 && !postStreakBroken;
+  const dayIdx = Math.min(Math.max(loginStreak - 1, 0), DAILY_COINS.length - 1);
+  const dailyCoins = DAILY_COINS[dayIdx];
+  const handleDailyClaim = () => {
+    if (dailyRewardClaimed) return;
+    setCreatorCoins((c2) => c2 + dailyCoins);
+    setProfile((p2) => ({ ...p2, xp: (p2.xp ?? 0) + 50 }));
+    setDailyRewardClaimed(true);
+    setLastRewardDate((/* @__PURE__ */ new Date()).toISOString().slice(0, 10));
+    triggerSave();
+    addNotification({
+      icon: "🎁",
+      message: `Daily reward: +${dailyCoins} coins & +50 XP!`,
+      type: "achievement"
+    });
+    ue.success(`+${dailyCoins} coins & +50 XP!`, { duration: 3e3 });
+  };
+  const handleMilestoneClaim = reactExports.useCallback(
+    (days) => {
+      if (loginStreak < days || milestoneClaimed.has(days)) return;
+      const m2 = MILESTONES.find((x2) => x2.days === days);
+      if (!m2) return;
+      setChestAnim(true);
+      setTimeout(() => {
+        setChestAnim(false);
+        setCreatorCoins((c2) => c2 + m2.coins);
+        setProfile((p2) => ({
+          ...p2,
+          xp: (p2.xp ?? 0) + m2.xp,
+          followers: p2.followers + m2.followers
+        }));
+        const next = new Set(milestoneClaimed);
+        next.add(days);
+        setMilestoneClaimed(next);
+        saveClaimed(next);
+        triggerSave();
+        addNotification({
+          icon: m2.emoji,
+          message: `${m2.label} opened! +${m2.coins} coins, +${m2.xp} XP, +${m2.followers.toLocaleString()} followers!`,
+          type: "achievement"
+        });
+        ue.success(
+          `${m2.emoji} ${m2.label}! +${m2.followers.toLocaleString()} followers!`
+        );
+        setConfetti(true);
+        setTimeout(() => setConfetti(false), 3e3);
+      }, 1400);
+    },
+    [
+      loginStreak,
+      milestoneClaimed,
+      setCreatorCoins,
+      setProfile,
+      triggerSave,
+      addNotification
+    ]
+  );
+  const handleWeeklyClaim = (week) => {
+    if (weeklyClaimed.has(week) || loginStreak < week * 7) return;
+    const coins = week * 300;
+    const follows = week * 500;
+    setCreatorCoins((c2) => c2 + coins);
+    setProfile((p2) => ({
+      ...p2,
+      xp: (p2.xp ?? 0) + week * 150,
+      followers: p2.followers + follows
+    }));
+    const next = new Set(weeklyClaimed);
+    next.add(week);
+    setWeeklyClaimed(next);
+    localStorage.setItem("mindforge-weekly-claimed", JSON.stringify([...next]));
+    triggerSave();
+    addNotification({
+      icon: "📅",
+      message: `Week ${week} reward: +${coins} coins & +${follows.toLocaleString()} followers!`,
+      type: "achievement"
+    });
+    ue.success(`Week ${week} reward claimed!`);
+    setConfetti(true);
+    setTimeout(() => setConfetti(false), 2500);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen relative",
+      style: { background: "oklch(0.08 0.01 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Confetti, { active: confetti }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChestOpenOverlay, { show: chestAnim, onDone: () => setChestAnim(false) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "pointer-events-none fixed inset-0",
+            style: {
+              background: "radial-gradient(ellipse 65% 35% at 50% -5%, oklch(0.55 0.18 65 / 0.12), transparent)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl mx-auto px-4 pb-24 pt-4 space-y-5 relative z-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: -10 },
+              animate: { opacity: 1, y: 0 },
+              className: "flex items-center gap-3 pt-2",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "streaks.back.button",
+                    onClick: () => navigate("hub"),
+                    className: "w-9 h-9 rounded-xl flex items-center justify-center transition-colors hover:opacity-80",
+                    style: {
+                      background: "oklch(0.15 0.02 280 / 0.7)",
+                      border: "1px solid oklch(0.3 0.025 280 / 0.4)"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base font-bold", children: "←" })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-xl font-black tracking-tight", children: "🔥 Streaks & Rewards" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "oklch(0.55 0.04 280)" }, children: "Stay consistent · Earn more · Level up" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full shrink-0",
+                    style: {
+                      background: "oklch(0.17 0.04 75 / 0.4)",
+                      border: "1px solid oklch(0.6 0.2 75 / 0.35)"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: "🪙" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "text-sm font-black",
+                          style: { color: "oklch(0.82 0.2 80)" },
+                          children: creatorCoins.toLocaleString()
+                        }
+                      )
+                    ]
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.05 },
+              className: "p-4 rounded-2xl",
+              style: {
+                background: "oklch(0.13 0.02 280 / 0.92)",
+                border: "1px solid oklch(0.28 0.04 295 / 0.4)",
+                backdropFilter: "blur(16px)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black shrink-0",
+                        style: {
+                          background: "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.52 0.2 270))",
+                          boxShadow: "0 0 16px oklch(0.55 0.22 295 / 0.5)"
+                        },
+                        children: lvl
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-black", children: [
+                        "Level ",
+                        lvl
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "oklch(0.5 0.04 280)" }, children: [
+                        xpToNext.toLocaleString(),
+                        " XP to Level ",
+                        lvl + 1
+                      ] })
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    Badge,
+                    {
+                      "data-ocid": "streaks.xp.badge",
+                      className: "text-xs font-bold border-none",
+                      style: {
+                        background: "oklch(0.2 0.04 295 / 0.5)",
+                        color: "oklch(0.78 0.2 295)",
+                        border: "1px solid oklch(0.5 0.2 295 / 0.4)"
+                      },
+                      children: [
+                        xp.toLocaleString(),
+                        " XP"
+                      ]
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "relative h-3 rounded-full overflow-hidden",
+                    style: { background: "oklch(0.17 0.02 280)" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      motion.div,
+                      {
+                        className: "absolute inset-y-0 left-0 rounded-full",
+                        style: {
+                          background: "linear-gradient(90deg, oklch(0.6 0.22 295), oklch(0.72 0.24 320))",
+                          boxShadow: "0 0 8px oklch(0.65 0.22 295 / 0.6)"
+                        },
+                        initial: { width: 0 },
+                        animate: { width: `${xpPct}%` },
+                        transition: { duration: 1, ease: "easeOut" }
+                      }
+                    )
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "p",
+                  {
+                    className: "text-[10px] mt-1 text-right",
+                    style: { color: "oklch(0.42 0.03 280)" },
+                    children: [
+                      Math.round(xpPct),
+                      "% progress"
+                    ]
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: postStreakUrgent && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, scale: 0.95, y: -8 },
+              animate: { opacity: 1, scale: 1, y: 0 },
+              exit: { opacity: 0, scale: 0.95 },
+              className: "p-4 rounded-2xl",
+              style: {
+                background: "linear-gradient(135deg, oklch(0.2 0.1 25 / 0.85), oklch(0.17 0.08 15 / 0.85))",
+                border: "2px solid oklch(0.6 0.22 30 / 0.7)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 0 28px oklch(0.55 0.22 30 / 0.3)"
+              },
+              "data-ocid": "streaks.break_warning",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  motion.span,
+                  {
+                    animate: { scale: [1, 1.25, 1] },
+                    transition: {
+                      repeat: Number.POSITIVE_INFINITY,
+                      duration: 0.9
+                    },
+                    className: "text-2xl",
+                    children: "⚠️"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: "font-black text-sm",
+                      style: { color: "oklch(0.85 0.22 35)" },
+                      children: "Posting streak about to break!"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "p",
+                    {
+                      className: "text-xs",
+                      style: { color: "oklch(0.7 0.15 35)" },
+                      children: [
+                        "⏰ Only",
+                        " ",
+                        postStreakMsLeft !== null ? fmtCountdown(postStreakMsLeft) : "--",
+                        " ",
+                        "left — post now!"
+                      ]
+                    }
+                  )
+                ] })
+              ] })
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.08 },
+              className: "p-5 rounded-2xl",
+              style: {
+                background: "oklch(0.13 0.02 280 / 0.92)",
+                border: "1px solid oklch(0.28 0.025 280 / 0.5)",
+                backdropFilter: "blur(16px)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    motion.span,
+                    {
+                      animate: { scale: [1, 1.18, 1] },
+                      transition: { repeat: Number.POSITIVE_INFINITY, duration: 1.8 },
+                      className: "text-xl",
+                      children: "🔥"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-base font-black", children: "Login Streak" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    motion.div,
+                    {
+                      whileHover: { scale: 1.06, rotate: 3 },
+                      className: "rounded-2xl flex flex-col items-center justify-center shrink-0",
+                      style: {
+                        width: 76,
+                        height: 76,
+                        background: "linear-gradient(135deg, oklch(0.73 0.22 55), oklch(0.65 0.22 35))",
+                        boxShadow: "0 0 26px oklch(0.65 0.2 55 / 0.55)"
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-2xl font-black leading-none",
+                            style: { color: "oklch(0.05 0.01 280)" },
+                            children: loginStreak
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-[10px] font-black",
+                            style: { color: "oklch(0.15 0.02 280)" },
+                            children: "DAYS"
+                          }
+                        )
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-black text-sm", children: loginStreak >= 60 ? "👑 Legendary!" : loginStreak >= 30 ? "🏆 Incredible streak!" : loginStreak >= 7 ? "💪 On a roll!" : loginStreak > 1 ? "Keep it going!" : "Just getting started!" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "p",
+                      {
+                        className: "text-xs mt-0.5",
+                        style: { color: "oklch(0.5 0.03 280)" },
+                        children: [
+                          "Last login: ",
+                          lastLoginDate || "Today"
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "oklch(0.6 0.12 295)" }, children: [
+                      "Resets in: ",
+                      fmtCountdown(msUntilMidnight)
+                    ] })
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "p",
+                  {
+                    className: "text-xs font-medium mb-2",
+                    style: { color: "oklch(0.48 0.03 280)" },
+                    children: "Last 7 days"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1.5", children: Array.from({ length: 7 }, (_, i) => {
+                  const dayNum = i + 1;
+                  const filled = loginStreak >= dayNum;
+                  const isToday = dayNum === Math.min(loginStreak, 7);
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    motion.div,
+                    {
+                      initial: { scale: 0 },
+                      animate: { scale: 1 },
+                      transition: { delay: 0.08 + i * 0.06 },
+                      className: "flex-1 flex flex-col items-center gap-1",
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "w-full rounded-xl flex items-center justify-center",
+                            style: {
+                              height: 38,
+                              background: filled ? isToday ? "linear-gradient(135deg, oklch(0.75 0.22 55), oklch(0.65 0.22 38))" : "oklch(0.22 0.06 65 / 0.75)" : "oklch(0.15 0.018 280)",
+                              border: isToday ? "1.5px solid oklch(0.8 0.2 60 / 0.8)" : "1.5px solid transparent",
+                              boxShadow: isToday ? "0 0 10px oklch(0.65 0.2 55 / 0.45)" : "none"
+                            },
+                            children: filled ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              motion.span,
+                              {
+                                animate: isToday ? { scale: [1, 1.25, 1] } : {},
+                                transition: {
+                                  repeat: Number.POSITIVE_INFINITY,
+                                  duration: 1.8
+                                },
+                                children: "🔥"
+                              }
+                            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                style: { color: "oklch(0.28 0.02 280)", fontSize: 18 },
+                                children: "·"
+                              }
+                            )
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "span",
+                          {
+                            className: "text-[9px] font-medium",
+                            style: {
+                              color: filled ? "oklch(0.68 0.15 65)" : "oklch(0.3 0.02 280)"
+                            },
+                            children: [
+                              "D",
+                              dayNum
+                            ]
+                          }
+                        )
+                      ]
+                    },
+                    `cal-${dayNum}`
+                  );
+                }) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.12 },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  animate: !dailyRewardClaimed ? {
+                    boxShadow: [
+                      "0 0 12px oklch(0.65 0.2 75 / 0.2)",
+                      "0 0 30px oklch(0.65 0.2 75 / 0.55)",
+                      "0 0 12px oklch(0.65 0.2 75 / 0.2)"
+                    ]
+                  } : { boxShadow: "none" },
+                  transition: { repeat: Number.POSITIVE_INFINITY, duration: 2.5 },
+                  className: "p-5 rounded-2xl",
+                  style: {
+                    background: dailyRewardClaimed ? "oklch(0.13 0.02 280 / 0.9)" : "linear-gradient(135deg, oklch(0.17 0.055 75 / 0.95), oklch(0.15 0.04 55 / 0.95))",
+                    border: dailyRewardClaimed ? "1px solid oklch(0.26 0.025 280 / 0.4)" : "1.5px solid oklch(0.7 0.2 80 / 0.55)",
+                    backdropFilter: "blur(16px)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        motion.span,
+                        {
+                          animate: !dailyRewardClaimed ? { rotate: [0, 18, -12, 8, 0] } : {},
+                          transition: { repeat: Number.POSITIVE_INFINITY, duration: 2.8 },
+                          className: "text-xl",
+                          children: "🎁"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-base font-black", children: "Daily Reward" }),
+                      !dailyRewardClaimed && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        motion.div,
+                        {
+                          animate: { opacity: [1, 0.35, 1] },
+                          transition: {
+                            repeat: Number.POSITIVE_INFINITY,
+                            duration: 1.4
+                          },
+                          className: "ml-auto text-xs font-black px-2 py-0.5 rounded-full",
+                          style: {
+                            background: "oklch(0.6 0.22 80 / 0.22)",
+                            border: "1px solid oklch(0.72 0.22 80 / 0.55)",
+                            color: "oklch(0.88 0.2 80)"
+                          },
+                          children: "READY!"
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1 mb-4", children: DAILY_COINS.map((coins, i) => {
+                      const active = i === dayIdx;
+                      const past = i < loginStreak && i < dayIdx;
+                      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "flex-1 flex flex-col items-center gap-0.5 rounded-xl py-2",
+                          style: {
+                            background: active && !dailyRewardClaimed ? "linear-gradient(135deg, oklch(0.22 0.06 80 / 0.85), oklch(0.2 0.05 65 / 0.85))" : past ? "oklch(0.19 0.04 70 / 0.55)" : "oklch(0.14 0.014 280 / 0.55)",
+                            border: active && !dailyRewardClaimed ? "1.5px solid oklch(0.72 0.2 80 / 0.7)" : "1px solid transparent",
+                            boxShadow: active && !dailyRewardClaimed ? "0 0 12px oklch(0.65 0.2 78 / 0.38)" : "none"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: past ? "✅" : "🪙" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "p",
+                              {
+                                className: "text-[10px] font-black leading-none",
+                                style: {
+                                  color: active && !dailyRewardClaimed ? "oklch(0.9 0.2 80)" : past ? "oklch(0.68 0.14 75)" : "oklch(0.38 0.02 280)"
+                                },
+                                children: coins
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "p",
+                              {
+                                className: "text-[9px]",
+                                style: { color: "oklch(0.36 0.02 280)" },
+                                children: [
+                                  "D",
+                                  i + 1
+                                ]
+                              }
+                            )
+                          ]
+                        },
+                        `day-coin-d${i + 1}`
+                      );
+                    }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "p",
+                          {
+                            className: "text-3xl font-black leading-none",
+                            style: {
+                              color: dailyRewardClaimed ? "oklch(0.5 0.05 280)" : "oklch(0.88 0.2 80)"
+                            },
+                            children: [
+                              "+",
+                              dailyCoins,
+                              " 🪙"
+                            ]
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: "text-xs mt-1",
+                            style: { color: "oklch(0.48 0.03 280)" },
+                            children: dailyRewardClaimed ? `✓ Claimed · Next in ${fmtCountdown(msUntilMidnight)}` : `Day ${loginStreak} reward · +50 XP included`
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Button,
+                        {
+                          "data-ocid": "streaks.daily_reward.primary_button",
+                          size: "lg",
+                          disabled: dailyRewardClaimed,
+                          onClick: handleDailyClaim,
+                          className: "font-black border-none shrink-0",
+                          style: {
+                            background: dailyRewardClaimed ? "oklch(0.21 0.02 280)" : "linear-gradient(135deg, oklch(0.76 0.2 75), oklch(0.65 0.22 55))",
+                            color: dailyRewardClaimed ? "oklch(0.42 0.03 280)" : "oklch(0.05 0.01 280)",
+                            boxShadow: dailyRewardClaimed ? "none" : "0 0 22px oklch(0.65 0.2 75 / 0.5)"
+                          },
+                          children: dailyRewardClaimed ? "Claimed ✓" : "Claim!"
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.16 },
+              className: "p-5 rounded-2xl",
+              style: {
+                background: "oklch(0.13 0.02 280 / 0.92)",
+                border: postStreakBroken ? "1.5px solid oklch(0.55 0.22 25 / 0.65)" : postStreakWarning ? "1.5px solid oklch(0.65 0.2 50 / 0.5)" : "1px solid oklch(0.25 0.025 280 / 0.5)",
+                backdropFilter: "blur(16px)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl", children: "📸" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-base font-black", children: "Posting Streak" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "rounded-2xl flex flex-col items-center justify-center shrink-0",
+                      style: {
+                        width: 76,
+                        height: 76,
+                        background: postStreakBroken ? "linear-gradient(135deg, oklch(0.5 0.2 25), oklch(0.44 0.18 10))" : "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.54 0.2 270))",
+                        boxShadow: `0 0 20px ${postStreakBroken ? "oklch(0.5 0.2 25 / 0.45)" : "oklch(0.55 0.22 295 / 0.45)"}`
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-2xl font-black leading-none",
+                            style: { color: "#fff" },
+                            children: postingStreak
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-[10px] font-black",
+                            style: { color: "rgba(255,255,255,0.75)" },
+                            children: "POSTS"
+                          }
+                        )
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-black text-sm", children: [
+                      postingStreak,
+                      " post",
+                      postingStreak !== 1 ? "s" : "",
+                      " streak"
+                    ] }),
+                    lastPostTime > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "p",
+                      {
+                        className: "text-xs mt-0.5",
+                        style: { color: "oklch(0.5 0.03 280)" },
+                        children: [
+                          "Last: ",
+                          new Date(lastPostTime).toLocaleTimeString()
+                        ]
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "p",
+                      {
+                        className: "text-xs mt-0.5",
+                        style: { color: "oklch(0.5 0.03 280)" },
+                        children: "No posts yet"
+                      }
+                    ),
+                    postStreakBroken && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "p",
+                      {
+                        className: "text-xs font-black mt-1",
+                        style: { color: "oklch(0.65 0.22 25)" },
+                        children: "⚠️ Streak broken — post now to restart"
+                      }
+                    ),
+                    postStreakWarning && !postStreakBroken && postStreakMsLeft !== null && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "p",
+                      {
+                        className: "text-xs font-bold mt-1",
+                        style: { color: "oklch(0.72 0.2 50)" },
+                        children: [
+                          "⏰ Breaks in ",
+                          fmtCountdown(postStreakMsLeft)
+                        ]
+                      }
+                    )
+                  ] })
+                ] })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.2 },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-sm font-black mb-3 flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "📅" }),
+                  " Weekly Reward Boxes",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "text-xs font-normal ml-1",
+                      style: { color: "oklch(0.48 0.03 280)" },
+                      children: "7-day milestones"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 sm:grid-cols-4", children: [1, 2, 3, 4].map((week) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  WeeklyBox,
+                  {
+                    week,
+                    streak: loginStreak,
+                    claimed: weeklyClaimed.has(week),
+                    onClaim: () => handleWeeklyClaim(week)
+                  },
+                  `wk-${week}`
+                )) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.24 },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-sm font-black mb-3 flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "🏆" }),
+                  " Creator Milestone Chests"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", children: MILESTONES.map((m2, idx) => {
+                  const unlocked = loginStreak >= m2.days;
+                  const isClaimed = milestoneClaimed.has(m2.days);
+                  const progressPct = Math.min(100, loginStreak / m2.days * 100);
+                  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    motion.div,
+                    {
+                      initial: { opacity: 0, x: -16 },
+                      animate: { opacity: 1, x: 0 },
+                      transition: { delay: 0.24 + idx * 0.07 },
+                      className: "p-4 rounded-2xl",
+                      style: {
+                        background: isClaimed ? "oklch(0.12 0.015 280 / 0.75)" : unlocked ? "oklch(0.15 0.03 280 / 0.92)" : "oklch(0.11 0.014 280 / 0.8)",
+                        border: isClaimed ? "1px solid oklch(0.24 0.02 280 / 0.35)" : unlocked ? `1.5px solid ${m2.color}` : "1px solid oklch(0.2 0.018 280 / 0.4)",
+                        backdropFilter: "blur(12px)",
+                        boxShadow: unlocked && !isClaimed ? `0 0 22px ${m2.glow}` : "none"
+                      },
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          motion.div,
+                          {
+                            animate: unlocked && !isClaimed ? { scale: [1, 1.12, 1], rotate: [0, 6, -4, 0] } : {},
+                            transition: {
+                              repeat: Number.POSITIVE_INFINITY,
+                              duration: 3
+                            },
+                            className: "text-3xl shrink-0",
+                            children: isClaimed ? "✅" : m2.emoji
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 flex-wrap mb-1", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-black text-sm", children: m2.label }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "span",
+                              {
+                                className: "text-[10px] font-black px-1.5 py-0.5 rounded-full shrink-0",
+                                style: {
+                                  background: unlocked ? `${m2.color}22` : "oklch(0.17 0.018 280)",
+                                  color: unlocked ? m2.color : "oklch(0.38 0.02 280)"
+                                },
+                                children: [
+                                  m2.days,
+                                  "d streak"
+                                ]
+                              }
+                            )
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-x-3 gap-y-0.5", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "span",
+                              {
+                                className: "text-[11px]",
+                                style: { color: "oklch(0.72 0.16 80)" },
+                                children: [
+                                  "+",
+                                  m2.coins.toLocaleString(),
+                                  " 🪙"
+                                ]
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "span",
+                              {
+                                className: "text-[11px]",
+                                style: { color: "oklch(0.68 0.16 295)" },
+                                children: [
+                                  "+",
+                                  m2.xp.toLocaleString(),
+                                  " XP"
+                                ]
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "span",
+                              {
+                                className: "text-[11px]",
+                                style: { color: "oklch(0.7 0.16 145)" },
+                                children: [
+                                  "+",
+                                  m2.followers.toLocaleString(),
+                                  " followers"
+                                ]
+                              }
+                            )
+                          ] }),
+                          !isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "div",
+                              {
+                                className: "relative h-1.5 rounded-full overflow-hidden",
+                                style: { background: "oklch(0.17 0.018 280)" },
+                                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  motion.div,
+                                  {
+                                    className: "absolute inset-y-0 left-0 rounded-full",
+                                    style: {
+                                      background: unlocked ? `linear-gradient(90deg, ${m2.color}, oklch(0.85 0.22 80))` : "oklch(0.26 0.035 280)"
+                                    },
+                                    initial: { width: 0 },
+                                    animate: { width: `${progressPct}%` },
+                                    transition: { duration: 1.2, ease: "easeOut" }
+                                  }
+                                )
+                              }
+                            ),
+                            !unlocked && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "p",
+                              {
+                                className: "text-[10px] mt-0.5",
+                                style: { color: "oklch(0.38 0.02 280)" },
+                                children: [
+                                  m2.days - loginStreak,
+                                  " more days to unlock"
+                                ]
+                              }
+                            )
+                          ] })
+                        ] }),
+                        unlocked && !isClaimed && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Button,
+                          {
+                            "data-ocid": `streaks.milestone.${m2.days}.claim_button`,
+                            size: "sm",
+                            className: "shrink-0 font-black border-none text-xs",
+                            style: {
+                              background: `linear-gradient(135deg, ${m2.color}, oklch(0.82 0.22 80))`,
+                              color: "oklch(0.05 0.01 280)",
+                              boxShadow: `0 0 16px ${m2.glow}`
+                            },
+                            onClick: () => handleMilestoneClaim(m2.days),
+                            children: "Open!"
+                          }
+                        )
+                      ] })
+                    },
+                    m2.days
+                  );
+                }) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, y: 12 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: 0.3 },
+              className: "p-5 rounded-2xl",
+              style: {
+                background: "oklch(0.13 0.02 280 / 0.92)",
+                border: "1px solid oklch(0.25 0.025 280 / 0.4)",
+                backdropFilter: "blur(16px)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-sm font-black mb-3 flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "⚡" }),
+                  " Active Streak Perks"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2", children: [
+                  { days: 3, perk: "+5% engagement bonus", icon: "💬" },
+                  { days: 7, perk: "+10% reach boost", icon: "📡" },
+                  { days: 14, perk: "+15% follower growth", icon: "📈" },
+                  { days: 30, perk: "+20% all bonuses", icon: "🚀" },
+                  { days: 60, perk: "Legend badge unlocked", icon: "👑" }
+                ].map((perk) => {
+                  const unlocked = loginStreak >= perk.days;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "flex items-center gap-3 px-3 py-2.5 rounded-xl",
+                      style: {
+                        background: unlocked ? "oklch(0.18 0.04 75 / 0.28)" : "oklch(0.14 0.016 280 / 0.55)",
+                        border: unlocked ? "1px solid oklch(0.62 0.18 80 / 0.32)" : "1px solid oklch(0.2 0.018 280 / 0.3)"
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base shrink-0", children: unlocked ? perk.icon : "🔒" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "text-xs font-bold truncate",
+                              style: {
+                                color: unlocked ? "oklch(0.85 0.16 80)" : "oklch(0.42 0.02 280)"
+                              },
+                              children: perk.perk
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "p",
+                            {
+                              className: "text-[10px]",
+                              style: {
+                                color: unlocked ? "oklch(0.58 0.08 80)" : "oklch(0.33 0.02 280)"
+                              },
+                              children: [
+                                "Day ",
+                                perk.days,
+                                " streak"
+                              ]
+                            }
+                          )
+                        ] }),
+                        unlocked && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm shrink-0", children: "✅" })
+                      ]
+                    },
+                    `perk-${perk.days}`
+                  );
+                }) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4" })
+        ] })
+      ]
+    }
+  );
+}
 const TREND_PAIRS = [
   {
     a: "#TechVsFitness",
@@ -78593,6 +87703,223 @@ function TrendBattles() {
               ]
             }
           )
+        ] })
+      ]
+    }
+  );
+}
+const TREND_POOL = [
+  { tag: "#GlowUpChallenge", topic: "Beauty & Lifestyle", emoji: "✨" },
+  { tag: "#TechTuesday", topic: "Technology", emoji: "💻" },
+  { tag: "#FitnessFriday", topic: "Health & Fitness", emoji: "💪" },
+  { tag: "#ViralDance", topic: "Entertainment", emoji: "💃" },
+  { tag: "#FoodieFinds", topic: "Food & Drink", emoji: "🍜" },
+  { tag: "#TravelDiaries", topic: "Travel", emoji: "✈️" },
+  { tag: "#GamersUnite", topic: "Gaming", emoji: "🎮" },
+  { tag: "#AICreator", topic: "Technology", emoji: "🤖" },
+  { tag: "#MotivationMonday", topic: "Mindset", emoji: "🔥" },
+  { tag: "#StyleOTD", topic: "Fashion", emoji: "👗" },
+  { tag: "#NightOwl", topic: "Lifestyle", emoji: "🦉" },
+  { tag: "#CreatorLife", topic: "Content Creation", emoji: "🎬" }
+];
+function generateTrends(seed) {
+  const shuffled = [...TREND_POOL].sort(() => Math.sin(seed) - 0.5);
+  return shuffled.slice(0, 9).map((t2, i) => ({
+    ...t2,
+    heatScore: Math.floor(
+      70 + Math.sin(seed + i * 0.7) * 25 + Math.random() * 10
+    ),
+    reachBoost: `${(1.5 + i % 4 * 0.3).toFixed(1)}x`,
+    postsToday: Math.floor(
+      12e3 + Math.cos(seed * i) * 8e3 + Math.random() * 5e3
+    )
+  }));
+}
+const REFRESH_INTERVAL = 5 * 60 * 1e3;
+const LS_KEY = "mindforge-trend-radar";
+function TrendRadar() {
+  const { navigate, setCreatorCoins, addNotification } = useApp();
+  const [trends, setTrends] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (raw) {
+        const d2 = JSON.parse(raw);
+        if (Date.now() - d2.ts < REFRESH_INTERVAL) return d2.trends;
+      }
+    } catch (_) {
+    }
+    const t2 = generateTrends(Date.now());
+    localStorage.setItem(LS_KEY, JSON.stringify({ ts: Date.now(), trends: t2 }));
+    return t2;
+  });
+  const [nextRefresh, setNextRefresh] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (raw) {
+        const d2 = JSON.parse(raw);
+        return d2.ts + REFRESH_INTERVAL;
+      }
+    } catch (_) {
+    }
+    return Date.now() + REFRESH_INTERVAL;
+  });
+  const [timeLeft, setTimeLeft] = reactExports.useState("");
+  const [riddenTags, setRiddenTags] = reactExports.useState(/* @__PURE__ */ new Set());
+  reactExports.useEffect(() => {
+    const interval = setInterval(() => {
+      const diff = Math.max(0, nextRefresh - Date.now());
+      if (diff === 0) {
+        const t2 = generateTrends(Date.now());
+        setTrends(t2);
+        const newTs = Date.now();
+        setNextRefresh(newTs + REFRESH_INTERVAL);
+        localStorage.setItem(LS_KEY, JSON.stringify({ ts: newTs, trends: t2 }));
+        setTimeLeft("Just refreshed!");
+      } else {
+        const mins = Math.floor(diff / 6e4);
+        const secs = Math.floor(diff % 6e4 / 1e3);
+        setTimeLeft(`Refreshes in ${mins}m ${secs}s`);
+      }
+    }, 1e3);
+    return () => clearInterval(interval);
+  }, [nextRefresh]);
+  function handleRide(tag) {
+    if (riddenTags.has(tag)) {
+      ue.info(`Already riding ${tag}!`);
+      return;
+    }
+    setRiddenTags((prev) => /* @__PURE__ */ new Set([...prev, tag]));
+    setCreatorCoins((c2) => c2 + 150);
+    addNotification({
+      icon: "📈",
+      message: `You rode the trend ${tag}! +150 coins & 2x reach on next post.`,
+      type: "boost"
+    });
+    ue.success(`🔥 Riding ${tag}! +150 coins & 2x reach on your next post!`);
+  }
+  const heatColor = (score) => score >= 90 ? "oklch(0.72 0.22 25)" : score >= 75 ? "oklch(0.78 0.18 80)" : "oklch(0.62 0.15 145)";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen pb-24",
+      style: { background: "oklch(0.09 0.018 280)" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "sticky top-0 z-10 px-4 py-3 flex items-center gap-3",
+            style: {
+              background: "oklch(0.11 0.018 280 / 0.95)",
+              borderBottom: "1px solid oklch(0.2 0.025 280 / 0.4)",
+              backdropFilter: "blur(20px)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => navigate("hub"),
+                  className: "p-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors",
+                  "data-ocid": "trend-radar.back.button",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-5 h-5" })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-lg font-bold text-foreground", children: "Trend Radar" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: timeLeft })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 text-xs text-muted-foreground", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-3.5 h-3.5" }),
+                "Auto-refresh"
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-5 space-y-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl p-3 flex items-center gap-2 text-sm",
+              style: {
+                background: "oklch(0.55 0.22 25 / 0.12)",
+                border: "1px solid oklch(0.55 0.22 25 / 0.3)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4", style: { color: "oklch(0.72 0.22 25)" } }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { color: "oklch(0.82 0.1 260)" }, children: [
+                  "Ride a trend to get ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "2x reach" }),
+                  " on your next post +",
+                  " ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "+150 coins" })
+                ] })
+              ]
+            }
+          ),
+          trends.map((trend, idx) => {
+            const isRidden = riddenTags.has(trend.tag);
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                "data-ocid": `trend-radar.item.${idx + 1}`,
+                className: "rounded-2xl p-4 flex items-center gap-3",
+                style: {
+                  background: isRidden ? "oklch(0.14 0.03 145 / 0.5)" : "oklch(0.13 0.016 280 / 0.95)",
+                  border: `1px solid ${isRidden ? "oklch(0.45 0.15 145 / 0.4)" : "oklch(0.22 0.025 280 / 0.5)"}`
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: trend.emoji }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-0.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-foreground", children: trend.tag }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          className: "text-[10px] font-bold px-1.5 py-0.5 rounded-full",
+                          style: {
+                            background: `${heatColor(trend.heatScore)}22`,
+                            color: heatColor(trend.heatScore),
+                            border: `1px solid ${heatColor(trend.heatScore)}44`
+                          },
+                          children: [
+                            "🔥 ",
+                            trend.heatScore
+                          ]
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+                      trend.topic,
+                      " · ",
+                      trend.postsToday.toLocaleString(),
+                      " posts today · ",
+                      trend.reachBoost,
+                      " reach"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      size: "sm",
+                      onClick: () => handleRide(trend.tag),
+                      disabled: isRidden,
+                      className: "flex-shrink-0 text-xs h-8",
+                      style: isRidden ? {
+                        background: "oklch(0.28 0.05 145)",
+                        color: "oklch(0.72 0.22 145)"
+                      } : {
+                        background: "linear-gradient(135deg, oklch(0.55 0.24 280), oklch(0.5 0.28 300))",
+                        color: "white"
+                      },
+                      "data-ocid": `trend-radar.ride.button.${idx + 1}`,
+                      children: isRidden ? "Riding" : "Ride"
+                    }
+                  )
+                ]
+              },
+              trend.tag
+            );
+          })
         ] })
       ]
     }
@@ -79093,6 +88420,7 @@ function AppShell() {
   useAlgoHackEngine();
   const [activeDrama, setActiveDrama] = reactExports.useState(null);
   useDramaEngine((event) => setActiveDrama(event));
+  const [notifOpen, setNotifOpen] = reactExports.useState(false);
   if (isNewUser) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Onboarding, {});
   }
@@ -79122,9 +88450,9 @@ function AppShell() {
       case "hub":
         return /* @__PURE__ */ jsxRuntimeExports.jsx(CreatorHub, {});
       case "creator-studio":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(HomeFeed, {});
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(CreatorStudio, {});
       case "challenges":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(HomeFeed, {});
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(ChallengesPage, {});
       case "user-profile":
         return /* @__PURE__ */ jsxRuntimeExports.jsx(Profile, { userId: currentRoute.userId });
       case "hashtag":
@@ -79147,6 +88475,24 @@ function AppShell() {
         return /* @__PURE__ */ jsxRuntimeExports.jsx(SponsorBidding, {});
       case "algo-hack":
         return /* @__PURE__ */ jsxRuntimeExports.jsx(AlgorithmHack, {});
+      case "skills":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(SkillUpgrades, {});
+      case "agency":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(AgencyPage, {});
+      case "investment":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(InvestmentPage, {});
+      case "streaks":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(StreaksRewards, {});
+      case "content-vault":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(ContentVault, {});
+      case "trend-radar":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(TrendRadar, {});
+      case "fan-mail":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(FanMailCenter, {});
+      case "challenges-board":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(ChallengesBoardPage, {});
+      case "monetization-booster":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(MonetizationBooster, {});
       default:
         return /* @__PURE__ */ jsxRuntimeExports.jsx(HomeFeed, {});
     }
@@ -79160,13 +88506,35 @@ function AppShell() {
         className: "flex-1 overflow-y-auto",
         style: {
           marginLeft: isMobile ? 0 : "240px",
-          marginRight: isMobile ? 0 : "288px",
+          marginRight: isMobile ? 0 : notifOpen ? "288px" : "0px",
           paddingBottom: isMobile && !hideMobileNav ? "80px" : 0
         },
         children: renderPage()
       }
     ),
-    !isMobile && /* @__PURE__ */ jsxRuntimeExports.jsx(NotificationsSidebar, {}),
+    !isMobile && notifOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(NotificationsSidebar, { onClose: () => setNotifOpen(false) }),
+    !isMobile && !notifOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "button",
+      {
+        type: "button",
+        "aria-label": "Open notifications",
+        "data-ocid": "app.notifications.open_button",
+        onClick: () => setNotifOpen(true),
+        className: "fixed top-4 right-4 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110",
+        style: {
+          background: "oklch(0.18 0.025 280 / 0.9)",
+          border: "1px solid oklch(0.35 0.04 280 / 0.5)",
+          backdropFilter: "blur(12px)"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Bell,
+          {
+            className: "w-4.5 h-4.5",
+            style: { color: "oklch(0.72 0.18 295)" }
+          }
+        )
+      }
+    ),
     isMobile && !hideMobileNav && /* @__PURE__ */ jsxRuntimeExports.jsx(MobileNav, { activePage, onNavigate: handleNavigate }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SaveIndicator, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(DramaModal, { event: activeDrama, onClose: () => setActiveDrama(null) }),

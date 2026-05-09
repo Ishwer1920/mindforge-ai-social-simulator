@@ -302,7 +302,7 @@ export interface Skills {
 }
 
 export interface AgencyState {
-  tier: "none" | "basic" | "premium" | "elite";
+  tier: "none" | "basic" | "premium" | "elite" | "starter" | "pro";
   revenueBoostPct: number;
   dealBoostPct: number;
   growthBoostPct: number;
@@ -410,6 +410,9 @@ interface AppContextType {
   stories: Story[];
   notifications: NotificationItem[];
   addNotification: (notif: Omit<NotificationItem, "id" | "timestamp">) => void;
+  dismissNotification: (id: string) => void;
+  clearActivityNotifications: () => void;
+  clearCollabNotifications: () => void;
   conversations: Conversation[];
   setConversations: React.Dispatch<React.SetStateAction<Conversation[]>>;
   achievements: Achievement[];
@@ -2098,6 +2101,27 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCurrentRoute({ page, ...params });
   }, []);
 
+  const dismissNotification = useCallback((id: string) => {
+    setNotifications((prev) => prev.filter((n) => n.id !== id));
+  }, []);
+
+  const clearActivityNotifications = useCallback(() => {
+    setNotifications((prev) =>
+      prev.filter(
+        (n) => n.type === "collab_request" || n.type === "collab_accepted",
+      ),
+    );
+  }, []);
+
+  const clearCollabNotifications = useCallback(() => {
+    setNotifications((prev) =>
+      prev.filter(
+        (n) => n.type !== "collab_request" && n.type !== "collab_accepted",
+      ),
+    );
+    setPendingCollabs([]);
+  }, []);
+
   const addNotification = useCallback(
     (notif: Omit<NotificationItem, "id" | "timestamp">) => {
       if (
@@ -3036,6 +3060,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         stories: activeStories,
         notifications,
         addNotification,
+        dismissNotification,
+        clearActivityNotifications,
+        clearCollabNotifications,
         conversations,
         setConversations,
         achievements,
